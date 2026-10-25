@@ -1,0 +1,1870 @@
+{
+ "fleet": {
+  "eval": {
+   "stop": null,
+   "lock": 600.0,
+   "micros": 5,
+   "sleeves": [
+    {
+     "micros": 1,
+     "id": "67348b9527a0",
+     "family": "noise",
+     "filter": "all",
+     "knobs": {
+      "lb": 0,
+      "mult": 0.8,
+      "freq": 60,
+      "first_t": 30,
+      "stop_mode": 1,
+      "every": 1,
+      "reentry": 1,
+      "gap_adj": 1,
+      "tf": 0,
+      "hard_stop": 0.3
+     },
+     "params": [
+      0,
+      0.8,
+      60,
+      30,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0.3,
+      1319
+     ],
+     "disc": {
+      "mean": 38.182,
+      "t": 3.7261,
+      "sharpe_ann": 1.8631,
+      "pf": 1.4918,
+      "trades": 1005.0,
+      "avg_trade": 38.296,
+      "years_pos": 4.0,
+      "max_dd": -3823.5573,
+      "worst_low": -2069.6987
+     },
+     "val": {
+      "mean": 32.3004,
+      "t": 2.1575,
+      "sharpe_ann": 2.1281,
+      "pf": 1.5989,
+      "trades": 246.0,
+      "max_dd": -1941.2551
+     },
+     "dsr": 0.6688787225888342,
+     "wr_disc": 0.40298507462686567,
+     "rr_disc": 2.096143698579183,
+     "wr_val": 0.4186991869918699,
+     "rr_val": 2.0942955130475838
+    },
+    {
+     "micros": 1,
+     "id": "8baf5bf17cdf",
+     "family": "noise",
+     "filter": "vol_not_high",
+     "knobs": {
+      "lb": 0,
+      "mult": 0.8,
+      "freq": 30,
+      "first_t": 30,
+      "stop_mode": 1,
+      "every": 1,
+      "reentry": 1,
+      "gap_adj": 1,
+      "tf": 1,
+      "hard_stop": 0.3
+     },
+     "params": [
+      0,
+      0.8,
+      30,
+      30,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0.3,
+      1319
+     ],
+     "disc": {
+      "mean": 24.8233,
+      "t": 3.7039,
+      "sharpe_ann": 1.8519,
+      "pf": 1.8757,
+      "trades": 511.0,
+      "avg_trade": 48.9666,
+      "years_pos": 4.0,
+      "max_dd": -3375.637,
+      "worst_low": -991.1703
+     },
+     "val": {
+      "mean": 18.4717,
+      "t": 2.2398,
+      "sharpe_ann": 2.2093,
+      "pf": 2.0969,
+      "trades": 94.0,
+      "max_dd": -1197.5977
+     },
+     "dsr": 0.667267450654881,
+     "wr_disc": 0.4246575342465753,
+     "rr_disc": 2.3145238447364878,
+     "wr_val": 0.48936170212765956,
+     "rr_val": 1.9386794160018417
+    },
+    {
+     "micros": 1,
+     "id": "2107458b7683",
+     "family": "brk",
+     "filter": "vol_not_high",
+     "knobs": {
+      "dir_mode": 1,
+      "stop": [
+       2,
+       0.2
+      ],
+      "target_r": 0,
+      "be_r": 1,
+      "tf": 1,
+      "window": "orb",
+      "ra": 930,
+      "rb": 990,
+      "cut": 1170,
+      "tx": 1364
+     },
+     "params": [
+      930,
+      990,
+      1170,
+      1,
+      2,
+      0.2,
+      0,
+      1364,
+      1,
+      1,
+      1
+     ],
+     "disc": {
+      "mean": 19.2151,
+      "t": 3.0735,
+      "sharpe_ann": 1.5367,
+      "pf": 1.6719,
+      "trades": 308.0,
+      "avg_trade": 62.8859,
+      "years_pos": 4.0,
+      "max_dd": -4021.2506,
+      "worst_low": -499.1241
+     },
+     "val": {
+      "mean": 12.9039,
+      "t": 1.5826,
+      "sharpe_ann": 1.5611,
+      "pf": 1.6001,
+      "trades": 88.0,
+      "max_dd": -1368.6211
+     },
+     "dsr": 0.3075161208875254,
+     "wr_disc": 0.4318181818181818,
+     "rr_disc": 2.19980798808901,
+     "wr_val": 0.3977272727272727,
+     "rr_val": 2.4229344582376537
+    },
+    {
+     "micros": 1,
+     "id": "c73a354074c0",
+     "family": "drive",
+     "filter": "gap_small+atr_le_20",
+     "knobs": {
+      "t1": 60,
+      "k": 0.1,
+      "follow": 1,
+      "stop": 0.3,
+      "target_r": 2,
+      "tx": 1315,
+      "tf": 0,
+      "anchor": 930
+     },
+     "params": [
+      930,
+      60,
+      0.1,
+      1,
+      0.3,
+      2,
+      1315,
+      0
+     ],
+     "disc": {
+      "mean": 9.2846,
+      "t": 2.3949,
+      "sharpe_ann": 1.1975,
+      "pf": 1.5669,
+      "trades": 163.0,
+      "avg_trade": 57.4163,
+      "years_pos": 4.0,
+      "max_dd": -2419.3508,
+      "worst_low": -435.4256
+     },
+     "val": {
+      "mean": 12.5373,
+      "t": 1.2457,
+      "sharpe_ann": 1.2288,
+      "pf": 1.3882,
+      "trades": 77.0,
+      "max_dd": -1477.4806
+     },
+     "dsr": 0.10838226315757843,
+     "wr_disc": 0.5276073619631901,
+     "rr_disc": 1.402885265293363,
+     "wr_val": 0.4805194805194805,
+     "rr_val": 1.500762268658139
+    },
+    {
+     "micros": 1,
+     "id": "73610347ba50",
+     "family": "brk",
+     "filter": "all",
+     "knobs": {
+      "dir_mode": 0,
+      "stop": [
+       2,
+       0.2
+      ],
+      "target_r": 3,
+      "be_r": 0,
+      "tf": 0,
+      "window": "orb",
+      "ra": 930,
+      "rb": 960,
+      "cut": 1020,
+      "tx": 1315
+     },
+     "params": [
+      930,
+      960,
+      1020,
+      0,
+      2,
+      0.2,
+      3,
+      1315,
+      0,
+      0,
+      1
+     ],
+     "disc": {
+      "mean": 29.0443,
+      "t": 2.2614,
+      "sharpe_ann": 1.1307,
+      "pf": 1.1991,
+      "trades": 934.0,
+      "avg_trade": 31.3455,
+      "years_pos": 4.0,
+      "max_dd": -10221.0921,
+      "worst_low": -1068.4656
+     },
+     "val": {
+      "mean": 30.0401,
+      "t": 1.7543,
+      "sharpe_ann": 1.7304,
+      "pf": 1.3066,
+      "trades": 248.0,
+      "max_dd": -2484.1083
+     },
+     "dsr": 0.1202530599559069,
+     "wr_disc": 0.39721627408993576,
+     "rr_disc": 1.8196047881646926,
+     "wr_val": 0.3870967741935484,
+     "rr_val": 2.0687387636153263
+    }
+   ]
+  },
+  "funded": {
+   "stop": null,
+   "lock": null,
+   "micros": 8,
+   "sleeves": [
+    {
+     "micros": 1,
+     "id": "050800019e7e",
+     "family": "drive",
+     "filter": "on_wide+atr_le_25",
+     "knobs": {
+      "t1": 60,
+      "k": 0.1,
+      "follow": 1,
+      "stop": 0.3,
+      "target_r": 2,
+      "tx": 1315,
+      "tf": 0,
+      "anchor": 930
+     },
+     "params": [
+      930,
+      60,
+      0.1,
+      1,
+      0.3,
+      2,
+      1315,
+      0
+     ],
+     "disc": {
+      "mean": 24.8269,
+      "t": 3.6129,
+      "sharpe_ann": 1.8065,
+      "pf": 1.5585,
+      "trades": 349.0,
+      "avg_trade": 71.7064,
+      "years_pos": 4.0,
+      "max_dd": -2626.113,
+      "worst_low": -528.0634
+     },
+     "val": {
+      "mean": 25.5123,
+      "t": 1.8578,
+      "sharpe_ann": 1.8325,
+      "pf": 1.4416,
+      "trades": 134.0,
+      "max_dd": -1791.5397
+     },
+     "dsr": 0.5936713564911476,
+     "wr_disc": 0.5272206303724928,
+     "rr_disc": 1.3975710546351665,
+     "wr_val": 0.5149253731343284,
+     "rr_val": 1.358009747330718
+    },
+    {
+     "micros": 1,
+     "id": "f28c7a9545a5",
+     "family": "drive",
+     "filter": "no_mon+atr_le_30",
+     "knobs": {
+      "t1": 15,
+      "k": 0.1,
+      "follow": 1,
+      "stop": 0.3,
+      "target_r": 2,
+      "tx": 1315,
+      "tf": 1,
+      "anchor": 930
+     },
+     "params": [
+      930,
+      15,
+      0.1,
+      1,
+      0.3,
+      2,
+      1315,
+      1
+     ],
+     "disc": {
+      "mean": 21.4232,
+      "t": 3.4928,
+      "sharpe_ann": 1.7464,
+      "pf": 1.8039,
+      "trades": 196.0,
+      "avg_trade": 110.1762,
+      "years_pos": 4.0,
+      "max_dd": -2094.8974,
+      "worst_low": -682.7853
+     },
+     "val": {
+      "mean": 16.46,
+      "t": 1.6958,
+      "sharpe_ann": 1.6727,
+      "pf": 1.7442,
+      "trades": 47.0,
+      "max_dd": -1705.4109
+     },
+     "dsr": 0.5156101970742112,
+     "wr_disc": 0.5306122448979592,
+     "rr_disc": 1.595777193488499,
+     "wr_val": 0.5531914893617021,
+     "rr_val": 1.4087496526899357
+    },
+    {
+     "micros": 1,
+     "id": "462215007478",
+     "family": "brk",
+     "filter": "all",
+     "knobs": {
+      "dir_mode": 0,
+      "stop": [
+       1,
+       0.5
+      ],
+      "target_r": 1,
+      "be_r": 1,
+      "tf": 1,
+      "window": "orb",
+      "ra": 930,
+      "rb": 990,
+      "cut": 1170,
+      "tx": 1364
+     },
+     "params": [
+      930,
+      990,
+      1170,
+      0,
+      1,
+      0.5,
+      1,
+      1364,
+      1,
+      1,
+      1
+     ],
+     "disc": {
+      "mean": 20.7482,
+      "t": 2.9884,
+      "sharpe_ann": 1.4942,
+      "pf": 1.3553,
+      "trades": 528.0,
+      "avg_trade": 39.6103,
+      "years_pos": 4.0,
+      "max_dd": -2516.6885,
+      "worst_low": -1561.5828
+     },
+     "val": {
+      "mean": 12.2277,
+      "t": 1.5169,
+      "sharpe_ann": 1.4962,
+      "pf": 1.3456,
+      "trades": 132.0,
+      "max_dd": -1266.8063
+     },
+     "dsr": 0.29777084416183425,
+     "wr_disc": 0.5757575757575758,
+     "rr_disc": 0.9986722029403432,
+     "wr_val": 0.5909090909090909,
+     "rr_val": 0.9315836764383555
+    },
+    {
+     "micros": 1,
+     "id": "cfbbdfd63f99",
+     "family": "noise",
+     "filter": "nr7_or_inside+atr_le_25",
+     "knobs": {
+      "lb": 1,
+      "mult": 1.0,
+      "freq": 30,
+      "first_t": 30,
+      "stop_mode": 2,
+      "every": 1,
+      "reentry": 1,
+      "gap_adj": 1,
+      "tf": 0,
+      "hard_stop": 0.5
+     },
+     "params": [
+      1,
+      1.0,
+      30,
+      30,
+      2,
+      1,
+      1,
+      1,
+      0,
+      0.5,
+      1319
+     ],
+     "disc": {
+      "mean": 8.8563,
+      "t": 2.7517,
+      "sharpe_ann": 1.3758,
+      "pf": 2.3461,
+      "trades": 198.0,
+      "avg_trade": 45.0865,
+      "years_pos": 4.0,
+      "max_dd": -1453.4491,
+      "worst_low": -597.5641
+     },
+     "val": {
+      "mean": 9.6427,
+      "t": 1.2706,
+      "sharpe_ann": 1.2533,
+      "pf": 2.2316,
+      "trades": 52.0,
+      "max_dd": -541.5209
+     },
+     "dsr": 0.1390792907658323,
+     "wr_disc": 0.3333333333333333,
+     "rr_disc": 4.000720062472533,
+     "wr_val": 0.3269230769230769,
+     "rr_val": 4.13632910958392
+    },
+    {
+     "micros": 1,
+     "id": "699f425fd2ec",
+     "family": "brk",
+     "filter": "all",
+     "knobs": {
+      "dir_mode": 0,
+      "stop": [
+       2,
+       0.2
+      ],
+      "target_r": 2,
+      "be_r": 0,
+      "tf": 0,
+      "window": "orb",
+      "ra": 930,
+      "rb": 990,
+      "cut": 1170,
+      "tx": 1315
+     },
+     "params": [
+      930,
+      990,
+      1170,
+      0,
+      2,
+      0.2,
+      2,
+      1315,
+      0,
+      0,
+      1
+     ],
+     "disc": {
+      "mean": 26.2291,
+      "t": 2.3828,
+      "sharpe_ann": 1.1914,
+      "pf": 1.2039,
+      "trades": 930.0,
+      "avg_trade": 28.4289,
+      "years_pos": 4.0,
+      "max_dd": -6280.2975,
+      "worst_low": -1456.3716
+     },
+     "val": {
+      "mean": 21.5001,
+      "t": 1.5215,
+      "sharpe_ann": 1.5008,
+      "pf": 1.2552,
+      "trades": 238.0,
+      "max_dd": -2725.6579
+     },
+     "dsr": 0.13090480862296439,
+     "wr_disc": 0.4559139784946237,
+     "rr_disc": 1.4366836848061721,
+     "wr_val": 0.4495798319327731,
+     "rr_val": 1.5367285745044572
+    },
+    {
+     "micros": 1,
+     "id": "2e071e05cd91",
+     "family": "brk",
+     "filter": "vol_low+atr_le_20",
+     "knobs": {
+      "dir_mode": 0,
+      "stop": [
+       2,
+       0.2
+      ],
+      "target_r": 2,
+      "be_r": 0,
+      "tf": 0,
+      "window": "orb",
+      "ra": 930,
+      "rb": 990,
+      "cut": 1170,
+      "tx": 1315
+     },
+     "params": [
+      930,
+      990,
+      1170,
+      0,
+      2,
+      0.2,
+      2,
+      1315,
+      0,
+      0,
+      1
+     ],
+     "disc": {
+      "mean": 7.4852,
+      "t": 2.3276,
+      "sharpe_ann": 1.1638,
+      "pf": 1.4406,
+      "trades": 207.0,
+      "avg_trade": 36.4497,
+      "years_pos": 3.0,
+      "max_dd": -1301.4309,
+      "worst_low": -264.7405
+     },
+     "val": {
+      "mean": 11.6121,
+      "t": 1.5373,
+      "sharpe_ann": 1.5164,
+      "pf": 1.4582,
+      "trades": 85.0,
+      "max_dd": -1134.2823
+     },
+     "dsr": 0.1324610971364471,
+     "wr_disc": 0.47342995169082125,
+     "rr_disc": 1.6023492976448592,
+     "wr_val": 0.4823529411764706,
+     "rr_val": 1.56491814446473
+    },
+    {
+     "micros": 2,
+     "id": "bbf405b265c0",
+     "family": "brk",
+     "filter": "all",
+     "knobs": {
+      "dir_mode": 0,
+      "stop": [
+       1,
+       0.5
+      ],
+      "target_r": 1,
+      "be_r": 0,
+      "tf": 1,
+      "window": "asia_ldn",
+      "ra": 0,
+      "rb": 540,
+      "cut": 660,
+      "tx": 1364
+     },
+     "params": [
+      0,
+      540,
+      660,
+      0,
+      1,
+      0.5,
+      1,
+      1364,
+      0,
+      1,
+      1
+     ],
+     "disc": {
+      "mean": 9.286,
+      "t": 2.1583,
+      "sharpe_ann": 1.0791,
+      "pf": 1.3073,
+      "trades": 373.0,
+      "avg_trade": 25.0947,
+      "years_pos": 4.0,
+      "max_dd": -2949.3026,
+      "worst_low": -1219.4617
+     },
+     "val": {
+      "mean": 7.5695,
+      "t": 1.3062,
+      "sharpe_ann": 1.2884,
+      "pf": 1.3638,
+      "trades": 99.0,
+      "max_dd": -1028.6444
+     },
+     "dsr": 0.08394326642989042,
+     "wr_disc": 0.5656836461126006,
+     "rr_disc": 1.003682895337891,
+     "wr_val": 0.5151515151515151,
+     "rr_val": 1.2835484131663721
+    }
+   ]
+  }
+ },
+ "in_sample": {
+  "dates": [
+   "2020-01-30",
+   "2024-12-31"
+  ],
+  "sessions": 1267,
+  "eval": {
+   "stats": {
+    "sessions": 1267,
+    "mean_day": 23.483084041420792,
+    "sd_day": 505.4342992451399,
+    "sharpe_ann": 0.7375486841698717,
+    "t": 1.6537837855392266,
+    "max_dd": -10464.95694770459,
+    "worst_day": -2074.2175409312335,
+    "worst_intraday": -2865.0592027584275,
+    "pct_days_ge_100": 0.4238358326756117,
+    "pct_up_days": 0.4664561957379637,
+    "total": 29753.067480480142
+   },
+   "lucid": {
+    "pass_10": 0.32935,
+    "ppmc_1k": 0.1096,
+    "any_payout_21": 0.30285,
+    "owner_mean_21": 330.6266304809904
+   },
+   "lucid_c40": {
+    "pass_10": 0.2706,
+    "ppmc_1k": 0.1096,
+    "any_payout_21": 0.30285,
+    "owner_mean_21": 330.6266304809904
+   },
+   "replays": {
+    "passed": 437,
+    "open": 80,
+    "breached": 741,
+    "pass_rate_10": 0.34737678855325915,
+    "median_days_to_pass": 5.0
+   },
+   "lifetime": {
+    "owner_mean_6m": 565.2910961132712,
+    "owner_median_6m": 0.0,
+    "payouts_mean_6m": 0.6814,
+    "p_any_payout_6m": 0.3034
+   },
+   "wr": 0.4161676646706587,
+   "rr": 1.9504239123599503,
+   "trades": 3674,
+   "sleeves": [
+    {
+     "id": "67348b9527a0",
+     "family": "noise",
+     "filter": "all",
+     "sharpe_ann": 1.8943856230049319,
+     "total_1micro": 46853.27151318531,
+     "wr": 0.4060751398880895,
+     "rr": 2.090044945583254,
+     "trades": 1251
+    },
+    {
+     "id": "8baf5bf17cdf",
+     "family": "noise",
+     "filter": "vol_not_high",
+     "sharpe_ann": 1.8764022171166783,
+     "total_1micro": 29806.068919334415,
+     "wr": 0.43471074380165287,
+     "rr": 2.2480071694208443,
+     "trades": 605
+    },
+    {
+     "id": "2107458b7683",
+     "family": "brk",
+     "filter": "vol_not_high",
+     "sharpe_ann": 1.5241646087803589,
+     "total_1micro": 22710.97627579932,
+     "wr": 0.42424242424242425,
+     "rr": 2.2531664509422162,
+     "trades": 396
+    },
+    {
+     "id": "c73a354074c0",
+     "family": "drive",
+     "filter": "gap_small+atr_le_20",
+     "sharpe_ann": 1.1974246999405573,
+     "total_1micro": 12606.020678606685,
+     "wr": 0.5125,
+     "rr": 1.433281404775045,
+     "trades": 240
+    },
+    {
+     "id": "73610347ba50",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": 1.2079546142343702,
+     "total_1micro": 37057.07319691891,
+     "wr": 0.39509306260575294,
+     "rr": 1.8600502394407852,
+     "trades": 1182
+    }
+   ],
+   "pass_60": 0.3643
+  },
+  "funded": {
+   "stats": {
+    "sessions": 1267,
+    "mean_day": 124.86062495651439,
+    "sd_day": 753.0557801989331,
+    "sharpe_ann": 2.6320772314510954,
+    "t": 5.901829589134275,
+    "max_dd": -10940.372736082762,
+    "worst_day": -2586.3494152347184,
+    "worst_intraday": -2642.664061703733,
+    "pct_days_ge_100": 0.44119968429360695,
+    "pct_up_days": 0.4972375690607735,
+    "total": 158198.41181990373
+   },
+   "lucid": {
+    "pass_10": 0.2133,
+    "ppmc_1k": 0.17745,
+    "any_payout_21": 0.3338,
+    "owner_mean_21": 453.0245705101717
+   },
+   "lucid_c40": {
+    "pass_10": 0.1228,
+    "ppmc_1k": 0.17745,
+    "any_payout_21": 0.3338,
+    "owner_mean_21": 453.0245705101717
+   },
+   "replays": {
+    "open": 190,
+    "passed": 269,
+    "breached": 799,
+    "pass_rate_10": 0.2138314785373609,
+    "median_days_to_pass": 6.0
+   },
+   "lifetime": {
+    "owner_mean_6m": 1647.0106157562473,
+    "owner_median_6m": 0.0,
+    "payouts_mean_6m": 1.8458,
+    "p_any_payout_6m": 0.32655
+   },
+   "wr": 0.49887892376681614,
+   "rr": 1.3840390199657957,
+   "trades": 3568,
+   "sleeves": [
+    {
+     "id": "050800019e7e",
+     "family": "drive",
+     "filter": "on_wide+atr_le_25",
+     "sharpe_ann": 1.8125481122817084,
+     "total_1micro": 31633.226939693282,
+     "wr": 0.5238095238095238,
+     "rr": 1.3902109185753835,
+     "trades": 483
+    },
+    {
+     "id": "f28c7a9545a5",
+     "family": "drive",
+     "filter": "no_mon+atr_le_30",
+     "sharpe_ann": 1.728278278394915,
+     "total_1micro": 25857.68122934682,
+     "wr": 0.5349794238683128,
+     "rr": 1.5588941637782245,
+     "trades": 243
+    },
+    {
+     "id": "462215007478",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": 1.4706318702325116,
+     "total_1micro": 24081.211515432347,
+     "wr": 0.5787878787878787,
+     "rr": 0.9853946663647243,
+     "trades": 660
+    },
+    {
+     "id": "cfbbdfd63f99",
+     "family": "noise",
+     "filter": "nr7_or_inside+atr_le_25",
+     "sharpe_ann": 1.3438559077300005,
+     "total_1micro": 11424.593068600432,
+     "wr": 0.332,
+     "rr": 4.028627636984925,
+     "trades": 250
+    },
+    {
+     "id": "699f425fd2ec",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": 1.2220205832715472,
+     "total_1micro": 32007.43257429242,
+     "wr": 0.4546232876712329,
+     "rr": 1.4530485442338021,
+     "trades": 1168
+    },
+    {
+     "id": "2e071e05cd91",
+     "family": "brk",
+     "filter": "vol_low+atr_le_20",
+     "sharpe_ann": 1.243453176446975,
+     "total_1micro": 10552.627115648622,
+     "wr": 0.476027397260274,
+     "rr": 1.5911056096582183,
+     "trades": 292
+    },
+    {
+     "id": "bbf405b265c0",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": 1.1004000994079008,
+     "total_1micro": 11320.8196884449,
+     "wr": 0.5550847457627118,
+     "rr": 1.0546165039895905,
+     "trades": 472
+    }
+   ],
+   "payout_within_10_funded": 0.263
+  },
+  "journey": {
+   "p_payout_within_10": 0.0124,
+   "p_payout_within_15": 0.07195,
+   "p_payout_within_21": 0.11035,
+   "p_payout_within_42": 0.11625,
+   "p_pass_within_10": 0.32465,
+   "median_sessions_to_first_payout": 14.0,
+   "owner_mean_within_42": 234.13847740938746
+  },
+  "journey_63": {
+   "p_payout_within_10": 0.01325,
+   "p_payout_within_15": 0.07005,
+   "p_payout_within_21": 0.1052,
+   "p_payout_within_42": 0.1119,
+   "p_pass_within_10": 0.32555,
+   "median_sessions_to_first_payout": 14.0,
+   "owner_mean_within_63": 316.66704699623375
+  },
+  "eval_zero_edge_pass_10": 0.28915
+ },
+ "sealed": {
+  "dates": [
+   "2025-01-02",
+   "2026-02-27"
+  ],
+  "sessions": 297,
+  "eval": {
+   "stats": {
+    "sessions": 297,
+    "mean_day": -24.283044905049348,
+    "sd_day": 463.79745904271124,
+    "sharpe_ann": -0.8311416542917041,
+    "t": -0.9023042493182735,
+    "max_dd": -11836.30201532752,
+    "worst_day": -1281.2634059758352,
+    "worst_intraday": -1519.7814090645468,
+    "pct_days_ge_100": 0.37037037037037035,
+    "pct_up_days": 0.4276094276094276,
+    "total": -7212.064336799656
+   },
+   "lucid": {
+    "pass_10": 0.2137,
+    "ppmc_1k": 0.04805,
+    "any_payout_21": 0.1986,
+    "owner_mean_21": 185.2315671878442
+   },
+   "lucid_c40": {
+    "pass_10": 0.1579,
+    "ppmc_1k": 0.04805,
+    "any_payout_21": 0.1986,
+    "owner_mean_21": 185.2315671878442
+   },
+   "replays": {
+    "breached": 196,
+    "open": 41,
+    "passed": 51,
+    "pass_rate_10": 0.17708333333333334,
+    "median_days_to_pass": 5.0
+   },
+   "lifetime": {
+    "owner_mean_6m": 237.29229681717428,
+    "owner_median_6m": 0.0,
+    "payouts_mean_6m": 0.308,
+    "p_any_payout_6m": 0.2026
+   },
+   "wr": 0.38453038674033146,
+   "rr": 1.6532793246157091,
+   "trades": 905,
+   "sleeves": [
+    {
+     "id": "67348b9527a0",
+     "family": "noise",
+     "filter": "all",
+     "sharpe_ann": 0.25096458662551113,
+     "total_1micro": 1814.6027474354055,
+     "wr": 0.3656957928802589,
+     "rr": 1.8573002637066331,
+     "trades": 309
+    },
+    {
+     "id": "8baf5bf17cdf",
+     "family": "noise",
+     "filter": "vol_not_high",
+     "sharpe_ann": -0.3193632618384216,
+     "total_1micro": -706.8902613744353,
+     "wr": 0.35251798561151076,
+     "rr": 1.680177000322813,
+     "trades": 139
+    },
+    {
+     "id": "2107458b7683",
+     "family": "brk",
+     "filter": "vol_not_high",
+     "sharpe_ann": 0.26763983421382165,
+     "total_1micro": 706.5911784437567,
+     "wr": 0.41304347826086957,
+     "rr": 1.558127153308339,
+     "trades": 92
+    },
+    {
+     "id": "c73a354074c0",
+     "family": "drive",
+     "filter": "gap_small+atr_le_20",
+     "sharpe_ann": 0.8565376165335058,
+     "total_1micro": 2359.366354464765,
+     "wr": 0.47674418604651164,
+     "rr": 1.389681650971627,
+     "trades": 86
+    },
+    {
+     "id": "73610347ba50",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": -0.25034852913085187,
+     "total_1micro": -1376.5953148870233,
+     "wr": 0.3835125448028674,
+     "rr": 1.5439387690118018,
+     "trades": 279
+    }
+   ],
+   "pass_60": 0.24245
+  },
+  "funded": {
+   "stats": {
+    "sessions": 297,
+    "mean_day": -11.8283252561915,
+    "sd_day": 652.317585696525,
+    "sharpe_ann": -0.28784881236201615,
+    "t": -0.31249451307647924,
+    "max_dd": -10309.857125549142,
+    "worst_day": -2098.8789218373113,
+    "worst_intraday": -2513.817691809156,
+    "pct_days_ge_100": 0.37037037037037035,
+    "pct_up_days": 0.43434343434343436,
+    "total": -3513.0126010888753
+   },
+   "lucid": {
+    "pass_10": 0.11535,
+    "ppmc_1k": 0.05005,
+    "any_payout_21": 0.1776,
+    "owner_mean_21": 191.3364096751345
+   },
+   "lucid_c40": {
+    "pass_10": 0.05525,
+    "ppmc_1k": 0.05005,
+    "any_payout_21": 0.1776,
+    "owner_mean_21": 191.3364096751345
+   },
+   "replays": {
+    "breached": 226,
+    "open": 22,
+    "passed": 40,
+    "pass_rate_10": 0.1388888888888889,
+    "median_days_to_pass": 7.0
+   },
+   "lifetime": {
+    "owner_mean_6m": 297.7382263608486,
+    "owner_median_6m": 0.0,
+    "payouts_mean_6m": 0.34695,
+    "p_any_payout_6m": 0.17885
+   },
+   "wr": 0.4204035874439462,
+   "rr": 1.3320832870349693,
+   "trades": 892,
+   "sleeves": [
+    {
+     "id": "050800019e7e",
+     "family": "drive",
+     "filter": "on_wide+atr_le_25",
+     "sharpe_ann": 0.31709753797464063,
+     "total_1micro": 1317.98367634297,
+     "wr": 0.4452054794520548,
+     "rr": 1.333194291608405,
+     "trades": 146
+    },
+    {
+     "id": "f28c7a9545a5",
+     "family": "drive",
+     "filter": "no_mon+atr_le_30",
+     "sharpe_ann": 0.13201610232201041,
+     "total_1micro": 363.7115567700536,
+     "wr": 0.4528301886792453,
+     "rr": 1.2627183926400851,
+     "trades": 53
+    },
+    {
+     "id": "462215007478",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": 0.8908718772237115,
+     "total_1micro": 3002.737752588198,
+     "wr": 0.5256410256410257,
+     "rr": 1.0805558536280089,
+     "trades": 156
+    },
+    {
+     "id": "cfbbdfd63f99",
+     "family": "noise",
+     "filter": "nr7_or_inside+atr_le_25",
+     "sharpe_ann": -1.3371700448537258,
+     "total_1micro": -1903.7852916325332,
+     "wr": 0.2289156626506024,
+     "rr": 2.103942001209026,
+     "trades": 83
+    },
+    {
+     "id": "699f425fd2ec",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": -0.18928279396701791,
+     "total_1micro": -911.0746310128238,
+     "wr": 0.4148148148148148,
+     "rr": 1.3681695095218573,
+     "trades": 270
+    },
+    {
+     "id": "2e071e05cd91",
+     "family": "brk",
+     "filter": "vol_low+atr_le_20",
+     "sharpe_ann": -1.5352416227101058,
+     "total_1micro": -2707.2653870851877,
+     "wr": 0.34444444444444444,
+     "rr": 1.2903025041240326,
+     "trades": 90
+    },
+    {
+     "id": "bbf405b265c0",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": -0.5712724595620594,
+     "total_1micro": -1337.6601385297754,
+     "wr": 0.44680851063829785,
+     "rr": 1.0552797532402356,
+     "trades": 94
+    }
+   ],
+   "payout_within_10_funded": 0.14055
+  },
+  "journey": {
+   "p_payout_within_10": 0.0021,
+   "p_payout_within_15": 0.0245,
+   "p_payout_within_21": 0.03935,
+   "p_payout_within_42": 0.0424,
+   "p_pass_within_10": 0.21165,
+   "median_sessions_to_first_payout": 15.0,
+   "owner_mean_within_42": 58.0780625431428
+  },
+  "journey_63": {
+   "p_payout_within_10": 0.00215,
+   "p_payout_within_15": 0.02505,
+   "p_payout_within_21": 0.0397,
+   "p_payout_within_42": 0.044,
+   "p_pass_within_10": 0.2087,
+   "median_sessions_to_first_payout": 15.0,
+   "owner_mean_within_63": 67.31952190899746
+  },
+  "eval_zero_edge_pass_10": 0.3281
+ },
+ "holdout": {
+  "dates": [
+   "2026-03-02",
+   "2026-10-23"
+  ],
+  "sessions": 167,
+  "eval": {
+   "stats": {
+    "sessions": 167,
+    "mean_day": -56.030766370223596,
+    "sd_day": 445.3147137371368,
+    "sharpe_ann": -1.997375819988903,
+    "t": -1.6259895616625317,
+    "max_dd": -13007.190777991138,
+    "worst_day": -1090.524542962485,
+    "worst_intraday": -1268.9868989573201,
+    "pct_days_ge_100": 0.30538922155688625,
+    "pct_up_days": 0.3532934131736527,
+    "total": -9357.13798382734
+   },
+   "lucid": {
+    "pass_10": 0.1479,
+    "ppmc_1k": 0.02025,
+    "any_payout_21": 0.14355,
+    "owner_mean_21": 119.75710326836007
+   },
+   "lucid_c40": {
+    "pass_10": 0.1112,
+    "ppmc_1k": 0.02025,
+    "any_payout_21": 0.14355,
+    "owner_mean_21": 119.75710326836007
+   },
+   "replays": {
+    "breached": 111,
+    "open": 23,
+    "passed": 24,
+    "pass_rate_10": 0.1518987341772152,
+    "median_days_to_pass": 6.0
+   },
+   "lifetime": {
+    "owner_mean_6m": 146.71125703572892,
+    "owner_median_6m": 0.0,
+    "payouts_mean_6m": 0.19615,
+    "p_any_payout_6m": 0.1493
+   },
+   "wr": 0.3443298969072165,
+   "rr": 1.8279491292110788,
+   "trades": 485,
+   "sleeves": [
+    {
+     "id": "67348b9527a0",
+     "family": "noise",
+     "filter": "all",
+     "sharpe_ann": 1.0290182833121277,
+     "total_1micro": 2514.344656488809,
+     "wr": 0.345679012345679,
+     "rr": 2.2777183149759423,
+     "trades": 162
+    },
+    {
+     "id": "8baf5bf17cdf",
+     "family": "noise",
+     "filter": "vol_not_high",
+     "sharpe_ann": 1.1308828926590533,
+     "total_1micro": 1975.100834772315,
+     "wr": 0.33695652173913043,
+     "rr": 2.6256944575890815,
+     "trades": 92
+    },
+    {
+     "id": "2107458b7683",
+     "family": "brk",
+     "filter": "vol_not_high",
+     "sharpe_ann": 0.7203507484802645,
+     "total_1micro": 1011.3090884669955,
+     "wr": 0.40425531914893614,
+     "rr": 1.8076294363326957,
+     "trades": 47
+    },
+    {
+     "id": "c73a354074c0",
+     "family": "drive",
+     "filter": "gap_small+atr_le_20",
+     "sharpe_ann": -1.7281593568970781,
+     "total_1micro": -1831.6711865260154,
+     "wr": 0.37037037037037035,
+     "rr": 0.8809060908444748,
+     "trades": 27
+    },
+    {
+     "id": "73610347ba50",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": -1.9209413452166133,
+     "total_1micro": -5611.624633567396,
+     "wr": 0.3248407643312102,
+     "rr": 1.547752913778868,
+     "trades": 157
+    }
+   ],
+   "pass_60": 0.17655
+  },
+  "funded": {
+   "stats": {
+    "sessions": 167,
+    "mean_day": -33.33709393429834,
+    "sd_day": 759.2477149407653,
+    "sharpe_ann": -0.6970188378424125,
+    "t": -0.5674171797174395,
+    "max_dd": -13893.363962775482,
+    "worst_day": -1451.3620534615225,
+    "worst_intraday": -1584.8102039183468,
+    "pct_days_ge_100": 0.33532934131736525,
+    "pct_up_days": 0.3652694610778443,
+    "total": -5567.294687027823
+   },
+   "lucid": {
+    "pass_10": 0.06985,
+    "ppmc_1k": 0.02895,
+    "any_payout_21": 0.1397,
+    "owner_mean_21": 146.03220101833222
+   },
+   "lucid_c40": {
+    "pass_10": 0.0243,
+    "ppmc_1k": 0.02895,
+    "any_payout_21": 0.1397,
+    "owner_mean_21": 146.03220101833222
+   },
+   "replays": {
+    "breached": 135,
+    "passed": 12,
+    "open": 11,
+    "pass_rate_10": 0.0759493670886076,
+    "median_days_to_pass": 6.5
+   },
+   "lifetime": {
+    "owner_mean_6m": 233.87805516809988,
+    "owner_median_6m": 0.0,
+    "payouts_mean_6m": 0.26605,
+    "p_any_payout_6m": 0.14435
+   },
+   "wr": 0.4093567251461988,
+   "rr": 1.3252375596095136,
+   "trades": 513,
+   "sleeves": [
+    {
+     "id": "050800019e7e",
+     "family": "drive",
+     "filter": "on_wide+atr_le_25",
+     "sharpe_ann": 0.19924271551492656,
+     "total_1micro": 525.0028071486213,
+     "wr": 0.4444444444444444,
+     "rr": 1.3012998382640022,
+     "trades": 90
+    },
+    {
+     "id": "f28c7a9545a5",
+     "family": "drive",
+     "filter": "no_mon+atr_le_30",
+     "sharpe_ann": -0.4222202519892663,
+     "total_1micro": -765.8427923067081,
+     "wr": 0.42105263157894735,
+     "rr": 1.2110468690352099,
+     "trades": 38
+    },
+    {
+     "id": "462215007478",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": -1.4121080162992912,
+     "total_1micro": -2487.4777854219997,
+     "wr": 0.4457831325301205,
+     "rr": 0.9414740107984537,
+     "trades": 83
+    },
+    {
+     "id": "cfbbdfd63f99",
+     "family": "noise",
+     "filter": "nr7_or_inside+atr_le_25",
+     "sharpe_ann": -0.2443732253721753,
+     "total_1micro": -213.49843527810214,
+     "wr": 0.23404255319148937,
+     "rr": 2.9764610417195194,
+     "trades": 47
+    },
+    {
+     "id": "699f425fd2ec",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": -0.7560614980129159,
+     "total_1micro": -2021.0861300351075,
+     "wr": 0.3841059602649007,
+     "rr": 1.431491012046854,
+     "trades": 151
+    },
+    {
+     "id": "2e071e05cd91",
+     "family": "brk",
+     "filter": "vol_low+atr_le_20",
+     "sharpe_ann": 0.16054733722753708,
+     "total_1micro": 187.7130192364566,
+     "wr": 0.38636363636363635,
+     "rr": 1.6609118374552423,
+     "trades": 44
+    },
+    {
+     "id": "bbf405b265c0",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": -0.2609753689700967,
+     "total_1micro": -396.0526851854919,
+     "wr": 0.5166666666666667,
+     "rr": 0.8806959885081298,
+     "trades": 60
+    }
+   ],
+   "payout_within_10_funded": 0.1021
+  },
+  "journey": {
+   "p_payout_within_10": 0.0007,
+   "p_payout_within_15": 0.01125,
+   "p_payout_within_21": 0.0219,
+   "p_payout_within_42": 0.0251,
+   "p_pass_within_10": 0.14425,
+   "median_sessions_to_first_payout": 16.0,
+   "owner_mean_within_42": 30.625397859301337
+  },
+  "journey_63": {
+   "p_payout_within_10": 0.00035,
+   "p_payout_within_15": 0.01025,
+   "p_payout_within_21": 0.0206,
+   "p_payout_within_42": 0.02435,
+   "p_pass_within_10": 0.141,
+   "median_sessions_to_first_payout": 16.0,
+   "owner_mean_within_63": 31.81996290042938
+  },
+  "eval_zero_edge_pass_10": 0.27165
+ },
+ "holdout_never_seen": {
+  "dates": [
+   "2026-03-02",
+   "2026-07-01"
+  ],
+  "sessions": 87,
+  "eval": {
+   "stats": {
+    "sessions": 87,
+    "mean_day": -18.51847102972815,
+    "sd_day": 476.0683915435564,
+    "sharpe_ann": -0.6174987024064869,
+    "t": -0.36282349730861124,
+    "max_dd": -5593.14299861756,
+    "worst_day": -1090.524542962485,
+    "worst_intraday": -1268.9868989573201,
+    "pct_days_ge_100": 0.367816091954023,
+    "pct_up_days": 0.41379310344827586,
+    "total": -1611.106979586349
+   },
+   "lucid": {
+    "pass_10": 0.18685,
+    "ppmc_1k": 0.04665,
+    "any_payout_21": 0.2122,
+    "owner_mean_21": 193.22826723035547
+   },
+   "lucid_c40": {
+    "pass_10": 0.14245,
+    "ppmc_1k": 0.04665,
+    "any_payout_21": 0.2122,
+    "owner_mean_21": 193.22826723035547
+   },
+   "replays": {
+    "breached": 51,
+    "open": 14,
+    "passed": 13,
+    "pass_rate_10": 0.16666666666666666,
+    "median_days_to_pass": 6.0
+   },
+   "lifetime": {
+    "owner_mean_6m": 264.3340309258827,
+    "owner_median_6m": 0.0,
+    "payouts_mean_6m": 0.3422,
+    "p_any_payout_6m": 0.21335
+   },
+   "wr": 0.38113207547169814,
+   "rr": 1.8524309248605593,
+   "trades": 265,
+   "sleeves": [
+    {
+     "id": "67348b9527a0",
+     "family": "noise",
+     "filter": "all",
+     "sharpe_ann": 1.072460424052375,
+     "total_1micro": 1505.7532727598993,
+     "wr": 0.3626373626373626,
+     "rr": 2.1020265486152296,
+     "trades": 91
+    },
+    {
+     "id": "8baf5bf17cdf",
+     "family": "noise",
+     "filter": "vol_not_high",
+     "sharpe_ann": 1.4009563971474408,
+     "total_1micro": 1187.8197809937396,
+     "wr": 0.37254901960784315,
+     "rr": 2.2907369030147864,
+     "trades": 51
+    },
+    {
+     "id": "2107458b7683",
+     "family": "brk",
+     "filter": "vol_not_high",
+     "sharpe_ann": 2.9758378454178374,
+     "total_1micro": 2538.964017044482,
+     "wr": 0.5161290322580645,
+     "rr": 2.0554468888253665,
+     "trades": 31
+    },
+    {
+     "id": "c73a354074c0",
+     "family": "drive",
+     "filter": "gap_small+atr_le_20",
+     "sharpe_ann": -0.6444721088739841,
+     "total_1micro": -349.53098495364753,
+     "wr": 0.45454545454545453,
+     "rr": 0.9084395812534033,
+     "trades": 11
+    },
+    {
+     "id": "73610347ba50",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": -0.7078200920565418,
+     "total_1micro": -1190.3741712481203,
+     "wr": 0.345679012345679,
+     "rr": 1.6998115212081766,
+     "trades": 81
+    }
+   ],
+   "pass_60": 0.22985
+  },
+  "funded": {
+   "stats": {
+    "sessions": 87,
+    "mean_day": 42.014820366791184,
+    "sd_day": 796.6788020869049,
+    "sharpe_ann": 0.8371813015111843,
+    "t": 0.49190232548166724,
+    "max_dd": -5286.860235908484,
+    "worst_day": -1451.3620534615225,
+    "worst_intraday": -1584.8102039183468,
+    "pct_days_ge_100": 0.40229885057471265,
+    "pct_up_days": 0.40229885057471265,
+    "total": 3655.2893719108333
+   },
+   "lucid": {
+    "pass_10": 0.1228,
+    "ppmc_1k": 0.0735,
+    "any_payout_21": 0.22405,
+    "owner_mean_21": 259.9488749357524
+   },
+   "lucid_c40": {
+    "pass_10": 0.0509,
+    "ppmc_1k": 0.0735,
+    "any_payout_21": 0.22405,
+    "owner_mean_21": 259.9488749357524
+   },
+   "replays": {
+    "breached": 59,
+    "passed": 12,
+    "open": 7,
+    "pass_rate_10": 0.15384615384615385,
+    "median_days_to_pass": 6.5
+   },
+   "lifetime": {
+    "owner_mean_6m": 564.4460727541536,
+    "owner_median_6m": 0.0,
+    "payouts_mean_6m": 0.6363,
+    "p_any_payout_6m": 0.2198
+   },
+   "wr": 0.4679245283018868,
+   "rr": 1.2564150886305052,
+   "trades": 265,
+   "sleeves": [
+    {
+     "id": "050800019e7e",
+     "family": "drive",
+     "filter": "on_wide+atr_le_25",
+     "sharpe_ann": 1.9651565390171055,
+     "total_1micro": 2629.5643430253476,
+     "wr": 0.55,
+     "rr": 1.2608389940450209,
+     "trades": 40
+    },
+    {
+     "id": "f28c7a9545a5",
+     "family": "drive",
+     "filter": "no_mon+atr_le_30",
+     "sharpe_ann": 0.036823205645690214,
+     "total_1micro": 35.054644758264715,
+     "wr": 0.47058823529411764,
+     "rr": 1.1383771838955168,
+     "trades": 17
+    },
+    {
+     "id": "462215007478",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": 0.07330206876820362,
+     "total_1micro": 73.40645920755472,
+     "wr": 0.5098039215686274,
+     "rr": 0.9742046902487154,
+     "trades": 51
+    },
+    {
+     "id": "cfbbdfd63f99",
+     "family": "noise",
+     "filter": "nr7_or_inside+atr_le_25",
+     "sharpe_ann": 0.28308593260525894,
+     "total_1micro": 142.017452047824,
+     "wr": 0.25,
+     "rr": 3.317353601013368,
+     "trades": 20
+    },
+    {
+     "id": "699f425fd2ec",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": 0.5533720200199389,
+     "total_1micro": 856.0531348026971,
+     "wr": 0.43373493975903615,
+     "rr": 1.4135843251117706,
+     "trades": 83
+    },
+    {
+     "id": "2e071e05cd91",
+     "family": "brk",
+     "filter": "vol_low+atr_le_20",
+     "sharpe_ann": 1.9991156428007835,
+     "total_1micro": 1378.7315742259627,
+     "wr": 0.5,
+     "rr": 1.7527397529539506,
+     "trades": 22
+    },
+    {
+     "id": "bbf405b265c0",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": -0.892053122584163,
+     "total_1micro": -729.7691180784085,
+     "wr": 0.5,
+     "rr": 0.8160406052882008,
+     "trades": 32
+    }
+   ],
+   "payout_within_10_funded": 0.1819
+  },
+  "journey": {
+   "p_payout_within_10": 0.00065,
+   "p_payout_within_15": 0.02535,
+   "p_payout_within_21": 0.04895,
+   "p_payout_within_42": 0.0557,
+   "p_pass_within_10": 0.18545,
+   "median_sessions_to_first_payout": 16.0,
+   "owner_mean_within_42": 78.85662728917347
+  },
+  "journey_63": {
+   "p_payout_within_10": 0.0003,
+   "p_payout_within_15": 0.0265,
+   "p_payout_within_21": 0.05075,
+   "p_payout_within_42": 0.05795,
+   "p_pass_within_10": 0.18515,
+   "median_sessions_to_first_payout": 16.0,
+   "owner_mean_within_63": 97.1181853558393
+  },
+  "eval_zero_edge_pass_10": 0.26355
+ },
+ "holdout_seen_in_v1": {
+  "dates": [
+   "2026-07-02",
+   "2026-10-23"
+  ],
+  "sessions": 80,
+  "eval": {
+   "stats": {
+    "sessions": 80,
+    "mean_day": -96.8253875530124,
+    "sd_day": 408.33044471785996,
+    "sharpe_ann": -3.764243877133291,
+    "t": -2.1209111523966455,
+    "max_dd": -7746.031004240994,
+    "worst_day": -1053.298229497188,
+    "worst_intraday": -1101.1859514986477,
+    "pct_days_ge_100": 0.2375,
+    "pct_up_days": 0.2875,
+    "total": -7746.031004240992
+   },
+   "lucid": {
+    "pass_10": 0.1205,
+    "ppmc_1k": 0.00565,
+    "any_payout_21": 0.0955,
+    "owner_mean_21": 70.5396189667966
+   },
+   "lucid_c40": {
+    "pass_10": 0.0862,
+    "ppmc_1k": 0.00565,
+    "any_payout_21": 0.0955,
+    "owner_mean_21": 70.5396189667966
+   },
+   "replays": {
+    "breached": 51,
+    "open": 9,
+    "passed": 11,
+    "pass_rate_10": 0.15492957746478872,
+    "median_days_to_pass": 6.0
+   },
+   "lifetime": {
+    "owner_mean_6m": 76.29580536146742,
+    "owner_median_6m": 0.0,
+    "payouts_mean_6m": 0.10855,
+    "p_any_payout_6m": 0.09705
+   },
+   "wr": 0.3,
+   "rr": 1.7435637443061331,
+   "trades": 220,
+   "sleeves": [
+    {
+     "id": "67348b9527a0",
+     "family": "noise",
+     "filter": "all",
+     "sharpe_ann": 0.9777265422557258,
+     "total_1micro": 1008.5913837289095,
+     "wr": 0.323943661971831,
+     "rr": 2.5364217317227538,
+     "trades": 71
+    },
+    {
+     "id": "8baf5bf17cdf",
+     "family": "noise",
+     "filter": "vol_not_high",
+     "sharpe_ann": 0.8753189710966148,
+     "total_1micro": 787.2810537785757,
+     "wr": 0.2926829268292683,
+     "rr": 3.1460245544194247,
+     "trades": 41
+    },
+    {
+     "id": "2107458b7683",
+     "family": "brk",
+     "filter": "vol_not_high",
+     "sharpe_ann": -3.0606812643047108,
+     "total_1micro": -1527.6549285774865,
+     "wr": 0.1875,
+     "rr": 1.4967134509089146,
+     "trades": 16
+    },
+    {
+     "id": "c73a354074c0",
+     "family": "drive",
+     "filter": "gap_small+atr_le_20",
+     "sharpe_ann": -2.86235941425917,
+     "total_1micro": -1482.140201572368,
+     "wr": 0.3125,
+     "rr": 0.8200824571534642,
+     "trades": 16
+    },
+    {
+     "id": "73610347ba50",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": -3.6238031560193664,
+     "total_1micro": -4421.250462319275,
+     "wr": 0.3026315789473684,
+     "rr": 1.3158206172840856,
+     "trades": 76
+    }
+   ],
+   "pass_60": 0.13915
+  },
+  "funded": {
+   "stats": {
+    "sessions": 80,
+    "mean_day": -115.28230073673323,
+    "sd_day": 712.2503648092522,
+    "sharpe_ann": -2.5693911583894127,
+    "t": -1.4476879130497626,
+    "max_dd": -13893.363962775484,
+    "worst_day": -1320.572839526943,
+    "worst_intraday": -1530.4704340494977,
+    "pct_days_ge_100": 0.2625,
+    "pct_up_days": 0.325,
+    "total": -9222.584058938659
+   },
+   "lucid": {
+    "pass_10": 0.0316,
+    "ppmc_1k": 0.0029,
+    "any_payout_21": 0.0593,
+    "owner_mean_21": 53.02766645753523
+   },
+   "lucid_c40": {
+    "pass_10": 0.00915,
+    "ppmc_1k": 0.0029,
+    "any_payout_21": 0.0593,
+    "owner_mean_21": 53.02766645753523
+   },
+   "replays": {
+    "breached": 69,
+    "open": 2,
+    "pass_rate_10": 0.0,
+    "median_days_to_pass": null
+   },
+   "lifetime": {
+    "owner_mean_6m": 67.98411630938766,
+    "owner_median_6m": 0.0,
+    "payouts_mean_6m": 0.07915,
+    "p_any_payout_6m": 0.0621
+   },
+   "wr": 0.3467741935483871,
+   "rr": 1.364512892185512,
+   "trades": 248,
+   "sleeves": [
+    {
+     "id": "050800019e7e",
+     "family": "drive",
+     "filter": "on_wide+atr_le_25",
+     "sharpe_ann": -1.6348956864756155,
+     "total_1micro": -2104.561535876727,
+     "wr": 0.36,
+     "rr": 1.3060983236394466,
+     "trades": 50
+    },
+    {
+     "id": "f28c7a9545a5",
+     "family": "drive",
+     "filter": "no_mon+atr_le_30",
+     "sharpe_ann": -0.9242884118066488,
+     "total_1micro": -800.8974370649728,
+     "wr": 0.38095238095238093,
+     "rr": 1.2504508837010164,
+     "trades": 21
+    },
+    {
+     "id": "462215007478",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": -3.4260757880215005,
+     "total_1micro": -2560.884244629555,
+     "wr": 0.34375,
+     "rr": 0.8634321426049268,
+     "trades": 32
+    },
+    {
+     "id": "cfbbdfd63f99",
+     "family": "noise",
+     "filter": "nr7_or_inside+atr_le_25",
+     "sharpe_ann": -0.9644052856607492,
+     "total_1micro": -355.5158873259261,
+     "wr": 0.2222222222222222,
+     "rr": 2.2751816884317626,
+     "trades": 27
+    },
+    {
+     "id": "699f425fd2ec",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": -2.6103940233803606,
+     "total_1micro": -2877.1392648378055,
+     "wr": 0.3235294117647059,
+     "rr": 1.3831952209942202,
+     "trades": 68
+    },
+    {
+     "id": "2e071e05cd91",
+     "family": "brk",
+     "filter": "vol_low+atr_le_20",
+     "sharpe_ann": -2.607019463926645,
+     "total_1micro": -1191.0185549895064,
+     "wr": 0.2727272727272727,
+     "rr": 1.267873847129107,
+     "trades": 22
+    },
+    {
+     "id": "bbf405b265c0",
+     "family": "brk",
+     "filter": "all",
+     "sharpe_ann": 0.4755756555491891,
+     "total_1micro": 333.7164328929166,
+     "wr": 0.5357142857142857,
+     "rr": 0.9701280213276097,
+     "trades": 28
+    }
+   ],
+   "payout_within_10_funded": 0.0302
+  },
+  "journey": {
+   "p_payout_within_10": 0.0001,
+   "p_payout_within_15": 0.0008,
+   "p_payout_within_21": 0.00235,
+   "p_payout_within_42": 0.0031,
+   "p_pass_within_10": 0.1199,
+   "median_sessions_to_first_payout": 18.0,
+   "owner_mean_within_42": 3.143732725179093
+  },
+  "journey_63": {
+   "p_payout_within_10": 0.0001,
+   "p_payout_within_15": 0.00125,
+   "p_payout_within_21": 0.003,
+   "p_payout_within_42": 0.0039,
+   "p_pass_within_10": 0.11895,
+   "median_sessions_to_first_payout": 18.0,
+   "owner_mean_within_63": 4.017197323668774
+  },
+  "eval_zero_edge_pass_10": 0.2859
+ }
+}

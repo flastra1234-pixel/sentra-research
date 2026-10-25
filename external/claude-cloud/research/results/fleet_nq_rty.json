@@ -1,0 +1,518 @@
+{
+ "stop": null,
+ "sleeves": [
+  {
+   "micros": 1,
+   "inst": "nq",
+   "id": "da6124bcbfcf",
+   "family": "orb",
+   "filter": "gap_large+atr_le_20",
+   "knobs": {
+    "or_len": 15,
+    "cutoff": 240,
+    "dir_mode": 0,
+    "stop": [
+     2,
+     0.15
+    ],
+    "target_r": 3,
+    "tx": 385,
+    "be_r": 1,
+    "tf": 2
+   },
+   "params": [
+    15,
+    240,
+    0,
+    2,
+    0.15,
+    3,
+    385,
+    1,
+    1,
+    2
+   ],
+   "disc": {
+    "mean": 9.82,
+    "t": 4.5169,
+    "sharpe_ann": 1.5464,
+    "pf": 1.6893,
+    "trades": 556.0,
+    "avg_trade": 37.973,
+    "years_pos": 8.0,
+    "max_dd": -1487.8496,
+    "worst_low": -316.1019
+   },
+   "val": {
+    "mean": 11.8963,
+    "t": 2.8566,
+    "sharpe_ann": 2.0382,
+    "pf": 1.9114,
+    "trades": 155.0,
+    "max_dd": -789.0262
+   },
+   "dsr_eff": 0.8853914885712074,
+   "round": 2
+  },
+  {
+   "micros": 1,
+   "inst": "nq",
+   "id": "51090c5e5731",
+   "family": "orb",
+   "filter": "nr7_or_inside+atr_le_25",
+   "knobs": {
+    "or_len": 30,
+    "cutoff": 240,
+    "dir_mode": 2,
+    "stop": [
+     1,
+     0.5
+    ],
+    "target_r": 1,
+    "tx": 150,
+    "be_r": 1,
+    "tf": 0
+   },
+   "params": [
+    30,
+    240,
+    2,
+    1,
+    0.5,
+    1,
+    150,
+    1,
+    1,
+    0
+   ],
+   "disc": {
+    "mean": 4.1906,
+    "t": 3.9186,
+    "sharpe_ann": 1.3416,
+    "pf": 1.8321,
+    "trades": 231.0,
+    "avg_trade": 39.0038,
+    "years_pos": 8.0,
+    "max_dd": -953.6845,
+    "worst_low": -419.3562
+   },
+   "val": {
+    "mean": 3.3958,
+    "t": 1.9843,
+    "sharpe_ann": 1.4158,
+    "pf": 1.9233,
+    "trades": 51.0,
+    "max_dd": -398.0054
+   },
+   "dsr_eff": 0.5530357426572413,
+   "round": 2
+  },
+  {
+   "micros": 1,
+   "inst": "nq",
+   "id": "021b96886f2b",
+   "family": "orb",
+   "filter": "nr7_or_inside",
+   "knobs": {
+    "or_len": 15,
+    "cutoff": 90,
+    "dir_mode": 1,
+    "stop": [
+     2,
+     0.15
+    ],
+    "target_r": 3,
+    "tx": 150,
+    "be_r": 1,
+    "tf": 0
+   },
+   "params": [
+    15,
+    90,
+    1,
+    2,
+    0.15,
+    3,
+    150,
+    1,
+    1,
+    0
+   ],
+   "disc": {
+    "mean": 8.7971,
+    "t": 3.6932,
+    "sharpe_ann": 1.2644,
+    "pf": 1.8943,
+    "trades": 328.0,
+    "avg_trade": 57.6637,
+    "years_pos": 7.0,
+    "max_dd": -1720.3491,
+    "worst_low": -740.2313
+   },
+   "val": {
+    "mean": 5.6635,
+    "t": 1.7544,
+    "sharpe_ann": 1.2518,
+    "pf": 1.7493,
+    "trades": 86.0,
+    "max_dd": -996.3266
+   },
+   "dsr_eff": 0.4076251774771748,
+   "round": 2
+  },
+  {
+   "micros": 1,
+   "inst": "nq",
+   "id": "596b800ba044",
+   "family": "orb",
+   "filter": "gap_large+atr_le_20",
+   "knobs": {
+    "or_len": 5,
+    "cutoff": 240,
+    "dir_mode": 0,
+    "stop": [
+     2,
+     0.15
+    ],
+    "target_r": 0,
+    "tx": 150,
+    "be_r": 1,
+    "tf": 0
+   },
+   "params": [
+    5,
+    240,
+    0,
+    2,
+    0.15,
+    0,
+    150,
+    1,
+    1,
+    0
+   ],
+   "disc": {
+    "mean": 13.2601,
+    "t": 4.4623,
+    "sharpe_ann": 1.5277,
+    "pf": 1.6831,
+    "trades": 765.0,
+    "avg_trade": 37.2668,
+    "years_pos": 9.0,
+    "max_dd": -1980.2191,
+    "worst_low": -263.5038
+   },
+   "val": {
+    "mean": 9.3778,
+    "t": 1.6438,
+    "sharpe_ann": 1.1729,
+    "pf": 1.4573,
+    "trades": 210.0,
+    "max_dd": -2490.2587
+   },
+   "dsr_eff": 0.729524381916979,
+   "round": 2
+  },
+  {
+   "micros": 1,
+   "inst": "nq",
+   "id": "a5e07041426d",
+   "family": "imom",
+   "filter": "gap_large+atr_le_15",
+   "knobs": {
+    "sig_mode": 2,
+    "te": 360,
+    "k": 0.1,
+    "follow": 1,
+    "stop": 0.0,
+    "tf": 1
+   },
+   "params": [
+    2,
+    360,
+    0.1,
+    1,
+    0.0,
+    1
+   ],
+   "disc": {
+    "mean": 2.3777,
+    "t": 3.344,
+    "sharpe_ann": 1.1448,
+    "pf": 1.9287,
+    "trades": 224.0,
+    "avg_trade": 22.8213,
+    "years_pos": 8.0,
+    "max_dd": -415.7044,
+    "worst_low": -451.9012
+   },
+   "val": {
+    "mean": 5.9014,
+    "t": 1.8104,
+    "sharpe_ann": 1.2917,
+    "pf": 2.5431,
+    "trades": 79.0,
+    "max_dd": -683.4628
+   },
+   "dsr_eff": 0.19086578345171634,
+   "round": 2
+  },
+  {
+   "micros": 1,
+   "inst": "nq",
+   "id": "dbca5d1f9117",
+   "family": "orb",
+   "filter": "all",
+   "knobs": {
+    "or_len": 60,
+    "cutoff": 240,
+    "dir_mode": 0,
+    "stop": [
+     2,
+     0.15
+    ],
+    "target_r": 3,
+    "tx": 385,
+    "be_r": 1,
+    "tf": 0
+   },
+   "params": [
+    60,
+    240,
+    0,
+    2,
+    0.15,
+    3,
+    385,
+    1,
+    1,
+    0
+   ],
+   "disc": {
+    "mean": 16.5026,
+    "t": 3.2336,
+    "sharpe_ann": 1.107,
+    "pf": 1.2576,
+    "trades": 1908.0,
+    "avg_trade": 18.5957,
+    "years_pos": 8.0,
+    "max_dd": -5601.201,
+    "worst_low": -838.7769
+   },
+   "val": {
+    "mean": 14.7858,
+    "t": 1.7856,
+    "sharpe_ann": 1.274,
+    "pf": 1.2794,
+    "trades": 449.0,
+    "max_dd": -2138.2839
+   },
+   "dsr_eff": 0.2652528910381606,
+   "round": 1
+  },
+  {
+   "micros": 1,
+   "inst": "nq",
+   "id": "b27c5df4e823",
+   "family": "imom",
+   "filter": "no_mon+atr_le_15",
+   "knobs": {
+    "sig_mode": 1,
+    "te": 360,
+    "k": 0.0,
+    "follow": 1,
+    "stop": 0.3,
+    "tf": 1
+   },
+   "params": [
+    1,
+    360,
+    0.0,
+    1,
+    0.3,
+    1
+   ],
+   "disc": {
+    "mean": 3.2383,
+    "t": 3.1146,
+    "sharpe_ann": 1.0663,
+    "pf": 1.5083,
+    "trades": 442.0,
+    "avg_trade": 15.7518,
+    "years_pos": 7.0,
+    "max_dd": -912.3441,
+    "worst_low": -297.7542
+   },
+   "val": {
+    "mean": 3.9269,
+    "t": 1.4876,
+    "sharpe_ann": 1.0614,
+    "pf": 1.5028,
+    "trades": 149.0,
+    "max_dd": -511.3185
+   },
+   "dsr_eff": 0.1916924506339004,
+   "round": 2
+  },
+  {
+   "micros": 1,
+   "inst": "rty",
+   "id": "238c48b6657b",
+   "family": "imom",
+   "filter": "no_fri",
+   "knobs": {
+    "sig_mode": 2,
+    "te": 360,
+    "k": 0.5,
+    "follow": 1,
+    "stop": 0.3,
+    "tf": 1
+   },
+   "params": [
+    2,
+    360,
+    0.5,
+    1,
+    0.3,
+    1
+   ],
+   "disc": {
+    "mean": 2.0898,
+    "t": 3.1617,
+    "sharpe_ann": 1.0667,
+    "pf": 1.8848,
+    "trades": 325.0,
+    "avg_trade": 14.2367,
+    "years_pos": 8.0,
+    "max_dd": -514.5441,
+    "worst_low": -316.2071
+   },
+   "val": {
+    "mean": 1.2776,
+    "t": 1.612,
+    "sharpe_ann": 1.149,
+    "pf": 1.8924,
+    "trades": 64.0,
+    "max_dd": -111.1616
+   },
+   "dsr_eff": 0.015047101165872321,
+   "round": 2
+  }
+ ],
+ "J_greedy": 0.15471125,
+ "scores_greedy": {
+  "pass": 0.50725,
+  "paid_1k": 0.305,
+  "owner_mean": 741.1871128646014,
+  "payouts_mean": 0.953
+ },
+ "scores_fresh": {
+  "pass": 0.4901,
+  "paid_1k": 0.3043,
+  "owner_mean": 735.0360548616726,
+  "payouts_mean": 0.9502
+ },
+ "scores_fresh_c40": {
+  "pass": 0.43835,
+  "paid_1k": 0.3043,
+  "owner_mean": 735.0360548616726,
+  "payouts_mean": 0.9502
+ },
+ "all_stops": [
+  {
+   "stop": null,
+   "J": 0.15471125,
+   "micros": 8,
+   "n_sleeves": 8
+  },
+  {
+   "stop": 300.0,
+   "J": 0.1039685625,
+   "micros": 3,
+   "n_sleeves": 3
+  },
+  {
+   "stop": 450.0,
+   "J": 0.12752324999999998,
+   "micros": 5,
+   "n_sleeves": 5
+  },
+  {
+   "stop": 600.0,
+   "J": 0.13929799999999998,
+   "micros": 7,
+   "n_sleeves": 7
+  }
+ ],
+ "history": [
+  {
+   "add": "dbca5d1f9117",
+   "J": 0.04872,
+   "pass": 0.406,
+   "paid_1k": 0.12,
+   "owner_mean": 356.94152575568853,
+   "payouts_mean": 0.56875
+  },
+  {
+   "add": "596b800ba044",
+   "J": 0.10355725,
+   "pass": 0.467,
+   "paid_1k": 0.22175,
+   "owner_mean": 535.1976242996302,
+   "payouts_mean": 0.78175
+  },
+  {
+   "add": "da6124bcbfcf",
+   "J": 0.1224534375,
+   "pass": 0.47325,
+   "paid_1k": 0.25875,
+   "owner_mean": 614.3950436638993,
+   "payouts_mean": 0.83225
+  },
+  {
+   "add": "51090c5e5731",
+   "J": 0.131355,
+   "pass": 0.4865,
+   "paid_1k": 0.27,
+   "owner_mean": 635.1728592178981,
+   "payouts_mean": 0.85525
+  },
+  {
+   "add": "021b96886f2b",
+   "J": 0.141981875,
+   "pass": 0.48875,
+   "paid_1k": 0.2905,
+   "owner_mean": 687.1032461453275,
+   "payouts_mean": 0.8995
+  },
+  {
+   "add": "a5e07041426d",
+   "J": 0.1488361875,
+   "pass": 0.50325,
+   "paid_1k": 0.29575,
+   "owner_mean": 708.39971874354,
+   "payouts_mean": 0.91925
+  },
+  {
+   "add": "b27c5df4e823",
+   "J": 0.1524095625,
+   "pass": 0.50425,
+   "paid_1k": 0.30225,
+   "owner_mean": 732.7705997775774,
+   "payouts_mean": 0.943
+  },
+  {
+   "add": "238c48b6657b",
+   "J": 0.15471125,
+   "pass": 0.50725,
+   "paid_1k": 0.305,
+   "owner_mean": 741.1871128646014,
+   "payouts_mean": 0.953
+  }
+ ],
+ "trials": {
+  "total": 175310,
+  "effective": 2958
+ },
+ "pool_size": 72
+}

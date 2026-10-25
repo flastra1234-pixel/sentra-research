@@ -1,0 +1,477 @@
+{
+ "dataset": "US macro event calendar (FOMC, CPI, NFP, PPI, PCE, retail sales, GDP) 2020-01-01..2026-12-31",
+ "built_utc": "2026-10-25",
+ "deliverable_files": {
+  "cross_check_sources.csv": {
+   "sha256": "6f7fe6f942811af81960dcf683f61e604f2ce57da952f13e73f870bee5d6a2f5",
+   "bytes": 198175
+  },
+  "events.csv": {
+   "sha256": "d06d635b7e9af0db2d5d09ffdeb23a54d00322c9df04267209edc8952e797eec",
+   "bytes": 207479
+  },
+  "schedule_changes.csv": {
+   "sha256": "07b7486bf84fe5a8668d48877793086c1531d644a386fcb1cb1f88848e2f930a",
+   "bytes": 2696
+  },
+  "source_disagreements.csv": {
+   "sha256": "601c5c96719c981bf138a2cd618020fa819a0f162e616fcd0fff11fd5fd49a81",
+   "bytes": 24317
+  }
+ },
+ "sources": [
+  {
+   "url": "https://github.com/ettiennehugo/MultiCharts.Net",
+   "commit_or_tag": "800bce70bdcac52ce1c32f113690e3bd7ace7864",
+   "role": "PRIMARY. Verbatim copies of official pages fetched 2026-10-23 16:36 UTC (repo manifest gives URL + sha256 per file; all 39 sha256 re-verified here). Parsed independently by this pipeline (the repo's own out/events_2016_2027.csv was used only as a parse check, never as a confirming source).",
+   "files": [
+    "tools/m-event/raw/bls_2020.html .. bls_2026.html (https://www.bls.gov/schedule/YYYY/home.htm)",
+    "tools/m-event/raw/bls_lapse.html (https://www.bls.gov/bls/2025-lapse-revised-release-dates.htm)",
+    "tools/m-event/raw/bea_2025.html (https://www.bea.gov/news/schedule/full-2025)",
+    "tools/m-event/raw/bea_2026.html (https://www.bea.gov/news/schedule/full)",
+    "tools/m-event/raw/census_marts.xlsx (https://www.census.gov/retail/marts/www/MARTSreleasedates.xlsx, last revised 2026-10-19)",
+    "tools/m-event/raw/fed_calendars.html (https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm)",
+    "tools/m-event/raw/fed_hist_2019.html, fed_hist_2020.html (fomchistoricalYYYY.htm)",
+    "tools/m-event/raw/fed_pr_20200303.html, fed_pr_20200315.html (Fed press releases monetary20200303a/20200315a)",
+    "tools/m-event/raw/alfred_9.txt, alfred_10.txt, alfred_46.txt, alfred_50.txt, alfred_53.txt, alfred_54.txt (https://alfred.stlouisfed.org/release/downloaddates?rid=N&ff=txt)",
+    "tools/m-event/raw/manifest.json",
+    "tools/m-event/out/events_2016_2027.csv (parse check only)"
+   ]
+  },
+  {
+   "url": "https://github.com/LuxAlgo/edge-stats",
+   "commit_or_tag": "a48259887962d0f67a27d2b0815e2df9a52efca5",
+   "role": "cross-check (FOMC/CPI/NFP dates, compiled from Fed/BLS schedules)",
+   "files": [
+    "data/events/fomc.json",
+    "data/events/cpi.json",
+    "data/events/nfp.json"
+   ]
+  },
+  {
+   "url": "https://github.com/chris-cheshire/project-midas-mk7",
+   "commit_or_tag": "f9e756cbbca3a0576178412a48e1e374c9c76cfe",
+   "role": "cross-check (FOMC, minutes, CPI, NFP, PPI, retail, GDP advance + later estimates from BEA news archive; lapse-moved dates in comments)",
+   "files": [
+    "midas/data/calendar/fomc.txt",
+    "fomc_minutes.txt",
+    "us_cpi.txt",
+    "us_nfp.txt",
+    "us_ppi.txt",
+    "us_retail.txt",
+    "us_gdp.txt",
+    "us_gdp_later.txt"
+   ]
+  },
+  {
+   "url": "https://github.com/dschace/trading-model",
+   "commit_or_tag": "835ce782417c888738bdd8d1ede5546b971944da",
+   "role": "cross-check incl. times (FOMC, CPI, NFP, GDP advance, PCE; times in America/Chicago, converted)",
+   "files": [
+    "data/calendar/scheduled_events.csv",
+    "data/calendar/README.md"
+   ]
+  },
+  {
+   "url": "https://github.com/charishma005/Event-Based-Price-Discovery-",
+   "commit_or_tag": "d48c542e22b39159be7f8844337f5ec965f2c703",
+   "role": "cross-check incl. times (BLS schedule parse; Fed statements/minutes/unscheduled actions from SF Fed USMPD)",
+   "files": [
+    "data/events/bls_release_calendar_2015_2026.csv",
+    "data/events/fed_release_calendar_2015_2026.csv"
+   ]
+  },
+  {
+   "url": "https://github.com/marekjarocinski/jkshocks_update_fed",
+   "commit_or_tag": "f788aef7d573f87f28b70ffc3763e73c4886a53f",
+   "role": "cross-check of FOMC announcement datetimes (Jarocinski-Karadi monetary policy shock data; includes 2020 unscheduled actions)",
+   "files": [
+    "source_data/fomc_surprises_jk.csv"
+   ]
+  },
+  {
+   "url": "https://github.com/LiveMacroEval/LiveMacroEval",
+   "commit_or_tag": "ef52f2ce115ad3c8020ae591b04e60ec5a08ed2c",
+   "role": "cross-check incl. times (market-calendar scrape with actual/consensus; CPI, NFP, PPI, retail, GDP advance, PCE; 2010..2026-04)",
+   "files": [
+    "Results/market_surprise_capture_score/step_15_2_historical_preprocessing/field_releases.csv",
+    "Results/ground_truth/data/field_releases_live.csv"
+   ]
+  },
+  {
+   "url": "https://github.com/lharazin/TFM",
+   "commit_or_tag": "8d3f06f9c36f602f40a11cf535a8700b1d479885",
+   "role": "cross-check (investing.com calendar cache to 2024-05; timestamps stored at fixed UTC-5, converted)",
+   "files": [
+    "Algorithm/data/cache/inflation_rate_mom_calendar.csv",
+    "producer_price_index_calendar.csv",
+    "retail_sales_calendar.csv",
+    "gdp_growth_rate_calendar.csv",
+    "unemployment_rate_calendar.csv"
+   ]
+  },
+  {
+   "url": "https://github.com/0xkoa1a/investment-research",
+   "commit_or_tag": "4ab328db66678e0049134e80e98d68be178a4185",
+   "role": "cross-check (ALFRED first-release dates per observation: CPI, payrolls, real GDP advance, core PCE; FRED DFEDTARU target changes)",
+   "files": [
+    "data/raw/fred_first_release/cpi.csv",
+    "nonfarm_payroll.csv",
+    "gdp_real.csv",
+    "pce_core.csv",
+    "ffr_target_upper.csv"
+   ]
+  },
+  {
+   "url": "https://github.com/i-staykov/proj-price-discovery",
+   "commit_or_tag": "88606fcb12eb0605a66aa8f968cc57e960f1eea5",
+   "role": "cross-check (CPI/Empsit from ALFRED NSA vintages; FOMC from Fed pages)",
+   "files": [
+    "src/pricediscovery/release_calendar.csv"
+   ]
+  },
+  {
+   "url": "https://github.com/vinentHuynh/QuantResearch",
+   "commit_or_tag": "b5733bad33fa1d763ed2fc789a52afc0cdf409c0",
+   "role": "cross-check (CPI/NFP 2020-2026 from BLS schedules)",
+   "files": [
+    "strategies/aw_bls_release_dates.csv"
+   ]
+  },
+  {
+   "url": "https://github.com/IOITI/WATA",
+   "commit_or_tag": "e43609b94bb833bf0fb479e25fec70d7ff6f483a",
+   "role": "cross-check (FOMC/CPI/NFP/PCE 2024-2026 with NY times)",
+   "files": [
+    "src/trade/data/macro_calendar.csv"
+   ]
+  },
+  {
+   "url": "https://github.com/Trujillofa/crypto-agent",
+   "commit_or_tag": "9d85c18163af82fbf332118e11beb01783a61a09",
+   "role": "cross-check (CPI/NFP/FOMC 2024-2026, UTC timestamps)",
+   "files": [
+    "data/macro_events/us_macro_releases.csv"
+   ]
+  },
+  {
+   "url": "https://github.com/borisjoffe/FOMC-dates.js",
+   "commit_or_tag": "7af82fd4c591c92031d08cc737a8037a27482db3",
+   "role": "cross-check (FOMC 2021-2024)",
+   "files": [
+    "dates.csv"
+   ]
+  },
+  {
+   "url": "https://github.com/ejclark/skynet-capital",
+   "commit_or_tag": "2302c7b912ba87b3b41e6171530404aef1b3d10a",
+   "role": "cross-check for late-2026 scheduled dates (per-event JSON citing BLS/BEA/Census/Fed schedule pages); primary for the two not-yet-listed 2026 FOMC minutes dates",
+   "files": [
+    "src/domain/market-events/{cpi,ppi,jobs,pce,retail-sales,fomc,fomc-minutes}-2026-*.json"
+   ]
+  },
+  {
+   "url": "https://github.com/RyanLuo1/luo-options-algo",
+   "commit_or_tag": "629b66229ae88649fb82966dfae2f63cb7e74403",
+   "role": "cross-check (2025-2026 FOMC/CPI/PPI/NFP; 2025 is stale pre-lapse schedule)",
+   "files": [
+    "data/macro_schedules/2025.json",
+    "data/macro_schedules/2026.json"
+   ]
+  },
+  {
+   "url": "https://github.com/noblabs/lit-forge-mcp",
+   "commit_or_tag": "845948ced10e1215af76bd3abde73ce67a34228e",
+   "role": "cross-check (May-Oct 2026 from OMB PFEI schedule; times in JST, converted)",
+   "files": [
+    "data/us-macro-schedule/*.json"
+   ]
+  },
+  {
+   "url": "https://github.com/mitchGuthrieDev/blotterbook",
+   "commit_or_tag": "ff366e532bb47138e078f5eb970dd769af69953d",
+   "role": "cross-check (low reliability for 2025-2026: several wrong/pre-lapse dates)",
+   "files": [
+    "static/data/econ-events.json"
+   ]
+  },
+  {
+   "url": "https://github.com/28licaris/stockalert",
+   "commit_or_tag": "befcf77eae0b0065a0deccd1ffb193ce03f5f2f0",
+   "role": "cross-check (low reliability: February CPI dates are seasonal-revision vintages)",
+   "files": [
+    "scripts/data/cpi_release_dates.csv",
+    "scripts/data/nfp_release_dates.csv"
+   ]
+  },
+  {
+   "url": "https://github.com/mulhamfetna/trading-strategy-finder",
+   "commit_or_tag": "d70580c510c1a1061925958085d9eb66cea9ed93",
+   "role": "cross-check (low reliability: ALFRED revision artifacts, gaps, default times)",
+   "files": [
+    "docs/DATA-REQUEST-2026-07-13-release_timestamps_2010_2026.csv"
+   ]
+  }
+ ],
+ "inspected_not_used": [
+  "https://github.com/sstoeckl/eventclock (FOMC .rda; redundant)",
+  "https://github.com/WillBtK/macro_kalshi (CPI distributions; no clean date list)",
+  "https://github.com/josuecross/trading-tournament (CPI point-in-time; redundant)",
+  "https://github.com/awarenessdays/financecalendar-api (test fixtures only)",
+  "https://github.com/seclab-ucr/A4 rendering_stream/html/bea.gov.html (late-2020 bea.gov capture; confirms 2020-11-25 GDP+PIO date but carries no times)"
+ ],
+ "coverage": {
+  "date_range": [
+   "2020-01-03",
+   "2026-12-30"
+  ],
+  "rows": 617,
+  "rows_by_event": {
+   "RETAIL": 84,
+   "NFP": 83,
+   "CPI": 83,
+   "PPI": 83,
+   "GDP": 83,
+   "PCE": 83,
+   "OTHER": 61,
+   "FOMC": 57
+  },
+  "rows_by_year_event": {
+   "2020": {
+    "OTHER": 12,
+    "NFP": 12,
+    "CPI": 12,
+    "PPI": 12,
+    "RETAIL": 12,
+    "GDP": 12,
+    "PCE": 12,
+    "FOMC": 9
+   },
+   "2021": {
+    "NFP": 12,
+    "CPI": 12,
+    "PPI": 12,
+    "RETAIL": 12,
+    "GDP": 12,
+    "PCE": 12,
+    "OTHER": 8,
+    "FOMC": 8
+   },
+   "2022": {
+    "NFP": 12,
+    "CPI": 12,
+    "PPI": 12,
+    "RETAIL": 12,
+    "GDP": 12,
+    "PCE": 12,
+    "OTHER": 8,
+    "FOMC": 8
+   },
+   "2023": {
+    "NFP": 12,
+    "CPI": 12,
+    "PPI": 12,
+    "RETAIL": 12,
+    "GDP": 12,
+    "PCE": 12,
+    "OTHER": 8,
+    "FOMC": 8
+   },
+   "2024": {
+    "NFP": 12,
+    "CPI": 12,
+    "PPI": 12,
+    "RETAIL": 12,
+    "GDP": 12,
+    "PCE": 12,
+    "OTHER": 8,
+    "FOMC": 8
+   },
+   "2025": {
+    "NFP": 11,
+    "CPI": 11,
+    "RETAIL": 11,
+    "PPI": 10,
+    "GDP": 10,
+    "PCE": 10,
+    "OTHER": 9,
+    "FOMC": 8
+   },
+   "2026": {
+    "PPI": 13,
+    "RETAIL": 13,
+    "GDP": 13,
+    "PCE": 13,
+    "NFP": 12,
+    "CPI": 12,
+    "FOMC": 8,
+    "OTHER": 8
+   }
+  },
+  "status": {
+   "released": 599,
+   "scheduled": 18
+  },
+  "schedule_type": {
+   "regular": 583,
+   "rescheduled_after_lapse": 28,
+   "unscheduled": 6
+  },
+  "verified": {
+   "true": 614,
+   "false": 3
+  },
+  "future_2026_dates": "Rows with status=scheduled (after the 2026-10-23 page fetch) come from the agencies' published-in-advance schedules: BLS 2026 schedule page (CPI/NFP/PPI), BEA full 2026 schedule (GDP/PCE), Census MARTS release-date sheet (retail), Fed fomccalendars.htm (FOMC). Each is cross-checked against independent 2026 transcriptions (LuxAlgo, midas, dschace, ioiti_wata, ejclark, ryanluo1, charishma005, blotterbook). The two late-2026 FOMC minutes dates are not on the Fed calendar page yet; they come from one source and follow the 3-week rule (verified=false).",
+  "event_definitions": {
+   "FOMC": "FOMC monetary-policy statement (rate decision): 55 scheduled meetings at 14:00 ET + 2 unscheduled 2020 emergency cuts (2020-03-03 10:00 ET, 2020-03-15 17:00 ET Sunday). Scheduled 2020-03-18 meeting was cancelled (not in events.csv; see schedule_changes.csv). detail '+ SEP' marks meetings with a Summary of Economic Projections.",
+   "CPI": "BLS Consumer Price Index news release, 08:30 ET (Oct 2025 CPI never published).",
+   "NFP": "BLS Employment Situation, 08:30 ET (Oct 2025 report cancelled; 2025-12-16 release covered Oct+Nov payrolls).",
+   "PPI": "BLS Producer Price Index (final demand), 08:30 ET (Oct 2025 PPI cancelled).",
+   "PCE": "BEA Personal Income and Outlays (PCE price index); 08:30 ET except 10:00 ET when released on the same day as a GDP release (2020-11-25, 2021-11-24, 2024-11-27, 2025-04-30) and two post-lapse releases (2025-12-05, 2026-01-22).",
+   "RETAIL": "Census Advance Monthly Retail Trade (retail sales), 08:30 ET.",
+   "GDP": "BEA GDP releases: advance, second and third estimates (2025Q3: 'initial' 2025-12-23 and 'updated' 2026-01-22; 2025Q3 advance cancelled), 08:30 ET.",
+   "OTHER": "FOMC minutes (14:00 ET) and 2020 unscheduled Fed/FOMC notation-vote announcements that were not rate decisions (2020-03-19 swap lines 09:00, 2020-03-23 unlimited QE 08:00, 2020-03-31 FIMA repo 08:30, 2020-08-27 framework statement 09:10)."
+  }
+ },
+ "columns": {
+  "date": "release date, YYYY-MM-DD, New York local date",
+  "time_et": "release time HH:MM, America/New_York wall clock (EST or EDT as in effect that day)",
+  "event": "FOMC|CPI|NFP|PPI|PCE|RETAIL|GDP|OTHER",
+  "source": "primary source URL(s) the row was built from (official agency page; for GDP/PCE 2020-2024 the ALFRED release-dates list)",
+  "verified": "true if the date is confirmed by >=1 source independent of the primary (excluding the primary's own repository/dataset) AND the time is either printed on the official page or confirmed by >=1 independent source other than the one it was taken from; a non-artifact time conflict additionally requires >=2 agreeing independent sources",
+  "detail": "release title / description from the primary source ('[BEA: New Date]' = BEA marked the row as a rescheduled date)",
+  "ref_period": "reference period covered (month or YYYYQn); empty for FOMC rows",
+  "status": "released (on/before the 2026-10-23 page fetch) | scheduled (future as of 2026-10-23)",
+  "schedule_type": "regular | rescheduled_after_lapse (date set/reset after a 2025 or 2026 lapse in appropriations began; NOT known on the original schedule; see schedule_changes.csv) | unscheduled (2020 emergency Fed actions; not known in advance)",
+  "time_basis": "where the time comes from (official page, Fed convention, or independent calendars)",
+  "n_confirm": "number of independent sources listing the same event on the same date",
+  "confirmed_by": "those sources (keys as in cross_check_sources.csv; alfred_raw = St. Louis Fed ALFRED release-dates list)",
+  "time_confirmed_by": "independent sources giving the same time",
+  "notes": "time/date disagreements found in other sources and how they were judged"
+ },
+ "other_files": {
+  "schedule_changes.csv": "originally scheduled vs actual dates for releases moved/cancelled by the 2025 and 2026 lapses in appropriations, the cancelled 2025Q3 GDP advance, and the cancelled 2020-03-18 FOMC meeting (for ex-ante / look-ahead-safe use)",
+  "source_disagreements.csv": "every date in a cross-check source (within its coverage) that is absent from events.csv and vice versa, plus time conflicts, each with an explanation",
+  "cross_check_sources.csv": "normalized long table of all cross-check sources (source,event,date,time_et,detail) for audit"
+ },
+ "timezone": "America/New_York. time_et is New York wall-clock time (EST in winter, EDT in summer). To get UTC, localize date+time_et with tz America/New_York.",
+ "checks": [
+  "sha256 of all 39 raw official-page copies re-computed and matched against the copying repo's manifest.json (0 mismatches).",
+  "BLS yearly schedule pages already reflect lapse revisions; every BLS lapse-page revision matched the schedule row (10 'confirms', 2 'no change'); 3 lapse-page cancellations (Oct 2025 CPI/NFP/PPI) have no schedule row and none in events.csv.",
+  "Every BLS (CPI/NFP/PPI) and Census (retail) date 2020-01..2026-10-23 appears in the St. Louis Fed ALFRED release-dates list for that release (ALFRED additionally lists annual seasonal-factor/benchmark revision dates, which were excluded).",
+  "GDP 2020-2024: ALFRED rid=53 dates kept only if also in the BEA news-archive transcription (midas); 9 ALFRED-only dates (series revisions, e.g. 2020-09-16, 2021-08-06) excluded; result is exactly 12 GDP releases per year (advance/second/third), cross-checked with investing.com cache (to 2024-05), blotterbook (2022-2024), LiveMacroEval/dschace/0xkoa1a (advance).",
+  "PCE 2020-2024: ALFRED rid=54 has exactly 12 dates/year; all 60 present in LiveMacroEval and 0xkoa1a, 2021+ in dschace, 2024 in ioiti_wata.",
+  "FOMC: all 55 scheduled statement dates agree with LuxAlgo, midas, istaykov, Jarocinski-Karadi, charishma005/USMPD, dschace (2021+), borisjoffe (2021-2024), blotterbook, ioiti_wata, trujillofa, ryanluo1 within their coverage (ryanluo1 additionally lists the 2025-08-22 notation vote); JK and USMPD both give 14:00 for every scheduled statement and 10:00 / 17:00 for 2020-03-03 / 2020-03-15, matching the Fed press releases.",
+  "FOMC rate changes: every change in FRED DFEDTARU (19 changes 2020-2025) is effective exactly one calendar day after an events.csv FOMC date (incl. 2020-03-04 and 2020-03-16 for the emergency cuts).",
+  "Per-source agreement for CPI/NFP: 9+ independent sources each match 100% of events.csv dates within their coverage except documented errors (28licaris February, blotterbook 2026, mulhamfetna, ryanluo1 2025 stale).",
+  "Weekend check: only 2020-03-15 (Sunday emergency FOMC, 17:00 ET, before Globex open) falls on a weekend. No duplicate (date,event) pairs. All time_et values match HH:MM.",
+  "Independent re-parse check: this pipeline's parse of the raw pages agrees with the copying repo's own built table on every date/time both contain.",
+  "Agreement detail per event and source: see agreement_stats below."
+ ],
+ "agreement_stats": {
+  "FOMC": {
+   "blotterbook": "2021-01-27..2026-12-09: 48/48 events.csv dates present in source; 0 source dates not in events.csv",
+   "borisjoffe": "2021-01-27..2024-12-18: 32/32 events.csv dates present in source; 0 source dates not in events.csv",
+   "charishma005": "2020-01-29..2026-09-16: 55/55 events.csv dates present in source; 0 source dates not in events.csv",
+   "dschace": "2021-01-27..2026-09-16: 46/46 events.csv dates present in source; 0 source dates not in events.csv",
+   "ejclark": "2026-09-16..2026-12-09: 3/3 events.csv dates present in source; 0 source dates not in events.csv",
+   "ioiti_wata": "2024-01-31..2026-12-09: 24/24 events.csv dates present in source; 0 source dates not in events.csv",
+   "istaykov": "2020-01-29..2026-07-29: 52/54 events.csv dates present in source; 0 source dates not in events.csv",
+   "jk_shocks": "2020-01-29..2026-09-16: 55/55 events.csv dates present in source; 0 source dates not in events.csv",
+   "luxalgo": "2020-01-29..2026-12-09: 55/57 events.csv dates present in source; 0 source dates not in events.csv",
+   "midas": "2020-01-29..2026-12-09: 55/57 events.csv dates present in source; 0 source dates not in events.csv",
+   "mulhamfetna": "2020-01-29..2026-12-09: 39/57 events.csv dates present in source; 0 source dates not in events.csv",
+   "ryanluo1": "2025-01-29..2026-12-09: 16/16 events.csv dates present in source; 1 source dates not in events.csv",
+   "trujillofa": "2024-01-31..2026-04-29: 19/19 events.csv dates present in source; 0 source dates not in events.csv"
+  },
+  "CPI": {
+   "alfred_28licaris": "2020-01-14..2026-06-10: 72/77 events.csv dates present in source; 5 source dates not in events.csv",
+   "alfred_firstrel_0xkoa1a": "2020-01-14..2026-08-12: 79/79 events.csv dates present in source; 0 source dates not in events.csv",
+   "blotterbook": "2024-01-11..2026-12-11: 28/35 events.csv dates present in source; 5 source dates not in events.csv",
+   "charishma005": "2020-01-14..2026-12-10: 83/83 events.csv dates present in source; 0 source dates not in events.csv",
+   "dschace": "2021-01-13..2026-12-10: 71/71 events.csv dates present in source; 0 source dates not in events.csv",
+   "ejclark": "2026-09-11..2026-12-10: 4/4 events.csv dates present in source; 0 source dates not in events.csv",
+   "ioiti_wata": "2024-01-11..2026-12-10: 35/35 events.csv dates present in source; 0 source dates not in events.csv",
+   "istaykov": "2020-01-14..2026-07-14: 78/78 events.csv dates present in source; 0 source dates not in events.csv",
+   "livemacroeval": "2020-01-14..2026-04-10: 75/75 events.csv dates present in source; 0 source dates not in events.csv",
+   "luxalgo": "2020-01-14..2026-12-10: 83/83 events.csv dates present in source; 0 source dates not in events.csv",
+   "midas": "2020-01-14..2026-12-10: 83/83 events.csv dates present in source; 0 source dates not in events.csv",
+   "mulhamfetna": "2020-01-14..2026-06-10: 75/77 events.csv dates present in source; 5 source dates not in events.csv",
+   "noblabs": "2026-05-12..2026-10-14: 6/6 events.csv dates present in source; 0 source dates not in events.csv",
+   "ryanluo1": "2025-01-15..2026-12-10: 22/23 events.csv dates present in source; 3 source dates not in events.csv",
+   "tfm_investing": "2020-01-14..2024-05-15: 53/53 events.csv dates present in source; 0 source dates not in events.csv",
+   "trujillofa": "2024-01-11..2026-05-12: 28/28 events.csv dates present in source; 0 source dates not in events.csv",
+   "vinenthuynh": "2020-01-14..2026-09-11: 80/80 events.csv dates present in source; 0 source dates not in events.csv"
+  },
+  "NFP": {
+   "alfred_28licaris": "2020-01-10..2026-07-02: 78/78 events.csv dates present in source; 0 source dates not in events.csv",
+   "alfred_firstrel_0xkoa1a": "2020-01-10..2026-08-07: 79/79 events.csv dates present in source; 0 source dates not in events.csv",
+   "blotterbook": "2024-01-05..2026-12-04: 34/35 events.csv dates present in source; 1 source dates not in events.csv",
+   "charishma005": "2020-01-10..2026-12-04: 83/83 events.csv dates present in source; 0 source dates not in events.csv",
+   "dschace": "2021-02-05..2026-12-04: 70/70 events.csv dates present in source; 0 source dates not in events.csv",
+   "ejclark": "2026-09-04..2026-12-04: 4/4 events.csv dates present in source; 0 source dates not in events.csv",
+   "ioiti_wata": "2024-01-05..2026-12-04: 35/35 events.csv dates present in source; 0 source dates not in events.csv",
+   "istaykov": "2020-01-10..2026-07-02: 78/78 events.csv dates present in source; 0 source dates not in events.csv",
+   "livemacroeval": "2020-01-10..2026-04-03: 75/75 events.csv dates present in source; 0 source dates not in events.csv",
+   "luxalgo": "2020-01-10..2026-12-04: 83/83 events.csv dates present in source; 0 source dates not in events.csv",
+   "midas": "2020-01-10..2026-12-04: 83/83 events.csv dates present in source; 0 source dates not in events.csv",
+   "mulhamfetna": "2020-01-10..2026-07-02: 75/78 events.csv dates present in source; 2 source dates not in events.csv",
+   "noblabs": "2026-05-08..2026-10-02: 6/6 events.csv dates present in source; 0 source dates not in events.csv",
+   "ryanluo1": "2025-01-10..2026-12-04: 22/23 events.csv dates present in source; 3 source dates not in events.csv",
+   "tfm_investing": "2020-01-10..2024-05-03: 53/53 events.csv dates present in source; 0 source dates not in events.csv",
+   "trujillofa": "2024-01-05..2026-05-08: 28/28 events.csv dates present in source; 0 source dates not in events.csv",
+   "vinenthuynh": "2020-01-10..2026-09-04: 80/80 events.csv dates present in source; 0 source dates not in events.csv"
+  },
+  "PPI": {
+   "charishma005": "2020-01-15..2026-12-15: 83/83 events.csv dates present in source; 0 source dates not in events.csv",
+   "ejclark": "2026-09-10..2026-12-15: 4/4 events.csv dates present in source; 0 source dates not in events.csv",
+   "livemacroeval": "2020-01-15..2026-04-14: 75/75 events.csv dates present in source; 0 source dates not in events.csv",
+   "midas": "2020-01-15..2025-09-10: 69/69 events.csv dates present in source; 0 source dates not in events.csv",
+   "mulhamfetna": "2020-01-15..2026-06-11: 73/77 events.csv dates present in source; 5 source dates not in events.csv",
+   "noblabs": "2026-05-13..2026-10-15: 6/6 events.csv dates present in source; 0 source dates not in events.csv",
+   "ryanluo1": "2025-01-14..2026-12-15: 22/23 events.csv dates present in source; 3 source dates not in events.csv",
+   "tfm_investing": "2020-01-15..2024-05-14: 53/53 events.csv dates present in source; 0 source dates not in events.csv"
+  },
+  "RETAIL": {
+   "ejclark": "2026-09-16..2026-12-16: 4/4 events.csv dates present in source; 0 source dates not in events.csv",
+   "livemacroeval": "2020-01-16..2026-04-21: 76/76 events.csv dates present in source; 0 source dates not in events.csv",
+   "midas": "2020-01-16..2025-09-16: 69/69 events.csv dates present in source; 0 source dates not in events.csv",
+   "mulhamfetna": "2020-01-16..2026-06-17: 70/78 events.csv dates present in source; 5 source dates not in events.csv",
+   "noblabs": "2026-05-14..2026-10-15: 6/6 events.csv dates present in source; 0 source dates not in events.csv",
+   "tfm_investing": "2020-01-16..2024-05-15: 53/53 events.csv dates present in source; 0 source dates not in events.csv"
+  },
+  "GDP": {
+   "alfred_firstrel_0xkoa1a": "2020-01-30..2026-07-30: 27/78 events.csv dates present in source; 0 source dates not in events.csv",
+   "blotterbook": "2022-01-27..2026-12-23: 53/59 events.csv dates present in source; 0 source dates not in events.csv",
+   "dschace": "2021-01-28..2026-10-29: 24/69 events.csv dates present in source; 0 source dates not in events.csv",
+   "livemacroeval": "2020-01-30..2026-04-30: 26/75 events.csv dates present in source; 0 source dates not in events.csv",
+   "midas": "2020-01-30..2026-12-23: 82/83 events.csv dates present in source; 0 source dates not in events.csv",
+   "mulhamfetna": "2020-01-30..2026-03-13: 68/73 events.csv dates present in source; 6 source dates not in events.csv",
+   "noblabs": "2026-07-30..2026-10-29: 2/4 events.csv dates present in source; 0 source dates not in events.csv",
+   "tfm_investing": "2020-01-30..2024-05-30: 53/53 events.csv dates present in source; 0 source dates not in events.csv"
+  },
+  "PCE": {
+   "alfred_firstrel_0xkoa1a": "2020-01-31..2026-08-26: 79/79 events.csv dates present in source; 0 source dates not in events.csv",
+   "dschace": "2021-01-29..2026-12-23: 71/71 events.csv dates present in source; 0 source dates not in events.csv",
+   "ejclark": "2026-08-26..2026-12-23: 5/5 events.csv dates present in source; 0 source dates not in events.csv",
+   "ioiti_wata": "2024-01-26..2026-12-23: 35/35 events.csv dates present in source; 0 source dates not in events.csv",
+   "livemacroeval": "2020-01-31..2026-04-30: 75/75 events.csv dates present in source; 0 source dates not in events.csv",
+   "mulhamfetna": "2020-01-31..2026-06-25: 74/77 events.csv dates present in source; 1 source dates not in events.csv",
+   "noblabs": "2026-05-28..2026-10-29: 6/6 events.csv dates present in source; 0 source dates not in events.csv"
+  }
+ },
+ "known_issues": [
+  "Official pages were read from a third-party GitHub copy (fetched 2026-10-23); federal sites are unreachable from this environment. The copy's sha256 manifest is internally consistent, and every date is independently corroborated by other repositories, but the copy itself cannot be checked against the live sites here.",
+  "Most cross-check repositories are recent (2026) hand/AI-assisted compilations; several share upstream pages (BLS/BEA/Fed). 'Independent' means separately transcribed/compiled, not independent original publishers. Market-calendar scrapes (LiveMacroEval, investing.com cache) and academic datasets (Jarocinski-Karadi, USMPD) are the most independent.",
+  "Retail sales time 08:30 is not printed on the Census date sheet; it is the standard release time and is confirmed by LiveMacroEval, investing.com cache, midas and ejclark.",
+  "GDP and PCE dates for 2020-2024 come from ALFRED (dates only) rather than BEA schedule pages; times from independent calendars. The 10:00 ET PCE time on 2020-11-25 rests on one independent source (LiveMacroEval) plus BEA's same-day staggering pattern; 2024-11-27 10:00 is supported by dschace + LiveMacroEval against ioiti_wata (08:30).",
+  "FOMC minutes 2025-12-30: USMPD (charishma005) says 2025-12-31; the Fed calendar page and midas say 2025-12-30 (used).",
+  "verified=false rows (3): 2020-08-27 09:10 framework statement (time from USMPD only); FOMC minutes 2026-11-18 and 2026-12-30 (not yet on the Fed calendar page; single source + 3-week rule).",
+  "2025-08-22 FOMC notation vote (Statement on Longer-Run Goals) is excluded: no reliable release time found. Other FOMC notation votes/statements without times are also excluded.",
+  "rescheduled_after_lapse rows were not known on the original schedule; for look-ahead-safe 'event day' features use schedule_changes.csv. Original (pre-lapse) dates for PCE, retail sales and GDP second/third estimates in Oct-Dec 2025 are not available from the captured pages.",
+  "Status 'scheduled' rows can still move. A cross-check source (ejclark, untrusted) reports FY2027 appropriations running through 2026-12-11; BLS/BEA/Census releases after that date (PPI 2026-12-15, retail 2026-12-16, GDP/PCE 2026-12-23) would move in a new lapse. FOMC dates are unaffected by appropriations.",
+  "Known source artifacts (dates still usable): LiveMacroEval and investing.com cache times shift by 1h in US/EU DST-mismatch windows and some 2024 rows; mulhamfetna uses 08:30 for everything; blotterbook 2025-2026 CPI/NFP/GDP dates are wrong; 28licaris February CPI dates are seasonal-revision vintages; ryanluo1 2025 is the pre-lapse schedule.",
+  "Only US releases listed in the task are included (plus FOMC minutes and 2020 emergency Fed announcements as OTHER). Jobless claims, ISM, JOLTS, Fed chair speeches/testimony and Treasury refunding are not included."
+ ],
+ "build_scripts_note": "Built by scratch scripts parse_official.py, load_sources.py, build_events.py, write_deliverables.py, write_manifest.py (not shipped; all inputs are the pinned commits above)."
+}

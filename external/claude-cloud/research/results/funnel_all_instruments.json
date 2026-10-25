@@ -1,0 +1,640 @@
+{
+ "instruments": [
+  "nq",
+  "rty",
+  "gc",
+  "cl"
+ ],
+ "trials_total": 175310,
+ "effective_total": 2958,
+ "var_sharpe_daily": 0.002771280304184316,
+ "per_instrument": {
+  "nq": {
+   "trials": {
+    "round1": 17808,
+    "round2": 70809,
+    "total": 88617,
+    "effective": 1398,
+    "var_sharpe_daily": 0.0006050960920052498
+   },
+   "funnel_r1": {
+    "orb": {
+     "activity": 0,
+     "edge": 4357,
+     "costs": 0,
+     "stability": 282,
+     "plateau": 0,
+     "validation": 949,
+     "survived": 172
+    },
+    "ALL": {
+     "activity": 1278,
+     "edge": 14936,
+     "costs": 0,
+     "stability": 302,
+     "plateau": 11,
+     "validation": 1053,
+     "survived": 228
+    },
+    "noise": {
+     "activity": 0,
+     "edge": 4287,
+     "costs": 0,
+     "stability": 5,
+     "plateau": 1,
+     "validation": 2,
+     "survived": 25
+    },
+    "imom": {
+     "activity": 36,
+     "edge": 383,
+     "costs": 0,
+     "stability": 3,
+     "plateau": 2,
+     "validation": 0,
+     "survived": 8
+    },
+    "gap": {
+     "activity": 576,
+     "edge": 2819,
+     "costs": 0,
+     "stability": 3,
+     "plateau": 0,
+     "validation": 58,
+     "survived": 0
+    },
+    "vwap": {
+     "activity": 330,
+     "edge": 383,
+     "costs": 0,
+     "stability": 4,
+     "plateau": 0,
+     "validation": 3,
+     "survived": 0
+    },
+    "level": {
+     "activity": 120,
+     "edge": 1148,
+     "costs": 0,
+     "stability": 1,
+     "plateau": 8,
+     "validation": 15,
+     "survived": 4
+    },
+    "tod": {
+     "activity": 0,
+     "edge": 312,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 0,
+     "survived": 0
+    },
+    "drive": {
+     "activity": 216,
+     "edge": 1031,
+     "costs": 0,
+     "stability": 4,
+     "plateau": 0,
+     "validation": 26,
+     "survived": 19
+    },
+    "rsi": {
+     "activity": 0,
+     "edge": 216,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 0,
+     "survived": 0
+    }
+   },
+   "funnel_r2": {
+    "orb": {
+     "activity": 11594,
+     "edge": 26598,
+     "costs": 0,
+     "stability": 1266,
+     "plateau": 31,
+     "validation": 15723,
+     "survived": 4201
+    },
+    "ALL": {
+     "activity": 14898,
+     "edge": 32561,
+     "costs": 0,
+     "stability": 1377,
+     "plateau": 138,
+     "validation": 16742,
+     "survived": 5093
+    },
+    "noise": {
+     "activity": 704,
+     "edge": 2949,
+     "costs": 0,
+     "stability": 31,
+     "plateau": 39,
+     "validation": 140,
+     "survived": 484
+    },
+    "imom": {
+     "activity": 101,
+     "edge": 220,
+     "costs": 0,
+     "stability": 8,
+     "plateau": 0,
+     "validation": 27,
+     "survived": 68
+    },
+    "gap": {
+     "activity": 1068,
+     "edge": 1423,
+     "costs": 0,
+     "stability": 40,
+     "plateau": 0,
+     "validation": 500,
+     "survived": 43
+    },
+    "vwap": {
+     "activity": 148,
+     "edge": 8,
+     "costs": 0,
+     "stability": 2,
+     "plateau": 0,
+     "validation": 1,
+     "survived": 0
+    },
+    "level": {
+     "activity": 365,
+     "edge": 411,
+     "costs": 0,
+     "stability": 8,
+     "plateau": 66,
+     "validation": 101,
+     "survived": 56
+    },
+    "drive": {
+     "activity": 918,
+     "edge": 952,
+     "costs": 0,
+     "stability": 22,
+     "plateau": 2,
+     "validation": 250,
+     "survived": 241
+    }
+   },
+   "survivors": 5321,
+   "survivor_families": {
+    "orb": 4373,
+    "noise": 509,
+    "imom": 76,
+    "level": 60,
+    "drive": 260,
+    "gap": 43
+   }
+  },
+  "rty": {
+   "inst": "rty",
+   "trials": {
+    "round1": 17808,
+    "round2": 9617,
+    "total": 27425,
+    "effective": 635,
+    "var_sharpe_daily": 0.0010251412671957157
+   },
+   "funnel_r1": {
+    "orb": {
+     "activity": 0,
+     "edge": 5588,
+     "costs": 42,
+     "stability": 31,
+     "plateau": 0,
+     "validation": 89,
+     "survived": 10
+    },
+    "ALL": {
+     "activity": 1186,
+     "edge": 16313,
+     "costs": 53,
+     "stability": 95,
+     "plateau": 4,
+     "validation": 141,
+     "survived": 16
+    },
+    "noise": {
+     "activity": 0,
+     "edge": 4289,
+     "costs": 0,
+     "stability": 19,
+     "plateau": 0,
+     "validation": 11,
+     "survived": 1
+    },
+    "imom": {
+     "activity": 36,
+     "edge": 365,
+     "costs": 7,
+     "stability": 15,
+     "plateau": 1,
+     "validation": 6,
+     "survived": 2
+    },
+    "gap": {
+     "activity": 576,
+     "edge": 2833,
+     "costs": 4,
+     "stability": 26,
+     "plateau": 0,
+     "validation": 17,
+     "survived": 0
+    },
+    "vwap": {
+     "activity": 310,
+     "edge": 410,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 0,
+     "survived": 0
+    },
+    "level": {
+     "activity": 48,
+     "edge": 1248,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 0,
+     "survived": 0
+    },
+    "tod": {
+     "activity": 0,
+     "edge": 312,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 0,
+     "survived": 0
+    },
+    "drive": {
+     "activity": 216,
+     "edge": 1052,
+     "costs": 0,
+     "stability": 4,
+     "plateau": 3,
+     "validation": 18,
+     "survived": 3
+    },
+    "rsi": {
+     "activity": 0,
+     "edge": 216,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 0,
+     "survived": 0
+    }
+   },
+   "funnel_r2": {
+    "orb": {
+     "activity": 3537,
+     "edge": 1044,
+     "costs": 10,
+     "stability": 69,
+     "plateau": 10,
+     "validation": 543,
+     "survived": 34
+    },
+    "ALL": {
+     "activity": 5512,
+     "edge": 2878,
+     "costs": 10,
+     "stability": 129,
+     "plateau": 16,
+     "validation": 1002,
+     "survived": 70
+    },
+    "noise": {
+     "activity": 731,
+     "edge": 930,
+     "costs": 0,
+     "stability": 22,
+     "plateau": 4,
+     "validation": 222,
+     "survived": 23
+    },
+    "imom": {
+     "activity": 254,
+     "edge": 131,
+     "costs": 0,
+     "stability": 13,
+     "plateau": 0,
+     "validation": 17,
+     "survived": 9
+    },
+    "gap": {
+     "activity": 455,
+     "edge": 354,
+     "costs": 0,
+     "stability": 15,
+     "plateau": 0,
+     "validation": 77,
+     "survived": 0
+    },
+    "drive": {
+     "activity": 535,
+     "edge": 419,
+     "costs": 0,
+     "stability": 10,
+     "plateau": 2,
+     "validation": 143,
+     "survived": 4
+    }
+   },
+   "survivors": 86,
+   "survivor_families": {
+    "orb": 44,
+    "noise": 24,
+    "imom": 11,
+    "drive": 7
+   }
+  },
+  "gc": {
+   "inst": "gc",
+   "trials": {
+    "round1": 17808,
+    "round2": 23652,
+    "total": 41460,
+    "effective": 594,
+    "var_sharpe_daily": 0.0006407875219053448
+   },
+   "funnel_r1": {
+    "orb": {
+     "activity": 0,
+     "edge": 5374,
+     "costs": 10,
+     "stability": 18,
+     "plateau": 0,
+     "validation": 358,
+     "survived": 0
+    },
+    "ALL": {
+     "activity": 1323,
+     "edge": 16018,
+     "costs": 10,
+     "stability": 23,
+     "plateau": 2,
+     "validation": 432,
+     "survived": 0
+    },
+    "noise": {
+     "activity": 0,
+     "edge": 4312,
+     "costs": 0,
+     "stability": 1,
+     "plateau": 0,
+     "validation": 7,
+     "survived": 0
+    },
+    "imom": {
+     "activity": 60,
+     "edge": 365,
+     "costs": 0,
+     "stability": 1,
+     "plateau": 1,
+     "validation": 5,
+     "survived": 0
+    },
+    "gap": {
+     "activity": 288,
+     "edge": 3132,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 36,
+     "survived": 0
+    },
+    "vwap": {
+     "activity": 351,
+     "edge": 368,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 1,
+     "validation": 0,
+     "survived": 0
+    },
+    "level": {
+     "activity": 264,
+     "edge": 1010,
+     "costs": 0,
+     "stability": 3,
+     "plateau": 0,
+     "validation": 19,
+     "survived": 0
+    },
+    "tod": {
+     "activity": 0,
+     "edge": 312,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 0,
+     "survived": 0
+    },
+    "drive": {
+     "activity": 360,
+     "edge": 929,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 7,
+     "survived": 0
+    },
+    "rsi": {
+     "activity": 0,
+     "edge": 216,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 0,
+     "survived": 0
+    }
+   },
+   "funnel_r2": {
+    "orb": {
+     "activity": 1785,
+     "edge": 9665,
+     "costs": 20,
+     "stability": 375,
+     "plateau": 3,
+     "validation": 7042,
+     "survived": 84
+    },
+    "ALL": {
+     "activity": 3108,
+     "edge": 11652,
+     "costs": 20,
+     "stability": 450,
+     "plateau": 25,
+     "validation": 8304,
+     "survived": 93
+    },
+    "noise": {
+     "activity": 208,
+     "edge": 698,
+     "costs": 0,
+     "stability": 34,
+     "plateau": 7,
+     "validation": 180,
+     "survived": 0
+    },
+    "imom": {
+     "activity": 88,
+     "edge": 51,
+     "costs": 0,
+     "stability": 2,
+     "plateau": 0,
+     "validation": 124,
+     "survived": 0
+    },
+    "gap": {
+     "activity": 704,
+     "edge": 499,
+     "costs": 0,
+     "stability": 20,
+     "plateau": 0,
+     "validation": 676,
+     "survived": 9
+    },
+    "level": {
+     "activity": 178,
+     "edge": 666,
+     "costs": 0,
+     "stability": 16,
+     "plateau": 12,
+     "validation": 135,
+     "survived": 0
+    },
+    "drive": {
+     "activity": 145,
+     "edge": 73,
+     "costs": 0,
+     "stability": 3,
+     "plateau": 3,
+     "validation": 147,
+     "survived": 0
+    }
+   },
+   "survivors": 93,
+   "survivor_families": {
+    "orb": 84,
+    "gap": 9
+   }
+  },
+  "cl": {
+   "inst": "cl",
+   "trials": {
+    "round1": 17808,
+    "round2": 0,
+    "total": 17808,
+    "effective": 331,
+    "var_sharpe_daily": 0.002771280304184316
+   },
+   "funnel_r1": {
+    "orb": {
+     "activity": 0,
+     "edge": 5760,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 0,
+     "survived": 0
+    },
+    "ALL": {
+     "activity": 1164,
+     "edge": 16641,
+     "costs": 1,
+     "stability": 1,
+     "plateau": 1,
+     "validation": 0,
+     "survived": 0
+    },
+    "noise": {
+     "activity": 0,
+     "edge": 4320,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 0,
+     "survived": 0
+    },
+    "imom": {
+     "activity": 60,
+     "edge": 372,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 0,
+     "survived": 0
+    },
+    "gap": {
+     "activity": 288,
+     "edge": 3168,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 0,
+     "survived": 0
+    },
+    "vwap": {
+     "activity": 324,
+     "edge": 396,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 0,
+     "survived": 0
+    },
+    "level": {
+     "activity": 96,
+     "edge": 1200,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 0,
+     "survived": 0
+    },
+    "tod": {
+     "activity": 0,
+     "edge": 309,
+     "costs": 1,
+     "stability": 1,
+     "plateau": 1,
+     "validation": 0,
+     "survived": 0
+    },
+    "drive": {
+     "activity": 396,
+     "edge": 900,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 0,
+     "survived": 0
+    },
+    "rsi": {
+     "activity": 0,
+     "edge": 216,
+     "costs": 0,
+     "stability": 0,
+     "plateau": 0,
+     "validation": 0,
+     "survived": 0
+    }
+   },
+   "funnel_r2": {},
+   "survivors": 0,
+   "survivor_families": {}
+  }
+ },
+ "survivors": 5500
+}

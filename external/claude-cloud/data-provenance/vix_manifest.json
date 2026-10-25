@@ -1,0 +1,274 @@
+{
+  "dataset": "vix",
+  "description": "Daily closing values of Cboe volatility indices VIX, VIX9D, VIX3M (formerly VXV), VVIX and VXN (Nasdaq-100 volatility index), one row per NYSE session 2019-01-02..2026-10-23. Built from public GitHub mirrors of the official Cboe history files (cdn.cboe.com .../us_indices/daily_prices/<INDEX>_History.csv), FRED mirrors (VIXCLS, VXVCLS, VXNCLS, which are Cboe data) and, only for the most recent days where no Cboe/FRED mirror exists, Yahoo Finance captures. Each cell's origin is recorded in vix_daily_sources.csv.",
+  "files": {
+    "vix_daily.csv": {
+      "sha256": "c5819bec9a54b3ca190f89ac111f160d1e4d2021b84fd4eabfeb38d1cd9600d0",
+      "rows": 1964,
+      "desc": "main file: date + one close column per index, NYSE sessions only, no gaps"
+    },
+    "vix_daily_sources.csv": {
+      "sha256": "c6fb9d3af54838ccad9cc86fc3aa2afa1c837a44bd6ba7d51269ff0b0f3be0ee",
+      "desc": "same shape as vix_daily.csv; each cell names the source the value came from (priority: cboe mirror > fred > yahoo)"
+    },
+    "vix_nonsession_prints.csv": {
+      "sha256": "a5b9ff3ea69bbcec63cb81db4cd73403f41ba925f947682b6926ef0c5783e99f",
+      "rows": 35,
+      "desc": "values Cboe published on dates that are NOT NYSE sessions (VIX on most US holidays since 2022-05-30 from Global Trading Hours, VXN on 2021-04-02 and 2021-12-24). Excluded from the main file; kept for completeness."
+    },
+    "vix_nonsession_prints_sources.csv": {
+      "sha256": "e8d005b39bd9d989052af36bd1a4aee86a6d8621e94da3a39f46904492292edb",
+      "desc": "per-cell source for vix_nonsession_prints.csv"
+    }
+  },
+  "sources": [
+    {
+      "url": "https://github.com/datasets/finance-vix",
+      "commit_or_tag": "3dbea23c70cc2afbeeec8ac232c9ec72ac26ac21",
+      "commit_date": "2026-09-23T18:30:07Z",
+      "files": [
+        "data/vix-daily.csv"
+      ],
+      "role": "VIX primary 2019-01-02..2026-09-22 (mirror of Cboe VIX_History.csv, auto-updated by GitHub Actions; updates stopped after 2026-09-22 data)"
+    },
+    {
+      "url": "https://github.com/0zean/wavelet-meta-model",
+      "commit_or_tag": "a32a91dcbe492cb854fc4899cbb956c0e1bcd1cb",
+      "commit_date": "2026-10-11T08:48:49Z",
+      "files": [
+        "data/cache/exo/cboe/VIX.npz",
+        "data/cache/exo/cboe/VIX.json",
+        "data/cache/exo/cboe/VIX9D.npz",
+        "data/cache/exo/cboe/VIX9D.json",
+        "data/cache/exo/cboe/VIX3M.npz",
+        "data/cache/exo/cboe/VIX3M.json",
+        "data/cache/exo/cboe/VVIX.npz",
+        "data/cache/exo/cboe/VVIX.json"
+      ],
+      "role": "VIX9D/VIX3M/VVIX primary 2019-01-02..2026-10-08 (VVIX ..2026-10-09) and VIX 2026-09-23..2026-10-08; cache of https://cdn-api.cboe.com/api/global/us_indices/daily_prices/<INDEX>_History.csv fetched 2026-10-09/2026-10-11 (read with numpy allow_pickle=False)"
+    },
+    {
+      "url": "https://github.com/jonaslffr-ship-it/trading-library",
+      "commit_or_tag": "081ac518b373f3e93344984b9272c35e737e69ae",
+      "commit_date": "2026-09-25T11:40:32Z",
+      "files": [
+        "03-volatility/figures/data/VIX_History.csv",
+        "03-volatility/figures/data/VIX9D_History.csv",
+        "03-volatility/figures/data/VIX3M_History.csv",
+        "03-volatility/figures/data/VVIX_History.csv",
+        "03-volatility/figures/data/VXN_History.csv"
+      ],
+      "role": "VXN primary 2019-01-02..2026-09-17; Cboe-format CSV snapshots used to cross-check all other indices (through 2026-09-16/17)"
+    },
+    {
+      "url": "https://github.com/navnoorthapar/vol-system-dashboard",
+      "commit_or_tag": "331cecc5deb922d0a7e1a10bb0927a9e02195b4f",
+      "commit_date": "2026-10-24T07:32:15Z",
+      "files": [
+        "data_store/market/vix_daily/vix_daily_2010.parquet .. vix_daily_2026.parquet",
+        "data_store/market/vix_term_structure/vix_term_structure_2010.parquet .. vix_term_structure_2026.parquet",
+        "joint_vol_calibration/tests/fixtures/cboe_VIX_History.csv",
+        "joint_vol_calibration/tests/fixtures/cboe_VIX9D_History.csv",
+        "joint_vol_calibration/tests/fixtures/cboe_VIX3M_History.csv",
+        "joint_vol_calibration/tests/fixtures/cboe_VVIX_History.csv"
+      ],
+      "role": "vix_daily parquet (Cboe-sourced VIX, source column = cboe in 2025-2026) gives VIX 2026-10-23; vix_term_structure parquet (yfinance ^VIX9D/^VIX3M/^VVIX, auto-refreshed daily by GitHub Actions) gives VIX9D and VVIX 2026-10-12..2026-10-23 and VIX3M 2026-10-23; Cboe fixtures (sparse 2026 rows) give 2026-10-09 VIX/VIX9D/VIX3M"
+    },
+    {
+      "url": "https://github.com/achl0902-web/back-testing",
+      "commit_or_tag": "bd0b7b0fc69317ed246de4a14e0b1542ed2f6de8",
+      "commit_date": "2026-10-25T00:31:24Z",
+      "files": [
+        "qld/data/macro/VIXCLS.csv",
+        "qld/data/macro/VXNCLS.csv",
+        "qld/data/macro/VXVCLS.csv"
+      ],
+      "role": "FRED mirror (fetched from fred.stlouisfed.org/graph/fredgraph.csv by the repo workflow; last observation 2026-10-22). VXN primary 2026-09-18..2026-10-22, VIX and VIX3M 2026-10-12..2026-10-22, and cross-check of everything back to 2019"
+    },
+    {
+      "url": "https://github.com/8wy88kzpj9-pixel/hull-price-pipeline",
+      "commit_or_tag": "46250b4a176fbc4f8b2e846daf6bf4ecc57cd212",
+      "commit_date": "2026-10-25T11:25:57Z",
+      "files": [
+        "data/vol_snapshot.csv",
+        "data/vol_indices.csv"
+      ],
+      "role": "VXN 2026-10-23 (=28.30, yfinance ^VXN snapshot asof 2026-10-23); weekly (Friday) VIX/VXN/VVIX history used only as cross-check"
+    },
+    {
+      "url": "https://github.com/jwee97/quant_for_finance_python",
+      "commit_or_tag": "b6f52039e4d987ce9358dfb68aa2a6d87e072fe7",
+      "files": [
+        "data/raw/altdata/VXN.csv"
+      ],
+      "role": "cross-check only (Yahoo-style VXN history through 2026-10-05)"
+    },
+    {
+      "url": "https://pypi.org/project/exchange-calendars/4.13.2/",
+      "commit_or_tag": "4.13.2",
+      "files": [
+        "exchange_calendars (XNYS)"
+      ],
+      "role": "NYSE session calendar for gap checks (not a data source)"
+    }
+  ],
+  "coverage": {
+    "date_start": "2019-01-02",
+    "date_end": "2026-10-23",
+    "rows": 1964,
+    "calendar": "NYSE (XNYS) sessions 2019-01-02..2026-10-23 per exchange_calendars 4.13.2 = 1964 sessions; 2019-01-01 is a holiday",
+    "last_date_available_all_columns": "2026-10-23",
+    "per_column": {
+      "VIX": {
+        "first": "2019-01-02",
+        "last": "2026-10-23",
+        "missing_nyse_sessions": 0,
+        "rows_by_source": {
+          "cboe:datasets/finance-vix": 1941,
+          "cboe:0zean/wavelet-meta-model": 12,
+          "fred:VIXCLS": 9,
+          "cboe:vol-system-dashboard/fixtures": 1,
+          "cboe:vol-system-dashboard/vix_daily[cboe]": 1
+        }
+      },
+      "VIX9D": {
+        "first": "2019-01-02",
+        "last": "2026-10-23",
+        "missing_nyse_sessions": 0,
+        "rows_by_source": {
+          "cboe:0zean/wavelet-meta-model": 1953,
+          "yahoo:^VIX9D": 10,
+          "cboe:vol-system-dashboard/fixtures": 1
+        }
+      },
+      "VIX3M": {
+        "first": "2019-01-02",
+        "last": "2026-10-23",
+        "missing_nyse_sessions": 0,
+        "rows_by_source": {
+          "cboe:0zean/wavelet-meta-model": 1953,
+          "fred:VXVCLS": 9,
+          "cboe:vol-system-dashboard/fixtures": 1,
+          "yahoo:^VIX3M": 1
+        }
+      },
+      "VVIX": {
+        "first": "2019-01-02",
+        "last": "2026-10-23",
+        "missing_nyse_sessions": 0,
+        "rows_by_source": {
+          "cboe:0zean/wavelet-meta-model": 1954,
+          "yahoo:^VVIX": 10
+        }
+      },
+      "VXN": {
+        "first": "2019-01-02",
+        "last": "2026-10-23",
+        "missing_nyse_sessions": 0,
+        "rows_by_source": {
+          "cboe:jonaslffr/trading-library": 1938,
+          "fred:VXNCLS": 25,
+          "yahoo:^VXN(hull snapshot)": 1
+        }
+      }
+    },
+    "nonsession_prints_rows": 35
+  },
+  "columns": {
+    "date": "trading date, YYYY-MM-DD, US/Eastern exchange date (no time component)",
+    "VIX": "Cboe Volatility Index (30-day S&P 500 implied vol) official daily close",
+    "VIX9D": "Cboe S&P 500 9-Day Volatility Index daily close",
+    "VIX3M": "Cboe S&P 500 3-Month Volatility Index daily close (formerly VXV; FRED series VXVCLS)",
+    "VVIX": "Cboe VIX of VIX index daily close",
+    "VXN": "Cboe Nasdaq-100 Volatility Index daily close (FRED series VXNCLS)"
+  },
+  "timezone": "Dates are US/Eastern trading dates. Values are end-of-day closing index levels, finalized at the Cboe close (about 16:15 ET). For ex-ante use in an intraday strategy on trading date D, use the value dated D-1 (previous NYSE session); the value dated D is not known until after 16:15 ET on D.",
+  "checks": [
+    "Gap check vs NYSE calendar: all 5 columns have a value on every one of the 1964 NYSE sessions 2019-01-02..2026-10-23 (0 missing); last date available for every column = 2026-10-23.",
+    "No duplicate dates; no non-NYSE-session rows in vix_daily.csv (35 Cboe holiday prints moved to vix_nonsession_prints.csv).",
+    "Cboe mirrors agree exactly with each other: finance-vix vs jonaslffr vs 0zean vs vol-system-dashboard fixtures, max |diff| = 0.00 on all overlaps (VIX 1970 sessions, VIX9D/VIX3M/VVIX 1938 sessions).",
+    "FRED vs Cboe: VIXCLS, VXVCLS, VXNCLS identical to Cboe CSV values on every overlapping date (VIX 1987, VIX3M 1954, VXN 1940 sessions; max |diff| 0.00), so FRED observation dates carry no day shift.",
+    "vol-system-dashboard vix_daily (Cboe) vs all Cboe/FRED: identical on 1992 overlapping dates (max |diff| < 1e-6).",
+    "Yahoo vs Cboe/FRED since 2022-01-03: VIX9D 1197/1197 exact, VIX3M 1206/1206 exact, VVIX 1197/1197 exact, VIX 1206/1207 exact (single error 2026-02-06 Yahoo 20.37 vs Cboe+FRED 17.76; Cboe kept). This is the basis for accepting the 10-session Yahoo tail for VIX9D/VVIX.",
+    "hull-price-pipeline weekly (Friday) values vs final file: VXN 111/111 and VVIX 111/111 exact; VIX 110/111 exact (the 2026-02-06 Yahoo error again).",
+    "Spot checks of well-known closes: VIX 2020-03-16 = 82.69 (record close), 2024-08-05 = 38.57, 2025-04-04 = 45.31, 2025-04-08 = 52.33.",
+    "Range and plausibility: VIX 11.54..82.69, VIX9D 9.04..106.66, VIX3M 13.95..72.98, VVIX 73.26..207.59, VXN 13.59..80.08. Ratios VIX9D/VIX 0.66..1.40, VIX3M/VIX 0.74..1.33, VXN/VIX 0.76..1.73, VVIX/VIX 2.05..8.02. The only ratio outlier (>4 sd from 21-day local median) is VIX9D/VIX on 2024-12-18 (FOMC day, VIX +74%), which is a real move.",
+    "All daily moves above 50% were checked against neighbouring days and all five indices; they line up with known volatility events (e.g. 2021-01-27, 2024-08-05, 2024-12-18, 2025-04-04, 2026-06-05, 2026-10-16) and are consistent across indices."
+  ],
+  "known_issues": [
+    "Single-source tail: VIX9D and VVIX for the 10 sessions 2026-10-12..2026-10-23 and VIX3M for 2026-10-23 come only from Yahoo Finance captures (vol-system-dashboard). Yahoo matched Cboe exactly for these indices on every session since 2022, but Yahoo had one VIX error in 2026, so these 21 cells are less certain. Re-verify against Cboe when possible (see vix_daily_sources.csv).",
+    "VXN for 2026-10-23 (28.30) comes from a single Yahoo snapshot (hull-price-pipeline vol_snapshot.csv, asof 2026-10-23). The same pipeline's weekly VXN matched Cboe/FRED on all 111 overlapping Fridays.",
+    "The official Cboe CDN (cdn.cboe.com) and FRED cannot be reached from this environment, so nothing could be checked directly against the official servers. All Cboe values come from third-party GitHub mirrors, which agree with each other and with the FRED mirror.",
+    "VIX9D 2019-01-02..2019-02-05 (24 sessions) plus 2021-08-11 and 2021-10-01: the current Cboe history differs from Yahoo by up to 0.53 points. Cboe values were kept. Cboe may have revised these after first publication, so the values traders saw in real time may have differed slightly. This is outside the 2020+ research window except the two 2021 dates.",
+    "VVIX: 9 sessions in 2019-2021 differ between Cboe and Yahoo (largest 2019-08-12: Cboe 110.31 vs Yahoo 105.31). Cboe values were kept. VIX/VIX3M 2021-08-11 and 2021-10-01 Yahoo values also differ from Cboe; Cboe kept.",
+    "Cboe publishes VIX values on many NYSE holidays since 2022-05-30 (Global Trading Hours sessions), plus VXN on 2021-04-02 (Good Friday) and 2021-12-24. These are not in vix_daily.csv; they are in vix_nonsession_prints.csv. The 2025-01-09 national day of mourning (NYSE closed) has a VIX print and is treated as non-session.",
+    "datasets/finance-vix has a daily cron, but its updates stopped after the 2026-09-22 observation (last commit 2026-09-23), so it cannot be relied on for future refreshes.",
+    "Only closes are included (no OHLC). VIX6M is also available from the same sources (Cboe cache in 0zean, Yahoo in vol-system-dashboard) but was not requested and is not included.",
+    "Values are rounded to 2 decimals (Cboe native precision); Yahoo float32 artifacts such as 18.860001 were rounded to 18.86.",
+    "Cboe index data is Cboe intellectual property, redistributed here by third-party mirrors. Use it for internal research only.",
+    "VIX9D 2019-09-23 = 9.83 (VIX 14.91; VIX9D 14.68 the session before and 17.73 the session after). VIX9D/VIX = 0.66, the smallest ratio in the file. Both the Cboe history and Yahoo have this value, so it is a real Cboe print and not a transcription error, but it looks like an artifact of the index calculation (the Monday after September expiration). It was left unchanged. It falls outside the 2020+ research window. Clip or ignore it if 2019 VIX9D term-structure features are used.",
+    "The VXN non-session print on 2021-04-02 (23.21, Good Friday) repeats the 2021-04-01 close exactly, so it is a stale carry-forward. This supports leaving it out of vix_daily.csv."
+  ],
+  "build": {
+    "scripts": "/tmp/claude-0/-home-user/f4111bd7-7194-5f3c-8353-395e6c9d714c/scratchpad/acq/vix_scripts/{load.py,compare.py,build.py,manifest.py} (scratch, not part of deliverable)",
+    "merge_rule": "For each index and date the value comes from the first source in this priority list that has a non-null value: Cboe mirrors (finance-vix > 0zean > jonaslffr > vol-system-dashboard fixtures) > FRED mirror > vol-system-dashboard vix_daily (Cboe) > Yahoo. Every lower-priority source was compared with the chosen value; the only disagreements above 0.01 involve Yahoo (40 cells, listed in known_issues), and in each case Cboe was kept.",
+    "built_utc": "2026-10-25"
+  },
+  "verification": {
+    "by": "independent verification agent, 2026-10-25 (data files not modified; only this manifest was amended)",
+    "checks": [
+      "sha256 of all 4 CSVs matches the manifest.",
+      "vix_daily.csv: 1964 rows, no duplicate dates, sorted. The dates equal exactly the XNYS sessions 2019-01-02..2026-10-23 from exchange_calendars 4.13.2 and also from pandas_market_calendars 5.5.0 (NYSE); both give 1964. No nulls in any column. All values have the format d+.dd. Rows per year: 2019 252, 2020 253, 2021 252, 2022 251, 2023 250, 2024 252, 2025 250, 2026 204 (through 10-23). Every column is complete in every year. No stale runs (longest run of unchanged consecutive values is 1 day).",
+      "Day stamping vs NQ 1-minute futures (futures_NQ.F_1m.parquet, 1522 overlapping sessions 2020-01-02..2026-02-27): corr(dln index on date D+k, NQ log return from 16:14 ET on D-1 to 16:14 ET on D) at k=-2..2 is VIX -0.05/0.04/-0.71/0.11/-0.02, VIX9D -0.04/0.03/-0.60/0.10/-0.03, VIX3M -0.08/0.05/-0.74/0.13/-0.03, VVIX -0.03/0.00/-0.56/0.10/0.03, VXN -0.05/0.05/-0.72/0.15/-0.01. The strong peak at k=0 holds in every year 2020-2026 for every column, so there is no date shift.",
+      "Close timing: dln index correlates slightly better with NQ returns ending 16:14 ET than with returns ending 15:59 ET for all 5 indices (e.g. VXN -0.723 vs -0.710). On 2022-02-02 (META earnings after the close) VXN rose 5.5% while VIX rose 0.6%, as NQ fell 1.7% between 16:00 and 16:14. This confirms that closes include 16:00-16:15 ET information. For any decision made before 16:15 ET on D, use the value dated D-1.",
+      "Freshly re-fetched achl0902-web/back-testing @ bd0b7b0 (FRED VIXCLS/VXNCLS/VXVCLS, plus Yahoo Y_VIX/Y_VIX3M/Y_VXN, which the original build did not use) and datasets/finance-vix @ 3dbea23. FRED vs the file: VIX, VXN and VIX3M all 1963/1963 exact. finance-vix: VIX 1941/1941 exact. Yahoo (achl0902): mismatches only on 2021-08-11 and 2021-10-01 (all indices, Yahoo-side), 2026-02-06 VIX (Yahoo 20.37 = that day's VIX3M value, a Yahoo mix-up; Cboe 17.76 is consistent with NQ +2.1% that day), and VXN 2019-03-05.",
+      "Yahoo tail: VIX3M 2026-10-23 = 20.48 is confirmed by a second, independent Yahoo capture (achl0902 Y_VIX3M.csv). VVIX 2026-10-16 = 109.91 and 2026-10-23 = 109.70, and VXN 2026-10-16/10-23, are confirmed by the hull-price-pipeline weekly file. Across all 116 overlapping Fridays 2024-08-09..2026-10-23 that file matches exactly for VXN and VVIX, and for VIX on 115/116 (2026-02-06 again). VIX9D 2026-10-12..10-23 and VVIX on non-Friday tail days still have only one capture (vol-system-dashboard). Their daily log changes have the same sign as VIX every day and are about 1.5-2x as large for VIX9D, which is plausible.",
+      "Non-session prints: all 33 VIX holiday values match FRED VIXCLS and finance-vix. Both VXN values match FRED VXNCLS. None of the 35 dates is an NYSE session or a weekend.",
+      "Spot checks against known closes agree: VIX 2019-12-31 13.78, 2020-02-21 17.08, 2020-02-24 25.03, 2020-02-27 39.16, 2020-02-28 40.11, 2020-03-09 54.46, 2020-03-12 75.47, 2020-03-16 82.69, 2020-03-18 76.45, 2020-12-31 22.75, 2021-01-27 37.21, 2021-11-26 28.62, 2021-12-31 17.22, 2022-03-07 36.45, 2022-06-13 34.02, 2022-12-30 21.67, 2023-03-13 26.52, 2023-12-29 12.45, 2024-08-02 23.39, 2024-08-05 38.57, 2024-12-18 27.62, 2024-12-31 17.35, 2025-04-04 45.31, 2025-04-07 46.98, 2025-04-08 52.33, 2025-04-09 33.62.",
+      "Outliers of index changes after controlling for the NQ return (|z|>4.5), and cross-index outliers (|z|>5 vs dlnVIX), were all checked. Apart from VIX9D 2019-09-23 (see known_issues), each one matches a known event: Feb-Mar 2020, 2020-06-11, 2021-01-27, 2021-11-26 Omicron, 2024-08-05/06, 2024-09-03, 2024-12-18 FOMC, 2025-04-02 Liberation Day (VVIX +21% with VIX flat), 2025-04-09 tariff pause, 2026-06-05. VXN/VIX below 1 (minimum 0.76 on 2025-04-08) happens only in acute S&P-led spikes, such as Aug 2024 and Apr 2025."
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/achl0902-web/back-testing",
+        "commit_or_tag": "bd0b7b0fc69317ed246de4a14e0b1542ed2f6de8",
+        "files": [
+          "qld/data/macro/VIXCLS.csv",
+          "qld/data/macro/VXNCLS.csv",
+          "qld/data/macro/VXVCLS.csv",
+          "qld/data/macro/Y_VIX.csv",
+          "qld/data/macro/Y_VIX3M.csv",
+          "qld/data/macro/Y_VXN.csv"
+        ]
+      },
+      {
+        "url": "https://github.com/datasets/finance-vix",
+        "commit_or_tag": "3dbea23c70cc2afbeeec8ac232c9ec72ac26ac21",
+        "files": [
+          "data/vix-daily.csv"
+        ]
+      },
+      {
+        "url": "https://github.com/navnoorthapar/vol-system-dashboard",
+        "commit_or_tag": "331cecc5deb922d0a7e1a10bb0927a9e02195b4f",
+        "files": [
+          "data_store/market/vix_term_structure/vix_term_structure_2019..2026.parquet"
+        ]
+      },
+      {
+        "url": "https://github.com/8wy88kzpj9-pixel/hull-price-pipeline",
+        "commit_or_tag": "46250b4a176fbc4f8b2e846daf6bf4ecc57cd212",
+        "files": [
+          "data/vol_snapshot.csv",
+          "data/vol_indices.csv"
+        ]
+      },
+      {
+        "url": "local",
+        "commit_or_tag": "n/a",
+        "files": [
+          "/home/user/sentra-data/raw/futures_NQ.F_1m.parquet"
+        ]
+      }
+    ]
+  }
+}
