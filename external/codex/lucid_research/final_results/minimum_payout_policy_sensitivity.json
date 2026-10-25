@@ -1,0 +1,220 @@
+{
+  "purpose": "Post-final fixed-strategy minimum first-payout threshold sensitivity, not retuning or selecting a strategy/policy.",
+  "strategy": "E028",
+  "instrument": "MES priced from ES bars",
+  "quantity": 2,
+  "primary_policy_profit_threshold": 1500.0,
+  "sensitivity_profit_threshold": 1000.0,
+  "gross_request": 500.0,
+  "trader_net_if_approved": 450.0,
+  "minimum_policy_example": {
+    "profit": 1000.0,
+    "balance_before": 26000.0,
+    "gross_request": 500.0,
+    "balance_after": 25500.0,
+    "locked_floor": 25100.0,
+    "remaining_headroom": 400.0
+  },
+  "reserve_policy_example": {
+    "profit": 1500.0,
+    "balance_before": 26500.0,
+    "gross_request": 500.0,
+    "balance_after": 26000.0,
+    "locked_floor": 25100.0,
+    "remaining_headroom": 900.0
+  },
+  "sessions": "194 complete holdout RTH sessions, 2026-01-02 through 2026-10-09",
+  "limitations": [
+    "Historical starts overlap and are dependent; observed fractions are not independent success probabilities.",
+    "First payout only; no post-payout survival, approvals, evaluation/reset fees or actual MES order-book execution simulated.",
+    "Both evaluation and funded stages share the same 120-session total horizon; funded-only uses60 sessions.",
+    "A failed first-payout objective is distinguished from an account breach; pending means horizon ended."
+  ],
+  "results": {
+    "baseline_evaluation_120": {
+      "primary_reserve_policy": {
+        "trials": 15,
+        "payout_paths": 0,
+        "eval_passed_paths": 13,
+        "failed_paths": 3,
+        "pending_paths": 12,
+        "observed_payout_fraction": 0.0,
+        "observed_eval_pass_fraction": 0.8666666666666667,
+        "median_sessions_to_payout": null,
+        "outcomes": {
+          "funded_pending": 10,
+          "funded_breach": 3,
+          "evaluation_pending": 2
+        },
+        "note": "Overlapping historical starts; fractions are NOT independent probability estimates. First payout only; evaluation/reset fees excluded."
+      },
+      "minimum_payout_policy": {
+        "trials": 15,
+        "payout_paths": 0,
+        "eval_passed_paths": 13,
+        "failed_paths": 3,
+        "pending_paths": 12,
+        "observed_payout_fraction": 0.0,
+        "observed_eval_pass_fraction": 0.8666666666666667,
+        "median_sessions_to_payout": null,
+        "outcomes": {
+          "funded_pending": 10,
+          "funded_breach": 3,
+          "evaluation_pending": 2
+        },
+        "note": "Overlapping historical starts; fractions are NOT independent probability estimates. First payout only; evaluation/reset fees excluded."
+      },
+      "trials_file": "E028_baseline_evaluation_120_minimum_payout_policy_replays.csv",
+      "minimum_policy_payout_after_headroom": []
+    },
+    "baseline_funded_60": {
+      "primary_reserve_policy": {
+        "trials": 27,
+        "payout_paths": 5,
+        "eval_passed_paths": 0,
+        "failed_paths": 2,
+        "pending_paths": 20,
+        "observed_payout_fraction": 0.18518518518518517,
+        "observed_eval_pass_fraction": 0.0,
+        "median_sessions_to_payout": 38.0,
+        "outcomes": {
+          "funded_pending": 20,
+          "payout": 5,
+          "funded_breach": 2
+        },
+        "note": "Overlapping historical starts; fractions are NOT independent probability estimates. First payout only; evaluation/reset fees excluded."
+      },
+      "minimum_payout_policy": {
+        "trials": 27,
+        "payout_paths": 15,
+        "eval_passed_paths": 0,
+        "failed_paths": 1,
+        "pending_paths": 11,
+        "observed_payout_fraction": 0.5555555555555556,
+        "observed_eval_pass_fraction": 0.0,
+        "median_sessions_to_payout": 28.0,
+        "outcomes": {
+          "payout": 15,
+          "funded_pending": 11,
+          "funded_breach": 1
+        },
+        "note": "Overlapping historical starts; fractions are NOT independent probability estimates. First payout only; evaluation/reset fees excluded."
+      },
+      "trials_file": "E028_baseline_funded_60_minimum_payout_policy_replays.csv",
+      "minimum_policy_payout_after_headroom": [
+        437.8800000000083,
+        400.30000000000655,
+        410.2600000000057,
+        518.4200000000201,
+        460.8200000000179,
+        473.2200000000157,
+        413.12000000001353,
+        478.02000000001135,
+        490.68000000001484,
+        540.3600000000079,
+        507.7600000000057,
+        417.70000000000437,
+        502.6600000000035,
+        515.3400000000074,
+        477.8400000000074
+      ]
+    },
+    "stress_evaluation_120": {
+      "primary_reserve_policy": {
+        "trials": 15,
+        "payout_paths": 0,
+        "eval_passed_paths": 1,
+        "failed_paths": 4,
+        "pending_paths": 11,
+        "observed_payout_fraction": 0.0,
+        "observed_eval_pass_fraction": 0.06666666666666667,
+        "median_sessions_to_payout": null,
+        "outcomes": {
+          "evaluation_pending": 11,
+          "evaluation_breach": 3,
+          "funded_breach": 1
+        },
+        "note": "Overlapping historical starts; fractions are NOT independent probability estimates. First payout only; evaluation/reset fees excluded."
+      },
+      "minimum_payout_policy": {
+        "trials": 15,
+        "payout_paths": 0,
+        "eval_passed_paths": 1,
+        "failed_paths": 4,
+        "pending_paths": 11,
+        "observed_payout_fraction": 0.0,
+        "observed_eval_pass_fraction": 0.06666666666666667,
+        "median_sessions_to_payout": null,
+        "outcomes": {
+          "evaluation_pending": 11,
+          "evaluation_breach": 3,
+          "funded_breach": 1
+        },
+        "note": "Overlapping historical starts; fractions are NOT independent probability estimates. First payout only; evaluation/reset fees excluded."
+      },
+      "trials_file": "E028_stress_evaluation_120_minimum_payout_policy_replays.csv",
+      "minimum_policy_payout_after_headroom": []
+    },
+    "stress_funded_60": {
+      "primary_reserve_policy": {
+        "trials": 27,
+        "payout_paths": 0,
+        "eval_passed_paths": 0,
+        "failed_paths": 3,
+        "pending_paths": 24,
+        "observed_payout_fraction": 0.0,
+        "observed_eval_pass_fraction": 0.0,
+        "median_sessions_to_payout": null,
+        "outcomes": {
+          "funded_pending": 24,
+          "funded_breach": 3
+        },
+        "note": "Overlapping historical starts; fractions are NOT independent probability estimates. First payout only; evaluation/reset fees excluded."
+      },
+      "minimum_payout_policy": {
+        "trials": 27,
+        "payout_paths": 8,
+        "eval_passed_paths": 0,
+        "failed_paths": 1,
+        "pending_paths": 18,
+        "observed_payout_fraction": 0.2962962962962963,
+        "observed_eval_pass_fraction": 0.0,
+        "median_sessions_to_payout": 35.5,
+        "outcomes": {
+          "funded_pending": 18,
+          "payout": 8,
+          "funded_breach": 1
+        },
+        "note": "Overlapping historical starts; fractions are NOT independent probability estimates. First payout only; evaluation/reset fees excluded."
+      },
+      "trials_file": "E028_stress_funded_60_minimum_payout_policy_replays.csv",
+      "minimum_policy_payout_after_headroom": [
+        438.3600000000188,
+        518.2600000000166,
+        443.08000000001266,
+        583.0000000000109,
+        500.4400000000096,
+        430.3800000000083,
+        410.3800000000083,
+        432.8400000000074
+      ]
+    }
+  },
+  "audit": {
+    "baseline": {
+      "net_2MES": 715.6599999999994,
+      "closed_trade_drawdown_2MES": 1406.6200000000008,
+      "trade_count": 158,
+      "pnl_conversion": "Every row: pnl_points * $5/MES - $1.24 round-trip fee, then quantity2.",
+      "mae_check": "Every row signed MAE <= min(realized PNL,0)."
+    },
+    "stress": {
+      "net_2MES": -526.8400000000005,
+      "closed_trade_drawdown_2MES": 1629.1200000000003,
+      "trade_count": 158,
+      "pnl_conversion": "Every row: pnl_points * $5/MES - $1.24 round-trip fee, then quantity2.",
+      "mae_check": "Every row signed MAE <= min(realized PNL,0)."
+    },
+    "conclusion": "No accounting bug found in MES point-value conversion or primary replay outcomes. Every saved primary trial matched independent reconstruction."
+  }
+}

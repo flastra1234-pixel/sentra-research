@@ -1,0 +1,12 @@
+{
+  "decision": "REJECT_ALL_FOR_FUNDED_DEPLOYMENT",
+  "configurations": 1025,
+  "sizing_sensitivity_additional_strategy_count": 0,
+  "best_research_lead": "E028",
+  "final_baseline_net_2MES": 715.66,
+  "final_stressed_net_2MES": -526.84,
+  "final_intraday_drawdown_baseline": 1429.1,
+  "live_forward_test_performed": false,
+  "orders_placed": false,
+  "final_rules_retuned": false
+}

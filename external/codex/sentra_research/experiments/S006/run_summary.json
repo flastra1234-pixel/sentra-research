@@ -1,0 +1,130 @@
+{
+  "MES": {
+    "gain": {
+      "sessions": 120,
+      "mean_daily_pnl": -0.09075853213497846,
+      "confidence": 0.95,
+      "ci_low": -0.1430889192014819,
+      "ci_high": -0.04644527258346265,
+      "centered_bootstrap_p_value": 0.9986671109630123,
+      "block_length": 5,
+      "bootstrap_samples": 3000,
+      "note": "Single-series stationary-block diagnostic; not search-adjusted or fresh holdout evidence."
+    },
+    "holm": 1,
+    "models": {
+      "own_1tick": {
+        "eligible_days": 120,
+        "trades": 6,
+        "net": 31.310000000000002,
+        "days100": 1,
+        "days150": 0,
+        "inactive_days": 114
+      },
+      "own_2tick": {
+        "eligible_days": 120,
+        "trades": 6,
+        "net": 20.060000000000002,
+        "days100": 1,
+        "days150": 0,
+        "inactive_days": 114
+      },
+      "cross_1tick": {
+        "eligible_days": 120,
+        "trades": 9,
+        "net": 102.58999999999999,
+        "days100": 1,
+        "days150": 1,
+        "inactive_days": 112
+      },
+      "cross_2tick": {
+        "eligible_days": 120,
+        "trades": 9,
+        "net": 83.84,
+        "days100": 1,
+        "days150": 1,
+        "inactive_days": 112
+      },
+      "stale_1tick": {
+        "eligible_days": 120,
+        "trades": 8,
+        "net": 11.330000000000005,
+        "days100": 0,
+        "days150": 0,
+        "inactive_days": 113
+      },
+      "stale_2tick": {
+        "eligible_days": 120,
+        "trades": 8,
+        "net": -3.6699999999999946,
+        "days100": 0,
+        "days150": 0,
+        "inactive_days": 113
+      }
+    }
+  },
+  "MNQ": {
+    "gain": {
+      "sessions": 120,
+      "mean_daily_pnl": -0.35002000245083165,
+      "confidence": 0.95,
+      "ci_low": -0.5553672645343941,
+      "ci_high": -0.17801225119437153,
+      "centered_bootstrap_p_value": 0.9990003332222592,
+      "block_length": 5,
+      "bootstrap_samples": 3000,
+      "note": "Single-series stationary-block diagnostic; not search-adjusted or fresh holdout evidence."
+    },
+    "holm": 1,
+    "models": {
+      "own_1tick": {
+        "eligible_days": 120,
+        "trades": 210,
+        "net": -1630.9000000000005,
+        "days100": 8,
+        "days150": 3,
+        "inactive_days": 6
+      },
+      "own_2tick": {
+        "eligible_days": 120,
+        "trades": 210,
+        "net": -1829.9000000000005,
+        "days100": 8,
+        "days150": 3,
+        "inactive_days": 6
+      },
+      "cross_1tick": {
+        "eligible_days": 120,
+        "trades": 227,
+        "net": -1637.9800000000005,
+        "days100": 7,
+        "days150": 4,
+        "inactive_days": 4
+      },
+      "cross_2tick": {
+        "eligible_days": 120,
+        "trades": 227,
+        "net": -1826.9800000000005,
+        "days100": 7,
+        "days150": 4,
+        "inactive_days": 4
+      },
+      "stale_1tick": {
+        "eligible_days": 120,
+        "trades": 231,
+        "net": -792.9400000000009,
+        "days100": 10,
+        "days150": 6,
+        "inactive_days": 3
+      },
+      "stale_2tick": {
+        "eligible_days": 120,
+        "trades": 231,
+        "net": -1007.4400000000009,
+        "days100": 10,
+        "days150": 6,
+        "inactive_days": 3
+      }
+    }
+  }
+}

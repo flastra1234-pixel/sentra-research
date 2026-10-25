@@ -1,0 +1,136 @@
+{
+  "utc": "2026-10-25T04:53:09.328838+00:00",
+  "risk_budget": 60,
+  "selection_history_consumed": true,
+  "reserved_checks_opened": false,
+  "current_fleet": [
+    {
+      "index": 3980,
+      "id": "ES_03981",
+      "family": "ema_cross9_21",
+      "score": 0.8646331269266009,
+      "train_net": 274.3999764919281,
+      "train_pf": 1.2442562927762388,
+      "train_trades": 54,
+      "validation_net": 182.6899871826172,
+      "validation_pf": 1.734638818375317,
+      "validation_trades": 15,
+      "positive_neighbor_fraction": 0.75,
+      "config": {
+        "id": "ES_03981",
+        "asset": "ES",
+        "family": "ema_cross9_21",
+        "tf": 3,
+        "window": "mid",
+        "stop_atr": 1.5,
+        "reward_r": 1.5,
+        "max_hold": 90,
+        "context": "trend",
+        "direction": "both"
+      },
+      "asset": "ES"
+    },
+    {
+      "index": 5338,
+      "id": "NQ_05339",
+      "family": "vwap_reversion",
+      "score": 0.48916632711480107,
+      "train_net": 736.1399245560169,
+      "train_pf": 1.4572524364289237,
+      "train_trades": 88,
+      "validation_net": 88.49997520446777,
+      "validation_pf": 1.1765972715910513,
+      "validation_trades": 25,
+      "positive_neighbor_fraction": 1.0,
+      "config": {
+        "id": "NQ_05339",
+        "asset": "NQ",
+        "family": "vwap_reversion",
+        "tf": 3,
+        "window": "PM",
+        "stop_atr": 1.5,
+        "reward_r": 1,
+        "max_hold": 90,
+        "context": "range",
+        "direction": "both"
+      },
+      "asset": "NQ"
+    }
+  ],
+  "asset_latest_selection": {
+    "NQ": {
+      "train_first": "2026-03-06",
+      "train_last": "2026-08-26",
+      "validation_first": "2026-08-27",
+      "validation_last": "2026-10-08",
+      "training_eligible": 31,
+      "training_shortlisted": 9,
+      "validated_variants": 1,
+      "selections": [
+        {
+          "index": 5338,
+          "id": "NQ_05339",
+          "family": "vwap_reversion",
+          "score": 0.48916632711480107,
+          "train_net": 736.1399245560169,
+          "train_pf": 1.4572524364289237,
+          "train_trades": 88,
+          "validation_net": 88.49997520446777,
+          "validation_pf": 1.1765972715910513,
+          "validation_trades": 25,
+          "positive_neighbor_fraction": 1.0,
+          "config": {
+            "id": "NQ_05339",
+            "asset": "NQ",
+            "family": "vwap_reversion",
+            "tf": 3,
+            "window": "PM",
+            "stop_atr": 1.5,
+            "reward_r": 1,
+            "max_hold": 90,
+            "context": "range",
+            "direction": "both"
+          }
+        }
+      ]
+    },
+    "ES": {
+      "train_first": "2026-03-09",
+      "train_last": "2026-08-27",
+      "validation_first": "2026-08-28",
+      "validation_last": "2026-10-09",
+      "training_eligible": 10,
+      "training_shortlisted": 8,
+      "validated_variants": 2,
+      "selections": [
+        {
+          "index": 3980,
+          "id": "ES_03981",
+          "family": "ema_cross9_21",
+          "score": 0.8646331269266009,
+          "train_net": 274.3999764919281,
+          "train_pf": 1.2442562927762388,
+          "train_trades": 54,
+          "validation_net": 182.6899871826172,
+          "validation_pf": 1.734638818375317,
+          "validation_trades": 15,
+          "positive_neighbor_fraction": 0.75,
+          "config": {
+            "id": "ES_03981",
+            "asset": "ES",
+            "family": "ema_cross9_21",
+            "tf": 3,
+            "window": "mid",
+            "stop_atr": 1.5,
+            "reward_r": 1.5,
+            "max_hold": 90,
+            "context": "trend",
+            "direction": "both"
+          }
+        }
+      ]
+    }
+  },
+  "plan_sha256": "cd256bd2271eeda073f9f43d7894264dd74ff6c8aa2c891b8e2389a0ab5171ac",
+  "engine_sha256": "363f4d68bd944803fece5ebbef5b41c07c964d7c46aa5351e7159adbe9c02266"
+}

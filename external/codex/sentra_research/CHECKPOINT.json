@@ -1,0 +1,119 @@
+{
+  "updated": "2026-10-25T14:14:28.533098-04:00",
+  "mission": "ACTIVE_RESEARCH_NOT_COMPLETE",
+  "execution": "This checkpoint is durable; no claim of background execution after turn/session ends.",
+  "owner_directive": "OWNER_DIRECTIVE.md",
+  "current_best_independently_verified_trading_baseline": null,
+  "safe_cash_baseline": {
+    "market_pnl": 0,
+    "withdrawals": 0,
+    "meets_owner_targets": false
+  },
+  "verified_improvement": false,
+  "completed": [
+    {
+      "id": "V1",
+      "outcome": "1025 configurations rejected",
+      "artifact": "/workspace/lucid_research/REPORT.md"
+    },
+    {
+      "id": "V2",
+      "outcome": "12960 configurations,9024 active; rolling fleet negative; no owner-target qualification",
+      "artifact": "/workspace/lucid_research_v2/ASSESSMENT.md"
+    },
+    {
+      "id": "S001",
+      "outcome": "Failed-auction single-event coverage22-27%; standalone70%target architecture rejected, predictive sleeve untested"
+    },
+    {
+      "id": "S002",
+      "outcome": "Genuine source-side parser implemented;4fixture tests pass; fullflowhypothesis DATA-BLOCKED"
+    },
+    {
+      "id": "S003",
+      "outcome": "MES fixed-hour drift negative;MNQ positive unprotected diagnostic,CIincludesloss andHolm4p>.05;notcandidate"
+    },
+    {
+      "id": "S004",
+      "outcome": "Fixed20pt protectiveMNQvariant negative aftercost,5/9overlapping account pathsbreach,noevalpasses/requests;closed withoutstop/hour tuning"
+    },
+    {
+      "id": "S006",
+      "outcome": "Cross-index augmented forecasts worsened rolling MSE forbothassets;Holmp1;dailygoalfailed;noaccountpayouts",
+      "artifact": "experiments/S006/RESULT.md"
+    }
+  ],
+  "data_spent": [
+    "Prior primaryNQAug2024-Oct9/2026 andESJun2025-Oct9/2026",
+    "HFD2026MES/MNQpriorOct10 overnight/opening event availability and2-3am return/risk diagnostics"
+  ],
+  "reserved": [
+    "ES native3min2024/preJune2025 strategyperformance",
+    "HFD MES/MNQ Oct12-16/2026 strategyperformance"
+  ],
+  "queue": [
+    {
+      "priority": 1,
+      "id": "S005",
+      "task": "Nested incremental-information test: price-only overnight/failedauction baseline versus same baseline plus genuine signed flow",
+      "status": "BLOCKED_DATA",
+      "prerequisite": "Authorized contract-identified trade+quote history covering overnight andcashopen acrossmultiplechronologicalperiods;no purchase authorized",
+      "next_action": "Validate any supplied authorized export with flow_contract.py, thenpreregister event definitions,chronologicalsplits,costs,unchangedrisk anddaily/lifecyclepasscriteria BEFOREoutcomes"
+    },
+    {
+      "priority": 3,
+      "id": "S007",
+      "task": "Conditional overnight drift using measuredpriorcloseimbalance,notprice-gap surrogate",
+      "status": "BLOCKED_DATA",
+      "prerequisite": "Actualpriorclose orderimbalance/quote-trade data,adequate historyincludingearlierregimes; current2026cannotreplicatepre2021decay"
+    },
+    {
+      "priority": 3,
+      "id": "S008",
+      "task": "Qualify official scheduled-macro-release data for an event-conditioned volatility-transition hypothesis",
+      "status": "NEEDS_SOURCE_AND_EVENT_QUALIFICATION",
+      "prerequisite": "Authoritative point-in-time release timestamps/history;causalinformationtimingaudit;singlepreregistered event/control design, unchangedrisk, full costs; no directional claims from eventvolatilityalone"
+    }
+  ],
+  "next_exact_action": "Resolve S005 contract-level signed-flow data prerequisite if authorized data are available; otherwise qualify S008 official macro-release calendar and event availability before any P&L test. Do not repeat S006 lags/models or reopen reserved samples for selection.",
+  "reproduction": [
+    "python -m unittest test_flow_contract.py -v",
+    "python experiments/S001/run.py",
+    "python experiments/S003/run.py",
+    "python experiments/S004/run.py",
+    "python checkpoint_update.py"
+  ],
+  "safety": {
+    "live_orders": false,
+    "purchases": false,
+    "risk_increases": false,
+    "invented_signing": false,
+    "reserved_outcomes_accessed": false
+  },
+  "holms": {
+    "S003_MNQ": 0.14261912695768078,
+    "S004_1": 1,
+    "S003_MES": 1,
+    "S004_2": 1
+  },
+  "publication": {
+    "repository": "https://github.com/flastra1234-pixel/sentra-research",
+    "path": "external/codex",
+    "local_branch": "codex/research-evidence-20261025",
+    "status": "BLOCKED_WRITE_403",
+    "remote_commit": null,
+    "pull_request": null,
+    "blockers": [
+      "Git HTTPS push denied403",
+      "ConnectedGitHub create_branch403 Resource not accessible by integration",
+      "CLI createPullRequest Resource not accessible by integration"
+    ],
+    "required_integration_access": [
+      "Contents: write",
+      "Pull requests: write"
+    ],
+    "raw_vendor_data_excluded": true,
+    "source_price_levels_excluded": true,
+    "publication_verified": false
+  }
+}

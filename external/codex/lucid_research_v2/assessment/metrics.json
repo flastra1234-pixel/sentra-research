@@ -1,0 +1,341 @@
+{
+  "daily_targets": {
+    "1": {
+      "eligible_sessions": 390,
+      "net": -1025.6,
+      "days_100": 4,
+      "days_150": 1,
+      "rate_100": 0.010256410256410256,
+      "rate_150": 0.002564102564102564,
+      "losing_days": 73,
+      "inactive_days": 269,
+      "zero_cash_baseline_net": 0,
+      "zero_gross_edge_fee_only_baseline": -235.6,
+      "rate_100_95_block_interval": [
+        0.0,
+        0.023076923076923078
+      ],
+      "rate_150_95_block_interval": [
+        0.0,
+        0.007692307692307693
+      ],
+      "evaluation_reserve1500": {
+        "trials": 28,
+        "eval_passed_paths": 0,
+        "paths_with_request": 0,
+        "paths_with_two_requests": 0,
+        "paths_with_three_requests": 0,
+        "total_simulated_requests": 0,
+        "failed_paths": 28,
+        "failed_after_request_paths": 0,
+        "alive_horizon_paths": 0,
+        "observed_request_fraction": 0.0,
+        "mean_simulated_trader_net": 0.0,
+        "median_sessions_to_first_request": null,
+        "post_request_20_session_assessable_paths": 0,
+        "post_request_20_session_survivors": 0,
+        "post_request_20_session_censored_paths": 0,
+        "outcomes": {
+          "evaluation_inactivity": 28
+        },
+        "note": "Overlapping historical starts are dependent, not independent payout probabilities. Requests are simulated eligibility events, not approvals or real payments. Trading continues after requests; evaluation/reset/hosting fees excluded."
+      },
+      "evaluation_reserve1000": {
+        "trials": 28,
+        "eval_passed_paths": 0,
+        "paths_with_request": 0,
+        "paths_with_two_requests": 0,
+        "paths_with_three_requests": 0,
+        "total_simulated_requests": 0,
+        "failed_paths": 28,
+        "failed_after_request_paths": 0,
+        "alive_horizon_paths": 0,
+        "observed_request_fraction": 0.0,
+        "mean_simulated_trader_net": 0.0,
+        "median_sessions_to_first_request": null,
+        "post_request_20_session_assessable_paths": 0,
+        "post_request_20_session_survivors": 0,
+        "post_request_20_session_censored_paths": 0,
+        "outcomes": {
+          "evaluation_inactivity": 28
+        },
+        "note": "Overlapping historical starts are dependent, not independent payout probabilities. Requests are simulated eligibility events, not approvals or real payments. Trading continues after requests; evaluation/reset/hosting fees excluded."
+      },
+      "funded_reserve1500": {
+        "trials": 28,
+        "eval_passed_paths": 0,
+        "paths_with_request": 0,
+        "paths_with_two_requests": 0,
+        "paths_with_three_requests": 0,
+        "total_simulated_requests": 0,
+        "failed_paths": 28,
+        "failed_after_request_paths": 0,
+        "alive_horizon_paths": 0,
+        "observed_request_fraction": 0.0,
+        "mean_simulated_trader_net": 0.0,
+        "median_sessions_to_first_request": null,
+        "post_request_20_session_assessable_paths": 0,
+        "post_request_20_session_survivors": 0,
+        "post_request_20_session_censored_paths": 0,
+        "outcomes": {
+          "funded_inactivity": 28
+        },
+        "note": "Overlapping historical starts are dependent, not independent payout probabilities. Requests are simulated eligibility events, not approvals or real payments. Trading continues after requests; evaluation/reset/hosting fees excluded."
+      },
+      "funded_reserve1000": {
+        "trials": 28,
+        "eval_passed_paths": 0,
+        "paths_with_request": 0,
+        "paths_with_two_requests": 0,
+        "paths_with_three_requests": 0,
+        "total_simulated_requests": 0,
+        "failed_paths": 28,
+        "failed_after_request_paths": 0,
+        "alive_horizon_paths": 0,
+        "observed_request_fraction": 0.0,
+        "mean_simulated_trader_net": 0.0,
+        "median_sessions_to_first_request": null,
+        "post_request_20_session_assessable_paths": 0,
+        "post_request_20_session_survivors": 0,
+        "post_request_20_session_censored_paths": 0,
+        "outcomes": {
+          "funded_inactivity": 28
+        },
+        "note": "Overlapping historical starts are dependent, not independent payout probabilities. Requests are simulated eligibility events, not approvals or real payments. Trading continues after requests; evaluation/reset/hosting fees excluded."
+      }
+    },
+    "2": {
+      "eligible_sessions": 390,
+      "net": -1179.87,
+      "days_100": 3,
+      "days_150": 1,
+      "rate_100": 0.007692307692307693,
+      "rate_150": 0.002564102564102564,
+      "losing_days": 73,
+      "inactive_days": 269,
+      "zero_cash_baseline_net": 0,
+      "zero_gross_edge_fee_only_baseline": -233.12,
+      "rate_100_95_block_interval": [
+        0.0,
+        0.017948717948717947
+      ],
+      "rate_150_95_block_interval": [
+        0.0,
+        0.007692307692307693
+      ],
+      "evaluation_reserve1500": {
+        "trials": 28,
+        "eval_passed_paths": 0,
+        "paths_with_request": 0,
+        "paths_with_two_requests": 0,
+        "paths_with_three_requests": 0,
+        "total_simulated_requests": 0,
+        "failed_paths": 28,
+        "failed_after_request_paths": 0,
+        "alive_horizon_paths": 0,
+        "observed_request_fraction": 0.0,
+        "mean_simulated_trader_net": 0.0,
+        "median_sessions_to_first_request": null,
+        "post_request_20_session_assessable_paths": 0,
+        "post_request_20_session_survivors": 0,
+        "post_request_20_session_censored_paths": 0,
+        "outcomes": {
+          "evaluation_inactivity": 28
+        },
+        "note": "Overlapping historical starts are dependent, not independent payout probabilities. Requests are simulated eligibility events, not approvals or real payments. Trading continues after requests; evaluation/reset/hosting fees excluded."
+      },
+      "evaluation_reserve1000": {
+        "trials": 28,
+        "eval_passed_paths": 0,
+        "paths_with_request": 0,
+        "paths_with_two_requests": 0,
+        "paths_with_three_requests": 0,
+        "total_simulated_requests": 0,
+        "failed_paths": 28,
+        "failed_after_request_paths": 0,
+        "alive_horizon_paths": 0,
+        "observed_request_fraction": 0.0,
+        "mean_simulated_trader_net": 0.0,
+        "median_sessions_to_first_request": null,
+        "post_request_20_session_assessable_paths": 0,
+        "post_request_20_session_survivors": 0,
+        "post_request_20_session_censored_paths": 0,
+        "outcomes": {
+          "evaluation_inactivity": 28
+        },
+        "note": "Overlapping historical starts are dependent, not independent payout probabilities. Requests are simulated eligibility events, not approvals or real payments. Trading continues after requests; evaluation/reset/hosting fees excluded."
+      },
+      "funded_reserve1500": {
+        "trials": 28,
+        "eval_passed_paths": 0,
+        "paths_with_request": 0,
+        "paths_with_two_requests": 0,
+        "paths_with_three_requests": 0,
+        "total_simulated_requests": 0,
+        "failed_paths": 28,
+        "failed_after_request_paths": 0,
+        "alive_horizon_paths": 0,
+        "observed_request_fraction": 0.0,
+        "mean_simulated_trader_net": 0.0,
+        "median_sessions_to_first_request": null,
+        "post_request_20_session_assessable_paths": 0,
+        "post_request_20_session_survivors": 0,
+        "post_request_20_session_censored_paths": 0,
+        "outcomes": {
+          "funded_inactivity": 28
+        },
+        "note": "Overlapping historical starts are dependent, not independent payout probabilities. Requests are simulated eligibility events, not approvals or real payments. Trading continues after requests; evaluation/reset/hosting fees excluded."
+      },
+      "funded_reserve1000": {
+        "trials": 28,
+        "eval_passed_paths": 0,
+        "paths_with_request": 0,
+        "paths_with_two_requests": 0,
+        "paths_with_three_requests": 0,
+        "total_simulated_requests": 0,
+        "failed_paths": 28,
+        "failed_after_request_paths": 0,
+        "alive_horizon_paths": 0,
+        "observed_request_fraction": 0.0,
+        "mean_simulated_trader_net": 0.0,
+        "median_sessions_to_first_request": null,
+        "post_request_20_session_assessable_paths": 0,
+        "post_request_20_session_survivors": 0,
+        "post_request_20_session_censored_paths": 0,
+        "outcomes": {
+          "funded_inactivity": 28
+        },
+        "note": "Overlapping historical starts are dependent, not independent payout probabilities. Requests are simulated eligibility events, not approvals or real payments. Trading continues after requests; evaluation/reset/hosting fees excluded."
+      }
+    }
+  },
+  "grid": {
+    "NQ": {
+      "configurations": 6480,
+      "active": 3684,
+      "max_rate100": 0.07380073800738007,
+      "max_rate150": 0.01845018450184502,
+      "passing70pct100": 0,
+      "passing70pct150": 0
+    },
+    "ES": {
+      "configurations": 6480,
+      "active": 5340,
+      "max_rate100": 0.08895705521472393,
+      "max_rate150": 0.03374233128834356,
+      "passing70pct100": 0,
+      "passing70pct150": 0
+    }
+  },
+  "E028_audit": {
+    "MES_point_value": 5,
+    "contracts": 2,
+    "roundtrip_fee_per_contract": 1.24,
+    "tick_points": 0.25,
+    "baseline_slippage_ticks_per_side": 1,
+    "stress_slippage_ticks_per_side": 2,
+    "matched_trades": 158,
+    "baseline_net": 715.6599999999994,
+    "stress_net": -526.8400000000005,
+    "delta": -1242.5,
+    "changed_exit_reason": 5,
+    "changed_exit_timestamp": 22,
+    "fee_delta": 0,
+    "naive_fixed_path_extra_slippage": -790.0,
+    "explanation": "A fixed-path two-sided subtraction is not an exact reconciliation: stops/targets anchor to the slipped entry; targets pay modeled adverse exit slip; stress can change target/stop hits and exit times. Saved fill-by-fill PNL is authoritative. Target market-style execution is not a resting-limit model.",
+    "delta_unchanged_paths": -362.5,
+    "delta_changed_paths": -880.0
+  },
+  "decision": "NO VERIFIED IMPROVEMENT",
+  "untouched_data_accessed": false,
+  "diagnostic_without_inactivity_NOT_valid_account_model": {
+    "1_evaluation": {
+      "trials": 28,
+      "eval_passed_paths": 0,
+      "paths_with_request": 0,
+      "paths_with_two_requests": 0,
+      "paths_with_three_requests": 0,
+      "total_simulated_requests": 0,
+      "failed_paths": 1,
+      "failed_after_request_paths": 0,
+      "alive_horizon_paths": 27,
+      "observed_request_fraction": 0.0,
+      "mean_simulated_trader_net": 0.0,
+      "median_sessions_to_first_request": null,
+      "post_request_20_session_assessable_paths": 0,
+      "post_request_20_session_survivors": 0,
+      "post_request_20_session_censored_paths": 0,
+      "outcomes": {
+        "evaluation_pending": 27,
+        "evaluation_breach": 1
+      },
+      "note": "Overlapping historical starts are dependent, not independent payout probabilities. Requests are simulated eligibility events, not approvals or real payments. Trading continues after requests; evaluation/reset/hosting fees excluded."
+    },
+    "1_funded": {
+      "trials": 28,
+      "eval_passed_paths": 0,
+      "paths_with_request": 0,
+      "paths_with_two_requests": 0,
+      "paths_with_three_requests": 0,
+      "total_simulated_requests": 0,
+      "failed_paths": 1,
+      "failed_after_request_paths": 0,
+      "alive_horizon_paths": 27,
+      "observed_request_fraction": 0.0,
+      "mean_simulated_trader_net": 0.0,
+      "median_sessions_to_first_request": null,
+      "post_request_20_session_assessable_paths": 0,
+      "post_request_20_session_survivors": 0,
+      "post_request_20_session_censored_paths": 0,
+      "outcomes": {
+        "funded_alive_no_request": 27,
+        "funded_breach": 1
+      },
+      "note": "Overlapping historical starts are dependent, not independent payout probabilities. Requests are simulated eligibility events, not approvals or real payments. Trading continues after requests; evaluation/reset/hosting fees excluded."
+    },
+    "2_evaluation": {
+      "trials": 28,
+      "eval_passed_paths": 0,
+      "paths_with_request": 0,
+      "paths_with_two_requests": 0,
+      "paths_with_three_requests": 0,
+      "total_simulated_requests": 0,
+      "failed_paths": 2,
+      "failed_after_request_paths": 0,
+      "alive_horizon_paths": 26,
+      "observed_request_fraction": 0.0,
+      "mean_simulated_trader_net": 0.0,
+      "median_sessions_to_first_request": null,
+      "post_request_20_session_assessable_paths": 0,
+      "post_request_20_session_survivors": 0,
+      "post_request_20_session_censored_paths": 0,
+      "outcomes": {
+        "evaluation_pending": 26,
+        "evaluation_breach": 2
+      },
+      "note": "Overlapping historical starts are dependent, not independent payout probabilities. Requests are simulated eligibility events, not approvals or real payments. Trading continues after requests; evaluation/reset/hosting fees excluded."
+    },
+    "2_funded": {
+      "trials": 28,
+      "eval_passed_paths": 0,
+      "paths_with_request": 0,
+      "paths_with_two_requests": 0,
+      "paths_with_three_requests": 0,
+      "total_simulated_requests": 0,
+      "failed_paths": 2,
+      "failed_after_request_paths": 0,
+      "alive_horizon_paths": 26,
+      "observed_request_fraction": 0.0,
+      "mean_simulated_trader_net": 0.0,
+      "median_sessions_to_first_request": null,
+      "post_request_20_session_assessable_paths": 0,
+      "post_request_20_session_survivors": 0,
+      "post_request_20_session_censored_paths": 0,
+      "outcomes": {
+        "funded_alive_no_request": 26,
+        "funded_breach": 2
+      },
+      "note": "Overlapping historical starts are dependent, not independent payout probabilities. Requests are simulated eligibility events, not approvals or real payments. Trading continues after requests; evaluation/reset/hosting fees excluded."
+    }
+  }
+}

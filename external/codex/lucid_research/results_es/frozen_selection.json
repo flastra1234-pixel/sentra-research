@@ -1,0 +1,38 @@
+{
+  "configs": [
+    {
+      "family": "orb",
+      "signal_minutes": 5,
+      "atr_period": 5,
+      "start_minute": 585,
+      "end_minute": 900,
+      "max_hold": 120,
+      "max_trades": 1,
+      "min_stop": 1,
+      "max_stop": 20,
+      "reward_r": 1,
+      "or_minutes": 30,
+      "stop_mode": "or_fraction",
+      "stop_fraction": 0.5,
+      "id": "E028",
+      "source_config_id": "H028"
+    }
+  ],
+  "quantity": 2,
+  "instrument": "MES",
+  "price_proxy": "ES",
+  "point_value": 5.0,
+  "branch": "es_higher_timeframe",
+  "tested_configs": 256,
+  "holdout_inspected": false,
+  "selection": "development gates top2 per family; validation gates top1 per family max3",
+  "sessions": {
+    "development": 70,
+    "validation": 62,
+    "development_first": "2025-06-20",
+    "development_last": "2025-09-30",
+    "validation_first": "2025-10-01",
+    "validation_last": "2025-12-31",
+    "holdout_inspected": false
+  }
+}

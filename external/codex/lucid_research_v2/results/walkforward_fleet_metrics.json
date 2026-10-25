@@ -1,0 +1,52 @@
+{
+  "1": {
+    "trades": 174,
+    "net": -1025.6,
+    "pf": 0.7660221019683712,
+    "max_closed_dd": 1442.8200000000006,
+    "intraday_eod_dd": 1442.8200000000004,
+    "sessions": 390,
+    "qualifying_days": 4,
+    "win_rate": 0.3850574712643678,
+    "mean_trade": -5.894252873563218,
+    "positive_months": 6,
+    "months": 20,
+    "top5_winner_share": null,
+    "daily_bootstrap": {
+      "sessions": 390,
+      "mean_daily_pnl": -2.62974358974359,
+      "confidence": 0.95,
+      "ci_low": -6.567108974358973,
+      "ci_high": 1.1907262820512814,
+      "centered_bootstrap_p_value": 0.9075462268865567,
+      "block_length": 5,
+      "bootstrap_samples": 2000,
+      "note": "Single-series stationary-block diagnostic; not search-adjusted or fresh holdout evidence."
+    }
+  },
+  "2": {
+    "trades": 173,
+    "net": -1179.8700000000001,
+    "pf": 0.7344184360924597,
+    "max_closed_dd": 1562.0700000000004,
+    "intraday_eod_dd": 1562.0700000000004,
+    "sessions": 390,
+    "qualifying_days": 3,
+    "win_rate": 0.3872832369942196,
+    "mean_trade": -6.820057803468209,
+    "positive_months": 6,
+    "months": 20,
+    "top5_winner_share": null,
+    "daily_bootstrap": {
+      "sessions": 390,
+      "mean_daily_pnl": -3.0253076923076927,
+      "confidence": 0.95,
+      "ci_low": -7.038083333333334,
+      "ci_high": 0.8356442307692235,
+      "centered_bootstrap_p_value": 0.9380309845077461,
+      "block_length": 5,
+      "bootstrap_samples": 2000,
+      "note": "Single-series stationary-block diagnostic; not search-adjusted or fresh holdout evidence."
+    }
+  }
+}

@@ -1,0 +1,6 @@
+# S003 — unconditional European-opening drift diagnostic
+Frozen before markout results. Based on NYFed original-author inventory-risk mechanism and July2026 report of decay after2021. Partial replication only: available2026 data cannot identify the historical2010–20 change or condition on actual closing inventory imbalance.
+
+Two tests only:MES andMNQ mean2:00–3:00America/New_York return after constant two-ticks-per-side adverse market friction and$1.24roundtrip fee for ONE micro. No sizingincrease,search overhours,tail-loss exclusion,orretuning. All60minutes2:00..2:59and3:00open required, weekdays only, datesbeforeOct10guard. Compute grosspoint markout and hypotheticalone-contractfixed-holdnet diagnostic. This has NOprotectivestop,NOaccountvalidation,and is NOTa tradingcandidate. Dollar resultdoesnotauthorizepositionriskorvalidateownerprofit.
+
+Useall eligible days including losses; mean,median,worst,100/150daycounts;5sessionblockbootstrap95%CI andcenteredone-sidedmeanp,Holmacross2assets. Chronologicalhalvesmustbothpositiveforanypositive mechanismlead. A positive resultwouldstillrequire fullstrategy protective-risk,independentconfirmationandlifecyclevalidation. All2026 researcher-consumed,noreserveddataaccess. Failures close onlythisunconditionalfixed-hourimplementation,notconditionalinventory/flowhypothesis.
