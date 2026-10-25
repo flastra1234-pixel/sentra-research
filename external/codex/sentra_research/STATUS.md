@@ -55,3 +55,7 @@ The requested private repository https://github.com/flastra1234-pixel/sentra-ext
 ## Corrected repository publication attempt
 
 The correct repository `flastra1234-pixel/sentra-research` is readable and public. A new local branch contains only `external/codex/**`. Git push and connected GitHub branch creation both returned403; PR creation returned `Resource not accessible by integration`. No remote branch, research commit or PR was published. Integration Contents:write and Pull requests:write access are required. The earlier404 concerned the obsolete repository name.
+
+## Publication unblocked — awaiting evidence review
+
+Write access now works. The sanitized snapshot is published on `codex/research-evidence-20261025` in `flastra1234-pixel/sentra-research`. Pull request: https://github.com/flastra1234-pixel/sentra-research/pull/1. The earlier403 findings are historical and no longer the current blocker. The PR is open for T1/T4 review; nothing has been merged into main or deployed. Research status remains NO VERIFIED IMPROVEMENT.

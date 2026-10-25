@@ -99,21 +99,14 @@
   "publication": {
     "repository": "https://github.com/flastra1234-pixel/sentra-research",
     "path": "external/codex",
-    "local_branch": "codex/research-evidence-20261025",
-    "status": "BLOCKED_WRITE_403",
-    "remote_commit": null,
-    "pull_request": null,
-    "blockers": [
-      "Git HTTPS push denied403",
-      "ConnectedGitHub create_branch403 Resource not accessible by integration",
-      "CLI createPullRequest Resource not accessible by integration"
-    ],
-    "required_integration_access": [
-      "Contents: write",
-      "Pull requests: write"
-    ],
+    "branch": "codex/research-evidence-20261025",
+    "status": "PUBLISHED_BRANCH_PR_OPEN_REVIEW_PENDING",
+    "published_evidence_commit": "0ec135daa7f1e60caa581ca0d99d2e5f52f66743",
+    "pull_request": "https://github.com/flastra1234-pixel/sentra-research/pull/1",
+    "publication_verified": true,
+    "merged": false,
+    "deployed": false,
     "raw_vendor_data_excluded": true,
-    "source_price_levels_excluded": true,
-    "publication_verified": false
+    "source_price_levels_excluded": true
   }
 }

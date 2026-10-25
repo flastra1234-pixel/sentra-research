@@ -122,8 +122,8 @@
   "files_sha256": [
     {
       "path": "STATUS.md",
-      "sha256": "05d928035f584bd8c5066a9913de100f6da1bef0b3b0601d294edce1fef3ae4f",
-      "bytes": 7680
+      "sha256": "e6c169cb770530beec5d7daf88fb1377e854d14d7e4324e5daa619070bc777f9",
+      "bytes": 8152
     },
     {
       "path": "lucid_rules.md",
@@ -132,8 +132,8 @@
     },
     {
       "path": "CHECKPOINT.json",
-      "sha256": "2f0454f4df181f650263f89830ca870619da08ae05d55c7d4f43b6fe716c3269",
-      "bytes": 4888
+      "sha256": "7c57be237291b2d66ec1fa2d29670434e536a3319fa7d285c9521642f4fc6ea8",
+      "bytes": 4747
     },
     {
       "path": "README.md",
@@ -227,8 +227,8 @@
     },
     {
       "path": "sentra_research/STATUS.md",
-      "sha256": "05d928035f584bd8c5066a9913de100f6da1bef0b3b0601d294edce1fef3ae4f",
-      "bytes": 7680
+      "sha256": "e6c169cb770530beec5d7daf88fb1377e854d14d7e4324e5daa619070bc777f9",
+      "bytes": 8152
     },
     {
       "path": "sentra_research/flow_contract.py",
@@ -242,8 +242,8 @@
     },
     {
       "path": "sentra_research/CHECKPOINT.json",
-      "sha256": "2f0454f4df181f650263f89830ca870619da08ae05d55c7d4f43b6fe716c3269",
-      "bytes": 4888
+      "sha256": "7c57be237291b2d66ec1fa2d29670434e536a3319fa7d285c9521642f4fc6ea8",
+      "bytes": 4747
     },
     {
       "path": "sentra_research/PUBLICATION_README.md",
@@ -1231,5 +1231,6 @@
       "bytes": 1543
     }
   ],
-  "publication_status": "BLOCKED_WRITE_403"
+  "publication_status": "PUBLISHED_BRANCH_PR_OPEN_REVIEW_PENDING",
+  "pull_request": "https://github.com/flastra1234-pixel/sentra-research/pull/1"
 }
