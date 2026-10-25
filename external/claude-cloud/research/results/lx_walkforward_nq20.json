@@ -1,0 +1,1986 @@
+[
+ {
+  "year": 2023,
+  "train": [
+   "2020-01-30",
+   "2022-12-30"
+  ],
+  "test": [
+   "2023-01-03",
+   "2023-12-29"
+  ],
+  "survivors": 64,
+  "pool": 10,
+  "test_results": {
+   "eval": {
+    "stats": {
+     "sessions": 257,
+     "mean_day": 24.590043254273215,
+     "sd_day": 357.652980294439,
+     "sharpe_ann": 1.091434593256875,
+     "t": 1.1022091347570493,
+     "max_dd": -4819.451380177236,
+     "worst_day": -874.8902872637541,
+     "worst_intraday": -888.6068490058544,
+     "pct_days_ge_100": 0.3463035019455253,
+     "pct_up_days": 0.4163424124513619,
+     "total": 6319.641116348216
+    },
+    "lucid": {
+     "pass_10": 0.2655,
+     "ppmc_1k": 0.105,
+     "any_payout_21": 0.36485,
+     "owner_mean_21": 341.73705696021415
+    },
+    "wr": 0.4101633393829401,
+    "rr": 1.8498469130248028,
+    "micros": 3,
+    "lock": 600.0,
+    "train_score": 0.3685,
+    "n_sleeves": 3,
+    "zero_edge_pass_10": 0.1623
+   },
+   "funded": {
+    "stats": {
+     "sessions": 257,
+     "mean_day": 57.871222486780376,
+     "sd_day": 516.8199288210642,
+     "sharpe_ann": 1.7775575696151755,
+     "t": 1.7951054537679185,
+     "max_dd": -5229.96297328754,
+     "worst_day": -1163.739413916789,
+     "worst_intraday": -1398.317362765182,
+     "pct_days_ge_100": 0.38910505836575876,
+     "pct_up_days": 0.48249027237354086,
+     "total": 14872.904179102556
+    },
+    "lucid": {
+     "pass_10": 0.15,
+     "ppmc_1k": 0.09255,
+     "any_payout_21": 0.30525,
+     "owner_mean_21": 326.48965223989654
+    },
+    "wr": 0.4845360824742268,
+    "rr": 1.2598993843631383,
+    "micros": 5,
+    "lock": null,
+    "train_score": 0.23625,
+    "n_sleeves": 5
+   },
+   "journey": {
+    "p_payout_within_10": 0.0051,
+    "p_payout_within_15": 0.03885,
+    "p_payout_within_21": 0.08535,
+    "p_payout_within_42": 0.1174,
+    "p_pass_within_10": 0.26775,
+    "median_sessions_to_first_payout": 18.0,
+    "owner_mean_within_42": 166.78617979910038
+   },
+   "fast_fleet": {
+    "train_score": 0.1005,
+    "micros": 5,
+    "lock": 600.0,
+    "stats": {
+     "sessions": 257,
+     "mean_day": 9.643767800600678,
+     "sd_day": 507.87117535307743,
+     "sharpe_ann": 0.3014348426169698,
+     "t": 0.3044105795428844,
+     "max_dd": -5292.522366550539,
+     "worst_day": -1555.0664040472122,
+     "worst_intraday": -2938.9652601229745,
+     "pct_days_ge_100": 0.42023346303501946,
+     "pct_up_days": 0.5097276264591439,
+     "total": 2478.448324754374
+    },
+    "p_payout_within_10": 0.00655,
+    "p_payout_within_15": 0.0308,
+    "p_payout_within_21": 0.0423,
+    "p_payout_within_42": 0.0439,
+    "p_pass_within_10": 0.2563,
+    "median_sessions_to_first_payout": 13.0,
+    "owner_mean_within_42": 49.300971456584584
+   },
+   "journey_63": {
+    "p_payout_within_10": 0.00495,
+    "p_payout_within_15": 0.03825,
+    "p_payout_within_21": 0.08405,
+    "p_payout_within_42": 0.11705,
+    "p_pass_within_10": 0.2689,
+    "median_sessions_to_first_payout": 18.0,
+    "owner_mean_within_63": 220.43740167254273
+   }
+  },
+  "fleets": {
+   "eval": {
+    "lock": 600.0,
+    "sleeves": [
+     {
+      "family": "imom",
+      "filter": "all",
+      "knobs": {
+       "sig_mode": 2,
+       "te": 1260,
+       "k": 0.0,
+       "follow": 1,
+       "stop": 0.3,
+       "tf": 0,
+       "tx": 1364
+      },
+      "params": [
+       2,
+       1260,
+       0.0,
+       1,
+       0.3,
+       0,
+       1364
+      ],
+      "micros": 1
+     },
+     {
+      "family": "drive",
+      "filter": "all",
+      "knobs": {
+       "t1": 60,
+       "k": 0.1,
+       "follow": 1,
+       "stop": 0.3,
+       "target_r": 2,
+       "tx": 1315,
+       "tf": 0,
+       "anchor": 930
+      },
+      "params": [
+       930,
+       60,
+       0.1,
+       1,
+       0.3,
+       2,
+       1315,
+       0
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 1,
+       "stop": [
+        2,
+        0.1
+       ],
+       "target_r": 0,
+       "be_r": 1,
+       "tf": 0,
+       "window": "on_rth",
+       "ra": 0,
+       "rb": 930,
+       "cut": 1020,
+       "tx": 1315
+      },
+      "params": [
+       0,
+       930,
+       1020,
+       1,
+       2,
+       0.1,
+       0,
+       1315,
+       1,
+       0,
+       1
+      ],
+      "micros": 1
+     }
+    ]
+   },
+   "funded": {
+    "lock": null,
+    "sleeves": [
+     {
+      "family": "noise",
+      "filter": "all",
+      "knobs": {
+       "lb": 2,
+       "mult": 1.5,
+       "freq": 15,
+       "first_t": 60,
+       "stop_mode": 1,
+       "every": 1,
+       "reentry": 1,
+       "gap_adj": 0,
+       "tf": 1
+      },
+      "params": [
+       2,
+       1.5,
+       15,
+       60,
+       1,
+       1,
+       1,
+       0,
+       1,
+       0.0,
+       1319
+      ],
+      "micros": 1
+     },
+     {
+      "family": "imom",
+      "filter": "all",
+      "knobs": {
+       "sig_mode": 2,
+       "te": 1260,
+       "k": 0.0,
+       "follow": 1,
+       "stop": 0.3,
+       "tf": 0,
+       "tx": 1364
+      },
+      "params": [
+       2,
+       1260,
+       0.0,
+       1,
+       0.3,
+       0,
+       1364
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 0,
+       "stop": [
+        2,
+        0.2
+       ],
+       "target_r": 1,
+       "be_r": 1,
+       "tf": 0,
+       "window": "pre_data",
+       "ra": 810,
+       "rb": 870,
+       "cut": 900,
+       "tx": 1080
+      },
+      "params": [
+       810,
+       870,
+       900,
+       0,
+       2,
+       0.2,
+       1,
+       1080,
+       1,
+       0,
+       1
+      ],
+      "micros": 1
+     },
+     {
+      "family": "drive",
+      "filter": "all",
+      "knobs": {
+       "t1": 60,
+       "k": 0.1,
+       "follow": 1,
+       "stop": 0.3,
+       "target_r": 2,
+       "tx": 1315,
+       "tf": 0,
+       "anchor": 930
+      },
+      "params": [
+       930,
+       60,
+       0.1,
+       1,
+       0.3,
+       2,
+       1315,
+       0
+      ],
+      "micros": 1
+     },
+     {
+      "family": "gap",
+      "filter": "all",
+      "knobs": {
+       "gmin": 0.2,
+       "gmax": 0.6,
+       "mode": 1,
+       "delay": 15,
+       "stop": 0.25,
+       "tgt": 1.0,
+       "tx": 990,
+       "tf": 0
+      },
+      "params": [
+       0.2,
+       0.6,
+       1,
+       15,
+       0.25,
+       2.0,
+       990,
+       0
+      ],
+      "micros": 1
+     }
+    ]
+   },
+   "journey": {
+    "lock": 600.0,
+    "sleeves": [
+     {
+      "family": "noise",
+      "filter": "all",
+      "knobs": {
+       "lb": 2,
+       "mult": 1.5,
+       "freq": 15,
+       "first_t": 60,
+       "stop_mode": 1,
+       "every": 1,
+       "reentry": 1,
+       "gap_adj": 0,
+       "tf": 1
+      },
+      "params": [
+       2,
+       1.5,
+       15,
+       60,
+       1,
+       1,
+       1,
+       0,
+       1,
+       0.0,
+       1319
+      ],
+      "micros": 1
+     },
+     {
+      "family": "noise",
+      "filter": "all",
+      "knobs": {
+       "lb": 0,
+       "mult": 0.8,
+       "freq": 30,
+       "first_t": 30,
+       "stop_mode": 0,
+       "every": 0,
+       "reentry": 1,
+       "gap_adj": 1,
+       "tf": 0
+      },
+      "params": [
+       0,
+       0.8,
+       30,
+       30,
+       0,
+       0,
+       1,
+       1,
+       0,
+       0.0,
+       1319
+      ],
+      "micros": 2
+     },
+     {
+      "family": "imom",
+      "filter": "all",
+      "knobs": {
+       "sig_mode": 3,
+       "te": 1260,
+       "k": 0.0,
+       "follow": 1,
+       "stop": 0.3,
+       "tf": 0,
+       "tx": 1364
+      },
+      "params": [
+       3,
+       1260,
+       0.0,
+       1,
+       0.3,
+       0,
+       1364
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 0,
+       "stop": [
+        2,
+        0.2
+       ],
+       "target_r": 1,
+       "be_r": 1,
+       "tf": 0,
+       "window": "pre_data",
+       "ra": 810,
+       "rb": 870,
+       "cut": 900,
+       "tx": 1080
+      },
+      "params": [
+       810,
+       870,
+       900,
+       0,
+       2,
+       0.2,
+       1,
+       1080,
+       1,
+       0,
+       1
+      ],
+      "micros": 1
+     }
+    ]
+   }
+  }
+ },
+ {
+  "year": 2024,
+  "train": [
+   "2020-01-30",
+   "2023-12-29"
+  ],
+  "test": [
+   "2024-01-02",
+   "2024-12-31"
+  ],
+  "survivors": 754,
+  "pool": 22,
+  "test_results": {
+   "eval": {
+    "stats": {
+     "sessions": 259,
+     "mean_day": 33.30619530620931,
+     "sd_day": 390.66455776852234,
+     "sharpe_ann": 1.353384761617249,
+     "t": 1.3720530195069982,
+     "max_dd": -2980.7108066086203,
+     "worst_day": -1050.6089868982604,
+     "worst_intraday": -1173.1679794729582,
+     "pct_days_ge_100": 0.38996138996138996,
+     "pct_up_days": 0.4980694980694981,
+     "total": 8626.30458430821
+    },
+    "lucid": {
+     "pass_10": 0.26065,
+     "ppmc_1k": 0.0828,
+     "any_payout_21": 0.3556,
+     "owner_mean_21": 305.6029654439637
+    },
+    "wr": 0.4657863145258103,
+    "rr": 1.4646654082996096,
+    "micros": 5,
+    "lock": 600.0,
+    "train_score": 0.39525,
+    "n_sleeves": 5,
+    "zero_edge_pass_10": 0.1525
+   },
+   "funded": {
+    "stats": {
+     "sessions": 259,
+     "mean_day": 21.567679765379847,
+     "sd_day": 536.233344917053,
+     "sharpe_ann": 0.6384837969153339,
+     "t": 0.6472908860131884,
+     "max_dd": -8145.589813986982,
+     "worst_day": -2296.2464437953963,
+     "worst_intraday": -2317.901856426147,
+     "pct_days_ge_100": 0.44787644787644787,
+     "pct_up_days": 0.4942084942084942,
+     "total": 5586.02905923338
+    },
+    "lucid": {
+     "pass_10": 0.13995,
+     "ppmc_1k": 0.1124,
+     "any_payout_21": 0.3203,
+     "owner_mean_21": 330.9990593106294
+    },
+    "wr": 0.39520958083832336,
+    "rr": 1.6590343926038067,
+    "micros": 5,
+    "lock": null,
+    "train_score": 0.1975,
+    "n_sleeves": 4
+   },
+   "journey": {
+    "p_payout_within_10": 0.0036,
+    "p_payout_within_15": 0.03825,
+    "p_payout_within_21": 0.07945,
+    "p_payout_within_42": 0.1063,
+    "p_pass_within_10": 0.25325,
+    "median_sessions_to_first_payout": 18.0,
+    "owner_mean_within_42": 129.56153106672667
+   },
+   "fast_fleet": {
+    "train_score": 0.10725,
+    "micros": 5,
+    "lock": 600.0,
+    "stats": {
+     "sessions": 259,
+     "mean_day": 17.040128968881973,
+     "sd_day": 421.78516386204876,
+     "sharpe_ann": 0.6413304320235584,
+     "t": 0.6501767869088118,
+     "max_dd": -6766.302854904462,
+     "worst_day": -1070.837382541353,
+     "worst_intraday": -1227.7262779653317,
+     "pct_days_ge_100": 0.4092664092664093,
+     "pct_up_days": 0.5096525096525096,
+     "total": 4413.393402940431
+    },
+    "p_payout_within_10": 0.0018,
+    "p_payout_within_15": 0.03455,
+    "p_payout_within_21": 0.0883,
+    "p_payout_within_42": 0.1143,
+    "p_pass_within_10": 0.2748,
+    "median_sessions_to_first_payout": 18.0,
+    "owner_mean_within_42": 130.9537645953981
+   },
+   "journey_63": {
+    "p_payout_within_10": 0.0047,
+    "p_payout_within_15": 0.03875,
+    "p_payout_within_21": 0.07845,
+    "p_payout_within_42": 0.10435,
+    "p_pass_within_10": 0.25565,
+    "median_sessions_to_first_payout": 17.0,
+    "owner_mean_within_63": 147.49626197548838
+   }
+  },
+  "fleets": {
+   "eval": {
+    "lock": 600.0,
+    "sleeves": [
+     {
+      "family": "drive",
+      "filter": "all",
+      "knobs": {
+       "t1": 60,
+       "k": 0.1,
+       "follow": 1,
+       "stop": 0.3,
+       "target_r": 2,
+       "tx": 1315,
+       "tf": 0,
+       "anchor": 930
+      },
+      "params": [
+       930,
+       60,
+       0.1,
+       1,
+       0.3,
+       2,
+       1315,
+       0
+      ],
+      "micros": 1
+     },
+     {
+      "family": "noise",
+      "filter": "all",
+      "knobs": {
+       "lb": 0,
+       "mult": 1.5,
+       "freq": 30,
+       "first_t": 30,
+       "stop_mode": 0,
+       "every": 1,
+       "reentry": 1,
+       "gap_adj": 1,
+       "tf": 1
+      },
+      "params": [
+       0,
+       1.5,
+       30,
+       30,
+       0,
+       1,
+       1,
+       1,
+       1,
+       0.0,
+       1319
+      ],
+      "micros": 1
+     },
+     {
+      "family": "imom",
+      "filter": "all",
+      "knobs": {
+       "sig_mode": 2,
+       "te": 1260,
+       "k": 0.1,
+       "follow": 1,
+       "stop": 0.3,
+       "tf": 0,
+       "tx": 1364
+      },
+      "params": [
+       2,
+       1260,
+       0.1,
+       1,
+       0.3,
+       0,
+       1364
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 1,
+       "stop": [
+        2,
+        0.2
+       ],
+       "target_r": 0,
+       "be_r": 1,
+       "tf": 1,
+       "window": "orb",
+       "ra": 930,
+       "rb": 990,
+       "cut": 1170,
+       "tx": 1364
+      },
+      "params": [
+       930,
+       990,
+       1170,
+       1,
+       2,
+       0.2,
+       0,
+       1364,
+       1,
+       1,
+       1
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 0,
+       "stop": [
+        0,
+        0.0
+       ],
+       "target_r": 1,
+       "be_r": 1,
+       "tf": 0,
+       "window": "pre_data",
+       "ra": 810,
+       "rb": 870,
+       "cut": 960,
+       "tx": 1364
+      },
+      "params": [
+       810,
+       870,
+       960,
+       0,
+       0,
+       0.0,
+       1,
+       1364,
+       1,
+       0,
+       1
+      ],
+      "micros": 1
+     }
+    ]
+   },
+   "funded": {
+    "lock": null,
+    "sleeves": [
+     {
+      "family": "noise",
+      "filter": "all",
+      "knobs": {
+       "lb": 0,
+       "mult": 0.8,
+       "freq": 30,
+       "first_t": 60,
+       "stop_mode": 1,
+       "every": 1,
+       "reentry": 1,
+       "gap_adj": 0,
+       "tf": 1
+      },
+      "params": [
+       0,
+       0.8,
+       30,
+       60,
+       1,
+       1,
+       1,
+       0,
+       1,
+       0.0,
+       1319
+      ],
+      "micros": 1
+     },
+     {
+      "family": "noise",
+      "filter": "all",
+      "knobs": {
+       "lb": 0,
+       "mult": 1.5,
+       "freq": 30,
+       "first_t": 30,
+       "stop_mode": 0,
+       "every": 1,
+       "reentry": 1,
+       "gap_adj": 1,
+       "tf": 1
+      },
+      "params": [
+       0,
+       1.5,
+       30,
+       30,
+       0,
+       1,
+       1,
+       1,
+       1,
+       0.0,
+       1319
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 0,
+       "stop": [
+        0,
+        0.0
+       ],
+       "target_r": 1,
+       "be_r": 1,
+       "tf": 0,
+       "window": "pre_data",
+       "ra": 810,
+       "rb": 870,
+       "cut": 960,
+       "tx": 1364
+      },
+      "params": [
+       810,
+       870,
+       960,
+       0,
+       0,
+       0.0,
+       1,
+       1364,
+       1,
+       0,
+       1
+      ],
+      "micros": 2
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 1,
+       "stop": [
+        2,
+        0.2
+       ],
+       "target_r": 0,
+       "be_r": 1,
+       "tf": 0,
+       "window": "on_rth",
+       "ra": 0,
+       "rb": 930,
+       "cut": 1020,
+       "tx": 1364
+      },
+      "params": [
+       0,
+       930,
+       1020,
+       1,
+       2,
+       0.2,
+       0,
+       1364,
+       1,
+       0,
+       1
+      ],
+      "micros": 1
+     }
+    ]
+   },
+   "journey": {
+    "lock": 600.0,
+    "sleeves": [
+     {
+      "family": "noise",
+      "filter": "all",
+      "knobs": {
+       "lb": 0,
+       "mult": 0.8,
+       "freq": 30,
+       "first_t": 60,
+       "stop_mode": 1,
+       "every": 1,
+       "reentry": 1,
+       "gap_adj": 0,
+       "tf": 1
+      },
+      "params": [
+       0,
+       0.8,
+       30,
+       60,
+       1,
+       1,
+       1,
+       0,
+       1,
+       0.0,
+       1319
+      ],
+      "micros": 1
+     },
+     {
+      "family": "imom",
+      "filter": "all",
+      "knobs": {
+       "sig_mode": 3,
+       "te": 1260,
+       "k": 0.0,
+       "follow": 1,
+       "stop": 0.3,
+       "tf": 0,
+       "tx": 1364
+      },
+      "params": [
+       3,
+       1260,
+       0.0,
+       1,
+       0.3,
+       0,
+       1364
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 0,
+       "stop": [
+        2,
+        0.2
+       ],
+       "target_r": 2,
+       "be_r": 0,
+       "tf": 1,
+       "window": "orb",
+       "ra": 930,
+       "rb": 990,
+       "cut": 1170,
+       "tx": 1315
+      },
+      "params": [
+       930,
+       990,
+       1170,
+       0,
+       2,
+       0.2,
+       2,
+       1315,
+       0,
+       1,
+       1
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 0,
+       "stop": [
+        2,
+        0.2
+       ],
+       "target_r": 2,
+       "be_r": 1,
+       "tf": 0,
+       "window": "pre_data",
+       "ra": 810,
+       "rb": 870,
+       "cut": 960,
+       "tx": 1080
+      },
+      "params": [
+       810,
+       870,
+       960,
+       0,
+       2,
+       0.2,
+       2,
+       1080,
+       1,
+       0,
+       1
+      ],
+      "micros": 1
+     },
+     {
+      "family": "drive",
+      "filter": "all",
+      "knobs": {
+       "t1": 60,
+       "k": 0.2,
+       "follow": 1,
+       "stop": 0.15,
+       "target_r": 2,
+       "tx": 1315,
+       "tf": 0,
+       "anchor": 930
+      },
+      "params": [
+       930,
+       60,
+       0.2,
+       1,
+       0.15,
+       2,
+       1315,
+       0
+      ],
+      "micros": 1
+     }
+    ]
+   }
+  }
+ },
+ {
+  "year": 2025,
+  "train": [
+   "2020-01-30",
+   "2024-12-31"
+  ],
+  "test": [
+   "2025-01-02",
+   "2025-12-31"
+  ],
+  "survivors": 1627,
+  "pool": 28,
+  "test_results": {
+   "eval": {
+    "stats": {
+     "sessions": 256,
+     "mean_day": -7.143400336809862,
+     "sd_day": 488.3274589086387,
+     "sharpe_ann": -0.23221705593389383,
+     "t": -0.23405279245282246,
+     "max_dd": -7166.405730823315,
+     "worst_day": -1983.6944700083334,
+     "worst_intraday": -1987.6899128805499,
+     "pct_days_ge_100": 0.4453125,
+     "pct_up_days": 0.4765625,
+     "total": -1828.7104862233248
+    },
+    "lucid": {
+     "pass_10": 0.225,
+     "ppmc_1k": 0.0698,
+     "any_payout_21": 0.2571,
+     "owner_mean_21": 230.26413875581696
+    },
+    "wr": 0.487012987012987,
+    "rr": 1.195664368986534,
+    "micros": 3,
+    "lock": 600.0,
+    "train_score": 0.3335,
+    "n_sleeves": 3,
+    "zero_edge_pass_10": 0.3619
+   },
+   "funded": {
+    "stats": {
+     "sessions": 256,
+     "mean_day": -10.030099278489173,
+     "sd_day": 715.8496137836732,
+     "sharpe_ann": -0.22242505525069808,
+     "t": -0.22418338344500893,
+     "max_dd": -11062.478966882003,
+     "worst_day": -2198.6208282741018,
+     "worst_intraday": -3770.7265377137337,
+     "pct_days_ge_100": 0.375,
+     "pct_up_days": 0.47265625,
+     "total": -2567.7054152932283
+    },
+    "lucid": {
+     "pass_10": 0.1145,
+     "ppmc_1k": 0.0399,
+     "any_payout_21": 0.1702,
+     "owner_mean_21": 169.72814818189138
+    },
+    "wr": 0.4440677966101695,
+    "rr": 1.2153525378470318,
+    "micros": 6,
+    "lock": null,
+    "train_score": 0.148,
+    "n_sleeves": 4
+   },
+   "journey": {
+    "p_payout_within_10": 0.00365,
+    "p_payout_within_15": 0.02525,
+    "p_payout_within_21": 0.0441,
+    "p_payout_within_42": 0.05045,
+    "p_pass_within_10": 0.22865,
+    "median_sessions_to_first_payout": 15.0,
+    "owner_mean_within_42": 62.068515243290385
+   },
+   "fast_fleet": {
+    "train_score": 0.0745,
+    "micros": 5,
+    "lock": 600.0,
+    "stats": {
+     "sessions": 256,
+     "mean_day": -38.532381451135144,
+     "sd_day": 490.2411673114552,
+     "sharpe_ann": -1.2477177218943798,
+     "t": -1.2575812565868874,
+     "max_dd": -15147.169766312105,
+     "worst_day": -1654.7453916736108,
+     "worst_intraday": -1658.7408345458273,
+     "pct_days_ge_100": 0.3828125,
+     "pct_up_days": 0.44921875,
+     "total": -9864.289651490597
+    },
+    "p_payout_within_10": 0.00185,
+    "p_payout_within_15": 0.01715,
+    "p_payout_within_21": 0.02935,
+    "p_payout_within_42": 0.0334,
+    "p_pass_within_10": 0.18845,
+    "median_sessions_to_first_payout": 15.0,
+    "owner_mean_within_42": 31.30049429802283
+   },
+   "journey_63": {
+    "p_payout_within_10": 0.0029,
+    "p_payout_within_15": 0.027,
+    "p_payout_within_21": 0.0465,
+    "p_payout_within_42": 0.05305,
+    "p_pass_within_10": 0.2209,
+    "median_sessions_to_first_payout": 15.0,
+    "owner_mean_within_63": 67.02211637644845
+   }
+  },
+  "fleets": {
+   "eval": {
+    "lock": 600.0,
+    "sleeves": [
+     {
+      "family": "drive",
+      "filter": "all",
+      "knobs": {
+       "t1": 60,
+       "k": 0.1,
+       "follow": 1,
+       "stop": 0.3,
+       "target_r": 2,
+       "tx": 1315,
+       "tf": 0,
+       "anchor": 930
+      },
+      "params": [
+       930,
+       60,
+       0.1,
+       1,
+       0.3,
+       2,
+       1315,
+       0
+      ],
+      "micros": 1
+     },
+     {
+      "family": "drive",
+      "filter": "all",
+      "knobs": {
+       "t1": 30,
+       "k": 0.1,
+       "follow": 1,
+       "stop": 0.3,
+       "target_r": 2,
+       "tx": 1315,
+       "tf": 0,
+       "anchor": 930
+      },
+      "params": [
+       930,
+       30,
+       0.1,
+       1,
+       0.3,
+       2,
+       1315,
+       0
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 1,
+       "stop": [
+        0,
+        0.0
+       ],
+       "target_r": 1,
+       "be_r": 0,
+       "tf": 1,
+       "window": "orb",
+       "ra": 930,
+       "rb": 960,
+       "cut": 1170,
+       "tx": 1364
+      },
+      "params": [
+       930,
+       960,
+       1170,
+       1,
+       0,
+       0.0,
+       1,
+       1364,
+       0,
+       1,
+       1
+      ],
+      "micros": 1
+     }
+    ]
+   },
+   "funded": {
+    "lock": null,
+    "sleeves": [
+     {
+      "family": "drive",
+      "filter": "all",
+      "knobs": {
+       "t1": 30,
+       "k": 0.1,
+       "follow": 1,
+       "stop": 0.3,
+       "target_r": 2,
+       "tx": 1315,
+       "tf": 0,
+       "anchor": 930
+      },
+      "params": [
+       930,
+       30,
+       0.1,
+       1,
+       0.3,
+       2,
+       1315,
+       0
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 1,
+       "stop": [
+        0,
+        0.0
+       ],
+       "target_r": 1,
+       "be_r": 0,
+       "tf": 1,
+       "window": "orb",
+       "ra": 930,
+       "rb": 960,
+       "cut": 1170,
+       "tx": 1364
+      },
+      "params": [
+       930,
+       960,
+       1170,
+       1,
+       0,
+       0.0,
+       1,
+       1364,
+       0,
+       1,
+       1
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 0,
+       "stop": [
+        2,
+        0.2
+       ],
+       "target_r": 3,
+       "be_r": 0,
+       "tf": 0,
+       "window": "orb",
+       "ra": 930,
+       "rb": 990,
+       "cut": 1170,
+       "tx": 1364
+      },
+      "params": [
+       930,
+       990,
+       1170,
+       0,
+       2,
+       0.2,
+       3,
+       1364,
+       0,
+       0,
+       1
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 0,
+       "stop": [
+        1,
+        0.5
+       ],
+       "target_r": 1,
+       "be_r": 1,
+       "tf": 1,
+       "window": "asia_ldn",
+       "ra": 0,
+       "rb": 540,
+       "cut": 660,
+       "tx": 1364
+      },
+      "params": [
+       0,
+       540,
+       660,
+       0,
+       1,
+       0.5,
+       1,
+       1364,
+       1,
+       1,
+       1
+      ],
+      "micros": 3
+     }
+    ]
+   },
+   "journey": {
+    "lock": 600.0,
+    "sleeves": [
+     {
+      "family": "noise",
+      "filter": "all",
+      "knobs": {
+       "lb": 1,
+       "mult": 0.6,
+       "freq": 60,
+       "first_t": 60,
+       "stop_mode": 1,
+       "every": 1,
+       "reentry": 1,
+       "gap_adj": 0,
+       "tf": 1
+      },
+      "params": [
+       1,
+       0.6,
+       60,
+       60,
+       1,
+       1,
+       1,
+       0,
+       1,
+       0.0,
+       1319
+      ],
+      "micros": 1
+     },
+     {
+      "family": "drive",
+      "filter": "all",
+      "knobs": {
+       "t1": 30,
+       "k": 0.1,
+       "follow": 1,
+       "stop": 0.3,
+       "target_r": 2,
+       "tx": 1315,
+       "tf": 0,
+       "anchor": 930
+      },
+      "params": [
+       930,
+       30,
+       0.1,
+       1,
+       0.3,
+       2,
+       1315,
+       0
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 0,
+       "stop": [
+        2,
+        0.2
+       ],
+       "target_r": 3,
+       "be_r": 0,
+       "tf": 0,
+       "window": "orb",
+       "ra": 930,
+       "rb": 990,
+       "cut": 1170,
+       "tx": 1364
+      },
+      "params": [
+       930,
+       990,
+       1170,
+       0,
+       2,
+       0.2,
+       3,
+       1364,
+       0,
+       0,
+       1
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 0,
+       "stop": [
+        1,
+        0.5
+       ],
+       "target_r": 1,
+       "be_r": 1,
+       "tf": 1,
+       "window": "asia_ldn",
+       "ra": 0,
+       "rb": 540,
+       "cut": 660,
+       "tx": 1364
+      },
+      "params": [
+       0,
+       540,
+       660,
+       0,
+       1,
+       0.5,
+       1,
+       1364,
+       1,
+       1,
+       1
+      ],
+      "micros": 1
+     },
+     {
+      "family": "noise",
+      "filter": "all",
+      "knobs": {
+       "lb": 0,
+       "mult": 1.5,
+       "freq": 30,
+       "first_t": 30,
+       "stop_mode": 2,
+       "every": 1,
+       "reentry": 0,
+       "gap_adj": 1,
+       "tf": 1
+      },
+      "params": [
+       0,
+       1.5,
+       30,
+       30,
+       2,
+       1,
+       0,
+       1,
+       1,
+       0.0,
+       1319
+      ],
+      "micros": 1
+     }
+    ]
+   }
+  }
+ },
+ {
+  "year": 2026,
+  "train": [
+   "2020-01-30",
+   "2025-12-31"
+  ],
+  "test": [
+   "2026-01-02",
+   "2026-10-23"
+  ],
+  "survivors": 351,
+  "pool": 16,
+  "test_results": {
+   "eval": {
+    "stats": {
+     "sessions": 208,
+     "mean_day": -49.506044820989146,
+     "sd_day": 446.9397963797814,
+     "sharpe_ann": -1.7583667964012126,
+     "t": -1.597500016720996,
+     "max_dd": -11772.331980056017,
+     "worst_day": -1273.3922683870321,
+     "worst_intraday": -1292.2065096292722,
+     "pct_days_ge_100": 0.36538461538461536,
+     "pct_up_days": 0.3942307692307692,
+     "total": -10297.257322765743
+    },
+    "lucid": {
+     "pass_10": 0.1715,
+     "ppmc_1k": 0.04065,
+     "any_payout_21": 0.1658,
+     "owner_mean_21": 153.4343904166732
+    },
+    "wr": 0.3339285714285714,
+    "rr": 1.8557349028124568,
+    "micros": 5,
+    "lock": 600.0,
+    "train_score": 0.308,
+    "n_sleeves": 5,
+    "zero_edge_pass_10": 0.2153
+   },
+   "funded": {
+    "stats": {
+     "sessions": 208,
+     "mean_day": -24.104420476598964,
+     "sd_day": 421.0885213603432,
+     "sharpe_ann": -0.9087063480959556,
+     "t": -0.8255720076430142,
+     "max_dd": -9562.856088268527,
+     "worst_day": -835.9436678120958,
+     "worst_intraday": -846.7544688629466,
+     "pct_days_ge_100": 0.3269230769230769,
+     "pct_up_days": 0.3605769230769231,
+     "total": -5013.719459132584
+    },
+    "lucid": {
+     "pass_10": 0.07985,
+     "ppmc_1k": 0.05025,
+     "any_payout_21": 0.2105,
+     "owner_mean_21": 198.59793826551973
+    },
+    "wr": 0.31422018348623854,
+    "rr": 1.9665211240077918,
+    "micros": 3,
+    "lock": null,
+    "train_score": 0.1375,
+    "n_sleeves": 3
+   },
+   "journey": {
+    "p_payout_within_10": 0.00095,
+    "p_payout_within_15": 0.0262,
+    "p_payout_within_21": 0.04745,
+    "p_payout_within_42": 0.05445,
+    "p_pass_within_10": 0.17225,
+    "median_sessions_to_first_payout": 16.0,
+    "owner_mean_within_42": 64.63822889458322
+   },
+   "fast_fleet": {
+    "train_score": 0.07375,
+    "micros": 5,
+    "lock": 600.0,
+    "stats": {
+     "sessions": 208,
+     "mean_day": -34.31571145939759,
+     "sd_day": 441.01879369848973,
+     "sharpe_ann": -1.2351968652730858,
+     "t": -1.1221930583345923,
+     "max_dd": -9023.485230298189,
+     "worst_day": -1178.4677080233607,
+     "worst_intraday": -1178.4677080233607,
+     "pct_days_ge_100": 0.375,
+     "pct_up_days": 0.40384615384615385,
+     "total": -7137.667983554699
+    },
+    "p_payout_within_10": 0.00215,
+    "p_payout_within_15": 0.02645,
+    "p_payout_within_21": 0.0425,
+    "p_payout_within_42": 0.0476,
+    "p_pass_within_10": 0.1837,
+    "median_sessions_to_first_payout": 15.0,
+    "owner_mean_within_42": 50.41769843511629
+   },
+   "journey_63": {
+    "p_payout_within_10": 0.0013,
+    "p_payout_within_15": 0.02765,
+    "p_payout_within_21": 0.04725,
+    "p_payout_within_42": 0.05495,
+    "p_pass_within_10": 0.17355,
+    "median_sessions_to_first_payout": 15.0,
+    "owner_mean_within_63": 74.72347182622985
+   }
+  },
+  "fleets": {
+   "eval": {
+    "lock": 600.0,
+    "sleeves": [
+     {
+      "family": "noise",
+      "filter": "all",
+      "knobs": {
+       "lb": 0,
+       "mult": 1.5,
+       "freq": 30,
+       "first_t": 60,
+       "stop_mode": 1,
+       "every": 1,
+       "reentry": 1,
+       "gap_adj": 1,
+       "tf": 0
+      },
+      "params": [
+       0,
+       1.5,
+       30,
+       60,
+       1,
+       1,
+       1,
+       1,
+       0,
+       0.0,
+       1319
+      ],
+      "micros": 1
+     },
+     {
+      "family": "drive",
+      "filter": "all",
+      "knobs": {
+       "t1": 15,
+       "k": 0.1,
+       "follow": 1,
+       "stop": 0.15,
+       "target_r": 0,
+       "tx": 1315,
+       "tf": 1,
+       "anchor": 930
+      },
+      "params": [
+       930,
+       15,
+       0.1,
+       1,
+       0.15,
+       0,
+       1315,
+       1
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 1,
+       "stop": [
+        0,
+        0.0
+       ],
+       "target_r": 1,
+       "be_r": 0,
+       "tf": 1,
+       "window": "orb",
+       "ra": 930,
+       "rb": 960,
+       "cut": 1170,
+       "tx": 1315
+      },
+      "params": [
+       930,
+       960,
+       1170,
+       1,
+       0,
+       0.0,
+       1,
+       1315,
+       0,
+       1,
+       1
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 0,
+       "stop": [
+        2,
+        0.2
+       ],
+       "target_r": 2,
+       "be_r": 1,
+       "tf": 0,
+       "window": "pre_data",
+       "ra": 810,
+       "rb": 870,
+       "cut": 960,
+       "tx": 1364
+      },
+      "params": [
+       810,
+       870,
+       960,
+       0,
+       2,
+       0.2,
+       2,
+       1364,
+       1,
+       0,
+       1
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 0,
+       "stop": [
+        2,
+        0.2
+       ],
+       "target_r": 2,
+       "be_r": 0,
+       "tf": 1,
+       "window": "orb",
+       "ra": 930,
+       "rb": 960,
+       "cut": 1170,
+       "tx": 1364
+      },
+      "params": [
+       930,
+       960,
+       1170,
+       0,
+       2,
+       0.2,
+       2,
+       1364,
+       0,
+       1,
+       1
+      ],
+      "micros": 1
+     }
+    ]
+   },
+   "funded": {
+    "lock": null,
+    "sleeves": [
+     {
+      "family": "noise",
+      "filter": "all",
+      "knobs": {
+       "lb": 0,
+       "mult": 1.5,
+       "freq": 30,
+       "first_t": 60,
+       "stop_mode": 1,
+       "every": 1,
+       "reentry": 1,
+       "gap_adj": 1,
+       "tf": 0
+      },
+      "params": [
+       0,
+       1.5,
+       30,
+       60,
+       1,
+       1,
+       1,
+       1,
+       0,
+       0.0,
+       1319
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 0,
+       "stop": [
+        2,
+        0.2
+       ],
+       "target_r": 2,
+       "be_r": 1,
+       "tf": 0,
+       "window": "pre_data",
+       "ra": 810,
+       "rb": 870,
+       "cut": 960,
+       "tx": 1364
+      },
+      "params": [
+       810,
+       870,
+       960,
+       0,
+       2,
+       0.2,
+       2,
+       1364,
+       1,
+       0,
+       1
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 0,
+       "stop": [
+        2,
+        0.2
+       ],
+       "target_r": 2,
+       "be_r": 0,
+       "tf": 1,
+       "window": "orb",
+       "ra": 930,
+       "rb": 960,
+       "cut": 1170,
+       "tx": 1364
+      },
+      "params": [
+       930,
+       960,
+       1170,
+       0,
+       2,
+       0.2,
+       2,
+       1364,
+       0,
+       1,
+       1
+      ],
+      "micros": 1
+     }
+    ]
+   },
+   "journey": {
+    "lock": 600.0,
+    "sleeves": [
+     {
+      "family": "noise",
+      "filter": "all",
+      "knobs": {
+       "lb": 0,
+       "mult": 1.5,
+       "freq": 30,
+       "first_t": 60,
+       "stop_mode": 1,
+       "every": 1,
+       "reentry": 1,
+       "gap_adj": 1,
+       "tf": 0
+      },
+      "params": [
+       0,
+       1.5,
+       30,
+       60,
+       1,
+       1,
+       1,
+       1,
+       0,
+       0.0,
+       1319
+      ],
+      "micros": 2
+     },
+     {
+      "family": "drive",
+      "filter": "all",
+      "knobs": {
+       "t1": 15,
+       "k": 0.1,
+       "follow": 1,
+       "stop": 0.15,
+       "target_r": 0,
+       "tx": 1315,
+       "tf": 1,
+       "anchor": 930
+      },
+      "params": [
+       930,
+       15,
+       0.1,
+       1,
+       0.15,
+       0,
+       1315,
+       1
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 0,
+       "stop": [
+        2,
+        0.2
+       ],
+       "target_r": 2,
+       "be_r": 1,
+       "tf": 0,
+       "window": "pre_data",
+       "ra": 810,
+       "rb": 870,
+       "cut": 960,
+       "tx": 1364
+      },
+      "params": [
+       810,
+       870,
+       960,
+       0,
+       2,
+       0.2,
+       2,
+       1364,
+       1,
+       0,
+       1
+      ],
+      "micros": 1
+     },
+     {
+      "family": "brk",
+      "filter": "all",
+      "knobs": {
+       "dir_mode": 0,
+       "stop": [
+        2,
+        0.2
+       ],
+       "target_r": 2,
+       "be_r": 0,
+       "tf": 1,
+       "window": "orb",
+       "ra": 930,
+       "rb": 960,
+       "cut": 1170,
+       "tx": 1364
+      },
+      "params": [
+       930,
+       960,
+       1170,
+       0,
+       2,
+       0.2,
+       2,
+       1364,
+       0,
+       1,
+       1
+      ],
+      "micros": 1
+     }
+    ]
+   }
+  }
+ }
+]

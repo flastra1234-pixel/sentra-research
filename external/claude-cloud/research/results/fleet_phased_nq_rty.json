@@ -1,0 +1,886 @@
+{
+ "eval": {
+  "stop": null,
+  "score": 0.72225,
+  "sleeves": [
+   {
+    "micros": 1,
+    "inst": "nq",
+    "id": "51090c5e5731",
+    "family": "orb",
+    "filter": "nr7_or_inside+atr_le_25",
+    "knobs": {
+     "or_len": 30,
+     "cutoff": 240,
+     "dir_mode": 2,
+     "stop": [
+      1,
+      0.5
+     ],
+     "target_r": 1,
+     "tx": 150,
+     "be_r": 1,
+     "tf": 0
+    },
+    "params": [
+     30,
+     240,
+     2,
+     1,
+     0.5,
+     1,
+     150,
+     1,
+     1,
+     0
+    ],
+    "disc": {
+     "mean": 4.1906,
+     "t": 3.9186,
+     "sharpe_ann": 1.3416,
+     "pf": 1.8321,
+     "trades": 231.0,
+     "avg_trade": 39.0038,
+     "years_pos": 8.0,
+     "max_dd": -953.6845,
+     "worst_low": -419.3562
+    },
+    "val": {
+     "mean": 3.3958,
+     "t": 1.9843,
+     "sharpe_ann": 1.4158,
+     "pf": 1.9233,
+     "trades": 51.0,
+     "max_dd": -398.0054
+    },
+    "dsr_eff": 0.5530357426572413,
+    "round": 2
+   },
+   {
+    "micros": 1,
+    "inst": "nq",
+    "id": "23c7b4cd6234",
+    "family": "orb",
+    "filter": "gap_large+atr_le_15",
+    "knobs": {
+     "or_len": 60,
+     "cutoff": 240,
+     "dir_mode": 1,
+     "stop": [
+      2,
+      0.3
+     ],
+     "target_r": 1.5,
+     "tx": 150,
+     "be_r": 1,
+     "tf": 0
+    },
+    "params": [
+     60,
+     240,
+     1,
+     2,
+     0.3,
+     1.5,
+     150,
+     1,
+     1,
+     0
+    ],
+    "disc": {
+     "mean": 3.5921,
+     "t": 3.7433,
+     "sharpe_ann": 1.2815,
+     "pf": 1.9035,
+     "trades": 246.0,
+     "avg_trade": 31.3942,
+     "years_pos": 8.0,
+     "max_dd": -689.6729,
+     "worst_low": -261.0459
+    },
+    "val": {
+     "mean": 4.2452,
+     "t": 1.9542,
+     "sharpe_ann": 1.3943,
+     "pf": 1.7663,
+     "trades": 89.0,
+     "max_dd": -779.4537
+    },
+    "dsr_eff": 0.4941778025992441,
+    "round": 2
+   },
+   {
+    "micros": 1,
+    "inst": "nq",
+    "id": "20f1796fce2d",
+    "family": "orb",
+    "filter": "gap_large+atr_le_25",
+    "knobs": {
+     "or_len": 15,
+     "cutoff": 240,
+     "dir_mode": 0,
+     "stop": [
+      2,
+      0.15
+     ],
+     "target_r": 3,
+     "tx": 385,
+     "be_r": 1,
+     "tf": 0
+    },
+    "params": [
+     15,
+     240,
+     0,
+     2,
+     0.15,
+     3,
+     385,
+     1,
+     1,
+     0
+    ],
+    "disc": {
+     "mean": 11.7444,
+     "t": 4.0496,
+     "sharpe_ann": 1.3864,
+     "pf": 1.4631,
+     "trades": 871.0,
+     "avg_trade": 28.9902,
+     "years_pos": 9.0,
+     "max_dd": -2539.1219,
+     "worst_low": -440.6848
+    },
+    "val": {
+     "mean": 8.3814,
+     "t": 1.6445,
+     "sharpe_ann": 1.1733,
+     "pf": 1.3493,
+     "trades": 229.0,
+     "max_dd": -1802.2739
+    },
+    "dsr_eff": 0.5585092632709417,
+    "round": 2
+   },
+   {
+    "micros": 1,
+    "inst": "nq",
+    "id": "9223211385cd",
+    "family": "orb",
+    "filter": "not_nr7+atr_le_25",
+    "knobs": {
+     "or_len": 60,
+     "cutoff": 240,
+     "dir_mode": 2,
+     "stop": [
+      2,
+      0.15
+     ],
+     "target_r": 1,
+     "tx": 385,
+     "be_r": 1,
+     "tf": 0
+    },
+    "params": [
+     60,
+     240,
+     2,
+     2,
+     0.15,
+     1,
+     385,
+     1,
+     1,
+     0
+    ],
+    "disc": {
+     "mean": 5.6316,
+     "t": 3.5392,
+     "sharpe_ann": 1.2117,
+     "pf": 1.3284,
+     "trades": 689.0,
+     "avg_trade": 17.5733,
+     "years_pos": 9.0,
+     "max_dd": -1698.1828,
+     "worst_low": -323.6309
+    },
+    "val": {
+     "mean": 4.5889,
+     "t": 1.6067,
+     "sharpe_ann": 1.1464,
+     "pf": 1.3235,
+     "trades": 157.0,
+     "max_dd": -1288.7728
+    },
+    "dsr_eff": 0.36261676911716645,
+    "round": 2
+   },
+   {
+    "micros": 1,
+    "inst": "nq",
+    "id": "a5e07041426d",
+    "family": "imom",
+    "filter": "gap_large+atr_le_15",
+    "knobs": {
+     "sig_mode": 2,
+     "te": 360,
+     "k": 0.1,
+     "follow": 1,
+     "stop": 0.0,
+     "tf": 1
+    },
+    "params": [
+     2,
+     360,
+     0.1,
+     1,
+     0.0,
+     1
+    ],
+    "disc": {
+     "mean": 2.3777,
+     "t": 3.344,
+     "sharpe_ann": 1.1448,
+     "pf": 1.9287,
+     "trades": 224.0,
+     "avg_trade": 22.8213,
+     "years_pos": 8.0,
+     "max_dd": -415.7044,
+     "worst_low": -451.9012
+    },
+    "val": {
+     "mean": 5.9014,
+     "t": 1.8104,
+     "sharpe_ann": 1.2917,
+     "pf": 2.5431,
+     "trades": 79.0,
+     "max_dd": -683.4628
+    },
+    "dsr_eff": 0.19086578345171634,
+    "round": 2
+   },
+   {
+    "micros": 1,
+    "inst": "rty",
+    "id": "986626b23b3e",
+    "family": "orb",
+    "filter": "gap_large",
+    "knobs": {
+     "or_len": 60,
+     "cutoff": 240,
+     "dir_mode": 1,
+     "stop": [
+      2,
+      0.3
+     ],
+     "target_r": 1.5,
+     "tx": 385,
+     "be_r": 1,
+     "tf": 2
+    },
+    "params": [
+     60,
+     240,
+     1,
+     2,
+     0.3,
+     1.5,
+     385,
+     1,
+     1,
+     2
+    ],
+    "disc": {
+     "mean": 2.1979,
+     "t": 2.9579,
+     "sharpe_ann": 0.9979,
+     "pf": 1.7181,
+     "trades": 209.0,
+     "avg_trade": 23.2834,
+     "years_pos": 8.0,
+     "max_dd": -770.3618,
+     "worst_low": -336.3622
+    },
+    "val": {
+     "mean": 2.4065,
+     "t": 2.1067,
+     "sharpe_ann": 1.5017,
+     "pf": 1.9073,
+     "trades": 61.0,
+     "max_dd": -653.5017
+    },
+    "dsr_eff": 0.027578705705971346,
+    "round": 2
+   }
+  ],
+  "all_stops": [
+   {
+    "stop": null,
+    "score": 0.72225,
+    "micros": 6
+   },
+   {
+    "stop": 300.0,
+    "score": 0.645,
+    "micros": 4
+   },
+   {
+    "stop": 450.0,
+    "score": 0.705,
+    "micros": 7
+   },
+   {
+    "stop": 600.0,
+    "score": 0.718,
+    "micros": 6
+   }
+  ]
+ },
+ "funded": {
+  "stop": null,
+  "score": 1047.331566794685,
+  "sleeves": [
+   {
+    "micros": 1,
+    "inst": "nq",
+    "id": "da6124bcbfcf",
+    "family": "orb",
+    "filter": "gap_large+atr_le_20",
+    "knobs": {
+     "or_len": 15,
+     "cutoff": 240,
+     "dir_mode": 0,
+     "stop": [
+      2,
+      0.15
+     ],
+     "target_r": 3,
+     "tx": 385,
+     "be_r": 1,
+     "tf": 2
+    },
+    "params": [
+     15,
+     240,
+     0,
+     2,
+     0.15,
+     3,
+     385,
+     1,
+     1,
+     2
+    ],
+    "disc": {
+     "mean": 9.82,
+     "t": 4.5169,
+     "sharpe_ann": 1.5464,
+     "pf": 1.6893,
+     "trades": 556.0,
+     "avg_trade": 37.973,
+     "years_pos": 8.0,
+     "max_dd": -1487.8496,
+     "worst_low": -316.1019
+    },
+    "val": {
+     "mean": 11.8963,
+     "t": 2.8566,
+     "sharpe_ann": 2.0382,
+     "pf": 1.9114,
+     "trades": 155.0,
+     "max_dd": -789.0262
+    },
+    "dsr_eff": 0.8853914885712074,
+    "round": 2
+   },
+   {
+    "micros": 1,
+    "inst": "nq",
+    "id": "51090c5e5731",
+    "family": "orb",
+    "filter": "nr7_or_inside+atr_le_25",
+    "knobs": {
+     "or_len": 30,
+     "cutoff": 240,
+     "dir_mode": 2,
+     "stop": [
+      1,
+      0.5
+     ],
+     "target_r": 1,
+     "tx": 150,
+     "be_r": 1,
+     "tf": 0
+    },
+    "params": [
+     30,
+     240,
+     2,
+     1,
+     0.5,
+     1,
+     150,
+     1,
+     1,
+     0
+    ],
+    "disc": {
+     "mean": 4.1906,
+     "t": 3.9186,
+     "sharpe_ann": 1.3416,
+     "pf": 1.8321,
+     "trades": 231.0,
+     "avg_trade": 39.0038,
+     "years_pos": 8.0,
+     "max_dd": -953.6845,
+     "worst_low": -419.3562
+    },
+    "val": {
+     "mean": 3.3958,
+     "t": 1.9843,
+     "sharpe_ann": 1.4158,
+     "pf": 1.9233,
+     "trades": 51.0,
+     "max_dd": -398.0054
+    },
+    "dsr_eff": 0.5530357426572413,
+    "round": 2
+   },
+   {
+    "micros": 1,
+    "inst": "nq",
+    "id": "345162db827a",
+    "family": "orb",
+    "filter": "gap_large",
+    "knobs": {
+     "or_len": 30,
+     "cutoff": 240,
+     "dir_mode": 1,
+     "stop": [
+      2,
+      0.15
+     ],
+     "target_r": 0,
+     "tx": 385,
+     "be_r": 1,
+     "tf": 0
+    },
+    "params": [
+     30,
+     240,
+     1,
+     2,
+     0.15,
+     0,
+     385,
+     1,
+     1,
+     0
+    ],
+    "disc": {
+     "mean": 16.4186,
+     "t": 3.8927,
+     "sharpe_ann": 1.3327,
+     "pf": 1.7843,
+     "trades": 659.0,
+     "avg_trade": 53.5659,
+     "years_pos": 9.0,
+     "max_dd": -2388.9553,
+     "worst_low": -831.174
+    },
+    "val": {
+     "mean": 14.5775,
+     "t": 1.9924,
+     "sharpe_ann": 1.4216,
+     "pf": 1.7576,
+     "trades": 166.0,
+     "max_dd": -1222.5094
+    },
+    "dsr_eff": 0.5621773288278581,
+    "round": 2
+   },
+   {
+    "micros": 1,
+    "inst": "nq",
+    "id": "23c7b4cd6234",
+    "family": "orb",
+    "filter": "gap_large+atr_le_15",
+    "knobs": {
+     "or_len": 60,
+     "cutoff": 240,
+     "dir_mode": 1,
+     "stop": [
+      2,
+      0.3
+     ],
+     "target_r": 1.5,
+     "tx": 150,
+     "be_r": 1,
+     "tf": 0
+    },
+    "params": [
+     60,
+     240,
+     1,
+     2,
+     0.3,
+     1.5,
+     150,
+     1,
+     1,
+     0
+    ],
+    "disc": {
+     "mean": 3.5921,
+     "t": 3.7433,
+     "sharpe_ann": 1.2815,
+     "pf": 1.9035,
+     "trades": 246.0,
+     "avg_trade": 31.3942,
+     "years_pos": 8.0,
+     "max_dd": -689.6729,
+     "worst_low": -261.0459
+    },
+    "val": {
+     "mean": 4.2452,
+     "t": 1.9542,
+     "sharpe_ann": 1.3943,
+     "pf": 1.7663,
+     "trades": 89.0,
+     "max_dd": -779.4537
+    },
+    "dsr_eff": 0.4941778025992441,
+    "round": 2
+   },
+   {
+    "micros": 1,
+    "inst": "nq",
+    "id": "3ef525607a4e",
+    "family": "orb",
+    "filter": "atr_le_20",
+    "knobs": {
+     "or_len": 60,
+     "cutoff": 240,
+     "dir_mode": 0,
+     "stop": [
+      2,
+      0.15
+     ],
+     "target_r": 0,
+     "tx": 385,
+     "be_r": 1,
+     "tf": 0
+    },
+    "params": [
+     60,
+     240,
+     0,
+     2,
+     0.15,
+     0,
+     385,
+     1,
+     1,
+     0
+    ],
+    "disc": {
+     "mean": 13.8834,
+     "t": 3.73,
+     "sharpe_ann": 1.277,
+     "pf": 1.3812,
+     "trades": 1418.0,
+     "avg_trade": 21.0503,
+     "years_pos": 9.0,
+     "max_dd": -3043.0519,
+     "worst_low": -373.6906
+    },
+    "val": {
+     "mean": 14.2129,
+     "t": 1.7981,
+     "sharpe_ann": 1.283,
+     "pf": 1.3991,
+     "trades": 370.0,
+     "max_dd": -2215.15
+    },
+    "dsr_eff": 0.4565165350350394,
+    "round": 2
+   },
+   {
+    "micros": 1,
+    "inst": "nq",
+    "id": "68ef6154d323",
+    "family": "orb",
+    "filter": "vol_not_high",
+    "knobs": {
+     "or_len": 5,
+     "cutoff": 240,
+     "dir_mode": 0,
+     "stop": [
+      2,
+      0.15
+     ],
+     "target_r": 0,
+     "tx": 150,
+     "be_r": 1,
+     "tf": 0
+    },
+    "params": [
+     5,
+     240,
+     0,
+     2,
+     0.15,
+     0,
+     150,
+     1,
+     1,
+     0
+    ],
+    "disc": {
+     "mean": 22.4013,
+     "t": 4.0189,
+     "sharpe_ann": 1.3759,
+     "pf": 1.3815,
+     "trades": 1710.0,
+     "avg_trade": 28.1653,
+     "years_pos": 8.0,
+     "max_dd": -7579.7741,
+     "worst_low": -699.7344
+    },
+    "val": {
+     "mean": 12.9532,
+     "t": 1.6419,
+     "sharpe_ann": 1.1715,
+     "pf": 1.3228,
+     "trades": 376.0,
+     "max_dd": -2124.5271
+    },
+    "dsr_eff": 0.5418352039365908,
+    "round": 2
+   },
+   {
+    "micros": 1,
+    "inst": "nq",
+    "id": "c70bbfb7504b",
+    "family": "orb",
+    "filter": "gap_large+atr_le_25",
+    "knobs": {
+     "or_len": 30,
+     "cutoff": 240,
+     "dir_mode": 2,
+     "stop": [
+      2,
+      0.15
+     ],
+     "target_r": 2,
+     "tx": 385,
+     "be_r": 0,
+     "tf": 0
+    },
+    "params": [
+     30,
+     240,
+     2,
+     2,
+     0.15,
+     2,
+     385,
+     0,
+     1,
+     0
+    ],
+    "disc": {
+     "mean": 8.8556,
+     "t": 4.2132,
+     "sharpe_ann": 1.4424,
+     "pf": 1.5072,
+     "trades": 526.0,
+     "avg_trade": 36.197,
+     "years_pos": 9.0,
+     "max_dd": -1704.4704,
+     "worst_low": -380.5354
+    },
+    "val": {
+     "mean": 6.4966,
+     "t": 1.6314,
+     "sharpe_ann": 1.164,
+     "pf": 1.3837,
+     "trades": 137.0,
+     "max_dd": -1258.226
+    },
+    "dsr_eff": 0.6170668561279431,
+    "round": 2
+   },
+   {
+    "micros": 1,
+    "inst": "nq",
+    "id": "9223211385cd",
+    "family": "orb",
+    "filter": "not_nr7+atr_le_25",
+    "knobs": {
+     "or_len": 60,
+     "cutoff": 240,
+     "dir_mode": 2,
+     "stop": [
+      2,
+      0.15
+     ],
+     "target_r": 1,
+     "tx": 385,
+     "be_r": 1,
+     "tf": 0
+    },
+    "params": [
+     60,
+     240,
+     2,
+     2,
+     0.15,
+     1,
+     385,
+     1,
+     1,
+     0
+    ],
+    "disc": {
+     "mean": 5.6316,
+     "t": 3.5392,
+     "sharpe_ann": 1.2117,
+     "pf": 1.3284,
+     "trades": 689.0,
+     "avg_trade": 17.5733,
+     "years_pos": 9.0,
+     "max_dd": -1698.1828,
+     "worst_low": -323.6309
+    },
+    "val": {
+     "mean": 4.5889,
+     "t": 1.6067,
+     "sharpe_ann": 1.1464,
+     "pf": 1.3235,
+     "trades": 157.0,
+     "max_dd": -1288.7728
+    },
+    "dsr_eff": 0.36261676911716645,
+    "round": 2
+   },
+   {
+    "micros": 1,
+    "inst": "nq",
+    "id": "b27c5df4e823",
+    "family": "imom",
+    "filter": "no_mon+atr_le_15",
+    "knobs": {
+     "sig_mode": 1,
+     "te": 360,
+     "k": 0.0,
+     "follow": 1,
+     "stop": 0.3,
+     "tf": 1
+    },
+    "params": [
+     1,
+     360,
+     0.0,
+     1,
+     0.3,
+     1
+    ],
+    "disc": {
+     "mean": 3.2383,
+     "t": 3.1146,
+     "sharpe_ann": 1.0663,
+     "pf": 1.5083,
+     "trades": 442.0,
+     "avg_trade": 15.7518,
+     "years_pos": 7.0,
+     "max_dd": -912.3441,
+     "worst_low": -297.7542
+    },
+    "val": {
+     "mean": 3.9269,
+     "t": 1.4876,
+     "sharpe_ann": 1.0614,
+     "pf": 1.5028,
+     "trades": 149.0,
+     "max_dd": -511.3185
+    },
+    "dsr_eff": 0.1916924506339004,
+    "round": 2
+   },
+   {
+    "micros": 1,
+    "inst": "rty",
+    "id": "98d37e021fa8",
+    "family": "drive",
+    "filter": "gap_small",
+    "knobs": {
+     "t1": 89,
+     "k": 0.3,
+     "follow": 1,
+     "stop": 0.25,
+     "target_r": 0,
+     "tx": 389,
+     "tf": 1
+    },
+    "params": [
+     89,
+     0.3,
+     1,
+     0.25,
+     0,
+     389,
+     1
+    ],
+    "disc": {
+     "mean": 2.344,
+     "t": 2.4737,
+     "sharpe_ann": 0.8346,
+     "pf": 1.6598,
+     "trades": 238.0,
+     "avg_trade": 21.8055,
+     "years_pos": 7.0,
+     "max_dd": -857.9573,
+     "worst_low": -295.0495
+    },
+    "val": {
+     "mean": 1.3281,
+     "t": 1.0132,
+     "sharpe_ann": 0.7222,
+     "pf": 1.5675,
+     "trades": 54.0,
+     "max_dd": -295.5541
+    },
+    "dsr_eff": 0.0007281264389801013,
+    "round": 2
+   }
+  ],
+  "all_stops": [
+   {
+    "stop": null,
+    "score": 1047.331566794685,
+    "micros": 10
+   },
+   {
+    "stop": 300.0,
+    "score": 770.4729454514752,
+    "micros": 4
+   },
+   {
+    "stop": 450.0,
+    "score": 895.6565507792853,
+    "micros": 6
+   },
+   {
+    "stop": 600.0,
+    "score": 980.5954352871313,
+    "micros": 8
+   }
+  ]
+ },
+ "trials": {
+  "total": 175310,
+  "effective": 2958
+ },
+ "pool_size": 72
+}

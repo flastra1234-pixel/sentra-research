@@ -1,0 +1,900 @@
+{
+ "pool_size": 150,
+ "eval": {
+  "stop": null,
+  "lock": 600.0,
+  "score": 0.34825,
+  "micros": 5,
+  "in_sample": {
+   "sessions": 1267,
+   "mean_day": 23.483084041420792,
+   "sd_day": 505.4342992451399,
+   "sharpe_ann": 0.7375486841698717,
+   "t": 1.6537837855392266,
+   "max_dd": -10464.95694770459,
+   "worst_day": -2074.2175409312335,
+   "worst_intraday": -2865.059326171875,
+   "pct_days_ge_100": 0.4238358326756117,
+   "pct_up_days": 0.4664561957379637,
+   "total": 29753.067480480142,
+   "owner_mean_6m": 565.2910961132712,
+   "owner_median_6m": 0.0,
+   "payouts_mean_6m": 0.6814,
+   "p_any_payout_6m": 0.3034
+  },
+  "grid": [
+   {
+    "stop": null,
+    "lock": null,
+    "score": 0.26175,
+    "micros": 5
+   },
+   {
+    "stop": null,
+    "lock": 150.0,
+    "score": 0.12775,
+    "micros": 8
+   },
+   {
+    "stop": null,
+    "lock": 250.0,
+    "score": 0.20525,
+    "micros": 7
+   },
+   {
+    "stop": null,
+    "lock": 400.0,
+    "score": 0.30375,
+    "micros": 7
+   },
+   {
+    "stop": null,
+    "lock": 600.0,
+    "score": 0.34825,
+    "micros": 5
+   },
+   {
+    "stop": 300.0,
+    "lock": null,
+    "score": 0.20375,
+    "micros": 3
+   },
+   {
+    "stop": 300.0,
+    "lock": 150.0,
+    "score": 0.0105,
+    "micros": 3
+   },
+   {
+    "stop": 300.0,
+    "lock": 250.0,
+    "score": 0.077,
+    "micros": 3
+   },
+   {
+    "stop": 300.0,
+    "lock": 400.0,
+    "score": 0.174,
+    "micros": 4
+   },
+   {
+    "stop": 300.0,
+    "lock": 600.0,
+    "score": 0.28,
+    "micros": 4
+   },
+   {
+    "stop": 500.0,
+    "lock": null,
+    "score": 0.2285,
+    "micros": 3
+   },
+   {
+    "stop": 500.0,
+    "lock": 150.0,
+    "score": 0.04175,
+    "micros": 4
+   },
+   {
+    "stop": 500.0,
+    "lock": 250.0,
+    "score": 0.124,
+    "micros": 6
+   },
+   {
+    "stop": 500.0,
+    "lock": 400.0,
+    "score": 0.25275,
+    "micros": 7
+   },
+   {
+    "stop": 500.0,
+    "lock": 600.0,
+    "score": 0.345,
+    "micros": 8
+   }
+  ],
+  "sleeves": [
+   {
+    "micros": 1,
+    "id": "67348b9527a0",
+    "family": "noise",
+    "filter": "all",
+    "knobs": {
+     "lb": 0,
+     "mult": 0.8,
+     "freq": 60,
+     "first_t": 30,
+     "stop_mode": 1,
+     "every": 1,
+     "reentry": 1,
+     "gap_adj": 1,
+     "tf": 0,
+     "hard_stop": 0.3
+    },
+    "params": [
+     0,
+     0.8,
+     60,
+     30,
+     1,
+     1,
+     1,
+     1,
+     0,
+     0.3,
+     1319
+    ],
+    "disc": {
+     "mean": 38.182,
+     "t": 3.7261,
+     "sharpe_ann": 1.8631,
+     "pf": 1.4918,
+     "trades": 1005.0,
+     "avg_trade": 38.296,
+     "years_pos": 4.0,
+     "max_dd": -3823.5573,
+     "worst_low": -2069.6987
+    },
+    "val": {
+     "mean": 32.3004,
+     "t": 2.1575,
+     "sharpe_ann": 2.1281,
+     "pf": 1.5989,
+     "trades": 246.0,
+     "max_dd": -1941.2551
+    },
+    "dsr": 0.6688787225888342,
+    "wr_disc": 0.40298507462686567,
+    "rr_disc": 2.096143698579183,
+    "wr_val": 0.4186991869918699,
+    "rr_val": 2.0942955130475838
+   },
+   {
+    "micros": 1,
+    "id": "8baf5bf17cdf",
+    "family": "noise",
+    "filter": "vol_not_high",
+    "knobs": {
+     "lb": 0,
+     "mult": 0.8,
+     "freq": 30,
+     "first_t": 30,
+     "stop_mode": 1,
+     "every": 1,
+     "reentry": 1,
+     "gap_adj": 1,
+     "tf": 1,
+     "hard_stop": 0.3
+    },
+    "params": [
+     0,
+     0.8,
+     30,
+     30,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0.3,
+     1319
+    ],
+    "disc": {
+     "mean": 24.8233,
+     "t": 3.7039,
+     "sharpe_ann": 1.8519,
+     "pf": 1.8757,
+     "trades": 511.0,
+     "avg_trade": 48.9666,
+     "years_pos": 4.0,
+     "max_dd": -3375.637,
+     "worst_low": -991.1703
+    },
+    "val": {
+     "mean": 18.4717,
+     "t": 2.2398,
+     "sharpe_ann": 2.2093,
+     "pf": 2.0969,
+     "trades": 94.0,
+     "max_dd": -1197.5977
+    },
+    "dsr": 0.667267450654881,
+    "wr_disc": 0.4246575342465753,
+    "rr_disc": 2.3145238447364878,
+    "wr_val": 0.48936170212765956,
+    "rr_val": 1.9386794160018417
+   },
+   {
+    "micros": 1,
+    "id": "2107458b7683",
+    "family": "brk",
+    "filter": "vol_not_high",
+    "knobs": {
+     "dir_mode": 1,
+     "stop": [
+      2,
+      0.2
+     ],
+     "target_r": 0,
+     "be_r": 1,
+     "tf": 1,
+     "window": "orb",
+     "ra": 930,
+     "rb": 990,
+     "cut": 1170,
+     "tx": 1364
+    },
+    "params": [
+     930,
+     990,
+     1170,
+     1,
+     2,
+     0.2,
+     0,
+     1364,
+     1,
+     1,
+     1
+    ],
+    "disc": {
+     "mean": 19.2151,
+     "t": 3.0735,
+     "sharpe_ann": 1.5367,
+     "pf": 1.6719,
+     "trades": 308.0,
+     "avg_trade": 62.8859,
+     "years_pos": 4.0,
+     "max_dd": -4021.2506,
+     "worst_low": -499.1241
+    },
+    "val": {
+     "mean": 12.9039,
+     "t": 1.5826,
+     "sharpe_ann": 1.5611,
+     "pf": 1.6001,
+     "trades": 88.0,
+     "max_dd": -1368.6211
+    },
+    "dsr": 0.3075161208875254,
+    "wr_disc": 0.4318181818181818,
+    "rr_disc": 2.19980798808901,
+    "wr_val": 0.3977272727272727,
+    "rr_val": 2.4229344582376537
+   },
+   {
+    "micros": 1,
+    "id": "c73a354074c0",
+    "family": "drive",
+    "filter": "gap_small+atr_le_20",
+    "knobs": {
+     "t1": 60,
+     "k": 0.1,
+     "follow": 1,
+     "stop": 0.3,
+     "target_r": 2,
+     "tx": 1315,
+     "tf": 0,
+     "anchor": 930
+    },
+    "params": [
+     930,
+     60,
+     0.1,
+     1,
+     0.3,
+     2,
+     1315,
+     0
+    ],
+    "disc": {
+     "mean": 9.2846,
+     "t": 2.3949,
+     "sharpe_ann": 1.1975,
+     "pf": 1.5669,
+     "trades": 163.0,
+     "avg_trade": 57.4163,
+     "years_pos": 4.0,
+     "max_dd": -2419.3508,
+     "worst_low": -435.4256
+    },
+    "val": {
+     "mean": 12.5373,
+     "t": 1.2457,
+     "sharpe_ann": 1.2288,
+     "pf": 1.3882,
+     "trades": 77.0,
+     "max_dd": -1477.4806
+    },
+    "dsr": 0.10838226315757843,
+    "wr_disc": 0.5276073619631901,
+    "rr_disc": 1.402885265293363,
+    "wr_val": 0.4805194805194805,
+    "rr_val": 1.500762268658139
+   },
+   {
+    "micros": 1,
+    "id": "73610347ba50",
+    "family": "brk",
+    "filter": "all",
+    "knobs": {
+     "dir_mode": 0,
+     "stop": [
+      2,
+      0.2
+     ],
+     "target_r": 3,
+     "be_r": 0,
+     "tf": 0,
+     "window": "orb",
+     "ra": 930,
+     "rb": 960,
+     "cut": 1020,
+     "tx": 1315
+    },
+    "params": [
+     930,
+     960,
+     1020,
+     0,
+     2,
+     0.2,
+     3,
+     1315,
+     0,
+     0,
+     1
+    ],
+    "disc": {
+     "mean": 29.0443,
+     "t": 2.2614,
+     "sharpe_ann": 1.1307,
+     "pf": 1.1991,
+     "trades": 934.0,
+     "avg_trade": 31.3455,
+     "years_pos": 4.0,
+     "max_dd": -10221.0921,
+     "worst_low": -1068.4656
+    },
+    "val": {
+     "mean": 30.0401,
+     "t": 1.7543,
+     "sharpe_ann": 1.7304,
+     "pf": 1.3066,
+     "trades": 248.0,
+     "max_dd": -2484.1083
+    },
+    "dsr": 0.1202530599559069,
+    "wr_disc": 0.39721627408993576,
+    "rr_disc": 1.8196047881646926,
+    "wr_val": 0.3870967741935484,
+    "rr_val": 2.0687387636153263
+   }
+  ]
+ },
+ "funded": {
+  "stop": null,
+  "lock": null,
+  "score": 0.188,
+  "micros": 8,
+  "in_sample": {
+   "sessions": 1267,
+   "mean_day": 124.86062495651439,
+   "sd_day": 753.0557801989331,
+   "sharpe_ann": 2.6320772314510954,
+   "t": 5.901829589134275,
+   "max_dd": -10940.372736082762,
+   "worst_day": -2586.3494152347184,
+   "worst_intraday": -2642.6640014648438,
+   "pct_days_ge_100": 0.44119968429360695,
+   "pct_up_days": 0.4972375690607735,
+   "total": 158198.41181990373,
+   "owner_mean_6m": 1647.0106157562473,
+   "owner_median_6m": 0.0,
+   "payouts_mean_6m": 1.8458,
+   "p_any_payout_6m": 0.32655
+  },
+  "grid": [
+   {
+    "stop": null,
+    "lock": null,
+    "score": 0.188,
+    "micros": 8
+   },
+   {
+    "stop": null,
+    "lock": 150.0,
+    "score": 0.06525,
+    "micros": 6
+   },
+   {
+    "stop": null,
+    "lock": 250.0,
+    "score": 0.10025,
+    "micros": 6
+   },
+   {
+    "stop": null,
+    "lock": 400.0,
+    "score": 0.14725,
+    "micros": 5
+   },
+   {
+    "stop": null,
+    "lock": 600.0,
+    "score": 0.16225,
+    "micros": 7
+   },
+   {
+    "stop": 300.0,
+    "lock": null,
+    "score": 0.1315,
+    "micros": 6
+   },
+   {
+    "stop": 300.0,
+    "lock": 150.0,
+    "score": 0.0125,
+    "micros": 4
+   },
+   {
+    "stop": 300.0,
+    "lock": 250.0,
+    "score": 0.0535,
+    "micros": 4
+   },
+   {
+    "stop": 300.0,
+    "lock": 400.0,
+    "score": 0.122,
+    "micros": 6
+   },
+   {
+    "stop": 300.0,
+    "lock": 600.0,
+    "score": 0.10175,
+    "micros": 2
+   },
+   {
+    "stop": 500.0,
+    "lock": null,
+    "score": 0.15925,
+    "micros": 6
+   },
+   {
+    "stop": 500.0,
+    "lock": 150.0,
+    "score": 0.03625,
+    "micros": 6
+   },
+   {
+    "stop": 500.0,
+    "lock": 250.0,
+    "score": 0.10375,
+    "micros": 5
+   },
+   {
+    "stop": 500.0,
+    "lock": 400.0,
+    "score": 0.1625,
+    "micros": 7
+   },
+   {
+    "stop": 500.0,
+    "lock": 600.0,
+    "score": 0.16425,
+    "micros": 6
+   }
+  ],
+  "sleeves": [
+   {
+    "micros": 1,
+    "id": "050800019e7e",
+    "family": "drive",
+    "filter": "on_wide+atr_le_25",
+    "knobs": {
+     "t1": 60,
+     "k": 0.1,
+     "follow": 1,
+     "stop": 0.3,
+     "target_r": 2,
+     "tx": 1315,
+     "tf": 0,
+     "anchor": 930
+    },
+    "params": [
+     930,
+     60,
+     0.1,
+     1,
+     0.3,
+     2,
+     1315,
+     0
+    ],
+    "disc": {
+     "mean": 24.8269,
+     "t": 3.6129,
+     "sharpe_ann": 1.8065,
+     "pf": 1.5585,
+     "trades": 349.0,
+     "avg_trade": 71.7064,
+     "years_pos": 4.0,
+     "max_dd": -2626.113,
+     "worst_low": -528.0634
+    },
+    "val": {
+     "mean": 25.5123,
+     "t": 1.8578,
+     "sharpe_ann": 1.8325,
+     "pf": 1.4416,
+     "trades": 134.0,
+     "max_dd": -1791.5397
+    },
+    "dsr": 0.5936713564911476,
+    "wr_disc": 0.5272206303724928,
+    "rr_disc": 1.3975710546351665,
+    "wr_val": 0.5149253731343284,
+    "rr_val": 1.358009747330718
+   },
+   {
+    "micros": 1,
+    "id": "f28c7a9545a5",
+    "family": "drive",
+    "filter": "no_mon+atr_le_30",
+    "knobs": {
+     "t1": 15,
+     "k": 0.1,
+     "follow": 1,
+     "stop": 0.3,
+     "target_r": 2,
+     "tx": 1315,
+     "tf": 1,
+     "anchor": 930
+    },
+    "params": [
+     930,
+     15,
+     0.1,
+     1,
+     0.3,
+     2,
+     1315,
+     1
+    ],
+    "disc": {
+     "mean": 21.4232,
+     "t": 3.4928,
+     "sharpe_ann": 1.7464,
+     "pf": 1.8039,
+     "trades": 196.0,
+     "avg_trade": 110.1762,
+     "years_pos": 4.0,
+     "max_dd": -2094.8974,
+     "worst_low": -682.7853
+    },
+    "val": {
+     "mean": 16.46,
+     "t": 1.6958,
+     "sharpe_ann": 1.6727,
+     "pf": 1.7442,
+     "trades": 47.0,
+     "max_dd": -1705.4109
+    },
+    "dsr": 0.5156101970742112,
+    "wr_disc": 0.5306122448979592,
+    "rr_disc": 1.595777193488499,
+    "wr_val": 0.5531914893617021,
+    "rr_val": 1.4087496526899357
+   },
+   {
+    "micros": 1,
+    "id": "462215007478",
+    "family": "brk",
+    "filter": "all",
+    "knobs": {
+     "dir_mode": 0,
+     "stop": [
+      1,
+      0.5
+     ],
+     "target_r": 1,
+     "be_r": 1,
+     "tf": 1,
+     "window": "orb",
+     "ra": 930,
+     "rb": 990,
+     "cut": 1170,
+     "tx": 1364
+    },
+    "params": [
+     930,
+     990,
+     1170,
+     0,
+     1,
+     0.5,
+     1,
+     1364,
+     1,
+     1,
+     1
+    ],
+    "disc": {
+     "mean": 20.7482,
+     "t": 2.9884,
+     "sharpe_ann": 1.4942,
+     "pf": 1.3553,
+     "trades": 528.0,
+     "avg_trade": 39.6103,
+     "years_pos": 4.0,
+     "max_dd": -2516.6885,
+     "worst_low": -1561.5828
+    },
+    "val": {
+     "mean": 12.2277,
+     "t": 1.5169,
+     "sharpe_ann": 1.4962,
+     "pf": 1.3456,
+     "trades": 132.0,
+     "max_dd": -1266.8063
+    },
+    "dsr": 0.29777084416183425,
+    "wr_disc": 0.5757575757575758,
+    "rr_disc": 0.9986722029403432,
+    "wr_val": 0.5909090909090909,
+    "rr_val": 0.9315836764383555
+   },
+   {
+    "micros": 1,
+    "id": "cfbbdfd63f99",
+    "family": "noise",
+    "filter": "nr7_or_inside+atr_le_25",
+    "knobs": {
+     "lb": 1,
+     "mult": 1.0,
+     "freq": 30,
+     "first_t": 30,
+     "stop_mode": 2,
+     "every": 1,
+     "reentry": 1,
+     "gap_adj": 1,
+     "tf": 0,
+     "hard_stop": 0.5
+    },
+    "params": [
+     1,
+     1.0,
+     30,
+     30,
+     2,
+     1,
+     1,
+     1,
+     0,
+     0.5,
+     1319
+    ],
+    "disc": {
+     "mean": 8.8563,
+     "t": 2.7517,
+     "sharpe_ann": 1.3758,
+     "pf": 2.3461,
+     "trades": 198.0,
+     "avg_trade": 45.0865,
+     "years_pos": 4.0,
+     "max_dd": -1453.4491,
+     "worst_low": -597.5641
+    },
+    "val": {
+     "mean": 9.6427,
+     "t": 1.2706,
+     "sharpe_ann": 1.2533,
+     "pf": 2.2316,
+     "trades": 52.0,
+     "max_dd": -541.5209
+    },
+    "dsr": 0.1390792907658323,
+    "wr_disc": 0.3333333333333333,
+    "rr_disc": 4.000720062472533,
+    "wr_val": 0.3269230769230769,
+    "rr_val": 4.13632910958392
+   },
+   {
+    "micros": 1,
+    "id": "699f425fd2ec",
+    "family": "brk",
+    "filter": "all",
+    "knobs": {
+     "dir_mode": 0,
+     "stop": [
+      2,
+      0.2
+     ],
+     "target_r": 2,
+     "be_r": 0,
+     "tf": 0,
+     "window": "orb",
+     "ra": 930,
+     "rb": 990,
+     "cut": 1170,
+     "tx": 1315
+    },
+    "params": [
+     930,
+     990,
+     1170,
+     0,
+     2,
+     0.2,
+     2,
+     1315,
+     0,
+     0,
+     1
+    ],
+    "disc": {
+     "mean": 26.2291,
+     "t": 2.3828,
+     "sharpe_ann": 1.1914,
+     "pf": 1.2039,
+     "trades": 930.0,
+     "avg_trade": 28.4289,
+     "years_pos": 4.0,
+     "max_dd": -6280.2975,
+     "worst_low": -1456.3716
+    },
+    "val": {
+     "mean": 21.5001,
+     "t": 1.5215,
+     "sharpe_ann": 1.5008,
+     "pf": 1.2552,
+     "trades": 238.0,
+     "max_dd": -2725.6579
+    },
+    "dsr": 0.13090480862296439,
+    "wr_disc": 0.4559139784946237,
+    "rr_disc": 1.4366836848061721,
+    "wr_val": 0.4495798319327731,
+    "rr_val": 1.5367285745044572
+   },
+   {
+    "micros": 1,
+    "id": "2e071e05cd91",
+    "family": "brk",
+    "filter": "vol_low+atr_le_20",
+    "knobs": {
+     "dir_mode": 0,
+     "stop": [
+      2,
+      0.2
+     ],
+     "target_r": 2,
+     "be_r": 0,
+     "tf": 0,
+     "window": "orb",
+     "ra": 930,
+     "rb": 990,
+     "cut": 1170,
+     "tx": 1315
+    },
+    "params": [
+     930,
+     990,
+     1170,
+     0,
+     2,
+     0.2,
+     2,
+     1315,
+     0,
+     0,
+     1
+    ],
+    "disc": {
+     "mean": 7.4852,
+     "t": 2.3276,
+     "sharpe_ann": 1.1638,
+     "pf": 1.4406,
+     "trades": 207.0,
+     "avg_trade": 36.4497,
+     "years_pos": 3.0,
+     "max_dd": -1301.4309,
+     "worst_low": -264.7405
+    },
+    "val": {
+     "mean": 11.6121,
+     "t": 1.5373,
+     "sharpe_ann": 1.5164,
+     "pf": 1.4582,
+     "trades": 85.0,
+     "max_dd": -1134.2823
+    },
+    "dsr": 0.1324610971364471,
+    "wr_disc": 0.47342995169082125,
+    "rr_disc": 1.6023492976448592,
+    "wr_val": 0.4823529411764706,
+    "rr_val": 1.56491814446473
+   },
+   {
+    "micros": 2,
+    "id": "bbf405b265c0",
+    "family": "brk",
+    "filter": "all",
+    "knobs": {
+     "dir_mode": 0,
+     "stop": [
+      1,
+      0.5
+     ],
+     "target_r": 1,
+     "be_r": 0,
+     "tf": 1,
+     "window": "asia_ldn",
+     "ra": 0,
+     "rb": 540,
+     "cut": 660,
+     "tx": 1364
+    },
+    "params": [
+     0,
+     540,
+     660,
+     0,
+     1,
+     0.5,
+     1,
+     1364,
+     0,
+     1,
+     1
+    ],
+    "disc": {
+     "mean": 9.286,
+     "t": 2.1583,
+     "sharpe_ann": 1.0791,
+     "pf": 1.3073,
+     "trades": 373.0,
+     "avg_trade": 25.0947,
+     "years_pos": 4.0,
+     "max_dd": -2949.3026,
+     "worst_low": -1219.4617
+    },
+    "val": {
+     "mean": 7.5695,
+     "t": 1.3062,
+     "sharpe_ann": 1.2884,
+     "pf": 1.3638,
+     "trades": 99.0,
+     "max_dd": -1028.6444
+    },
+    "dsr": 0.08394326642989042,
+    "wr_disc": 0.5656836461126006,
+    "rr_disc": 1.003682895337891,
+    "wr_val": 0.5151515151515151,
+    "rr_val": 1.2835484131663721
+   }
+  ]
+ }
+}

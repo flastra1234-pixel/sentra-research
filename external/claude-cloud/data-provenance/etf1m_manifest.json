@@ -1,0 +1,950 @@
+{
+ "dataset": "etf1m",
+ "description": "1-minute OHLCV bars for SPY and QQQ (ETF proxies for ES/NQ cash-index flow) intended as ex-ante predictors for intraday NQ strategies. Main files contain only consolidated-tape (SIP-quality) bars; two clearly-labelled lower-quality supplements cover part of October 2026. Built only from public GitHub repositories reachable from the research container; nothing was fabricated, forward-filled or interpolated.",
+ "generated_utc": "2026-10-25T18:26:50Z",
+ "files": {
+  "spy_1m.parquet": {
+   "sha256": "4a4814fbf4d9653fd90ee14e44b3cfce705a53031ae6295157badc6c0edce12f",
+   "rows": 1375984,
+   "first_ts_utc": "2019-12-02 09:00:00+00:00",
+   "last_ts_utc": "2026-09-30 19:59:00+00:00",
+   "sources_present": {
+    "alpaca_sip@oyzh888/data": 1021624,
+    "prsdro/spy": 234630,
+    "alpaca_sip_rth@xcollantes/close-reversal": 119730
+   },
+   "desc": "MAIN SPY 1-minute bars, NYSE sessions 2019-12-02..2026-09-30, 04:00-20:00 ET where available (RTH only after 2026-04-09). Spliced per (session date, segment) from consolidated-tape sources; see splice_decisions."
+  },
+  "qqq_1m.parquet": {
+   "sha256": "c76a24faf031024195d99625f3f2cf0c7619e0adcc5c1345cad791185bf104a4",
+   "rows": 1318095,
+   "first_ts_utc": "2020-07-13 08:00:00+00:00",
+   "last_ts_utc": "2026-09-30 19:59:00+00:00",
+   "sources_present": {
+    "alpaca_sip@oyzh888/data": 1049252,
+    "alpaca_sip@ramires666/rtharb": 258313,
+    "alpaca_sip_rth@xcollantes/close-reversal": 10530
+   },
+   "desc": "MAIN QQQ 1-minute bars, NYSE sessions 2020-07-13..2026-09-30, 04:00-20:00 ET where available (RTH only after 2026-08-21). All rows are Alpaca SIP (consolidated tape) bars from three byte-identical mirrors."
+  },
+  "spy_1m_supplement.parquet": {
+   "sha256": "550a9ea33a872e86c2fec553aa5cd5bef6777d42eba353924bbfb7747033b318",
+   "rows": 4590,
+   "first_ts_utc": "2026-10-08 13:30:00+00:00",
+   "last_ts_utc": "2026-10-23 19:58:00+00:00",
+   "sources_present": {
+    "alpaca_iex_rth@ishmael07/spy0dte-bots": 4590
+   },
+   "desc": "LOWER-QUALITY SUPPLEMENT, kept out of the main file: SPY RTH 1-minute bars 2026-10-08..2026-10-23 from Alpaca IEX feed (IEX exchange only, ~2% of consolidated volume). Not verified against SIP (no overlap available)."
+  },
+  "qqq_1m_supplement.parquet": {
+   "sha256": "af4d202fed464ab2680d19a1657a8e7b015aafbbec57e637f6ceee5f74847961",
+   "rows": 1410,
+   "first_ts_utc": "2026-10-01 13:30:00+00:00",
+   "last_ts_utc": "2026-10-23 15:59:00+00:00",
+   "sources_present": {
+    "dukascopy_cfd_mid@macchiatopsk-create/Market-Signal": 1410
+   },
+   "desc": "LOWER-QUALITY SUPPLEMENT, kept out of the main file: QQQ 1-minute bars built from Dukascopy QQQ.US/USD CFD bid/ask MID quotes (not trades), 7 sessions in 2026-10 only, 09:30-14:59 ET only. Volume column is Dukascopy quote volume, not shares."
+  }
+ },
+ "timezone": "ts_utc is a timezone-aware UTC timestamp (parquet timestamp[ns, tz=UTC]) marking the START of the bar: the bar covers trades in [ts_utc, ts_utc+60s). Session logic should convert to America/New_York (RTH 09:30-16:00 ET, 13:00 ET close on early-close days; extended 04:00-09:30 and close-20:00 ET). Every source was verified to stamp bars at minute start (09:30 ET bar carries the opening-auction volume spike) and converted to UTC with DST-aware zoneinfo.",
+ "columns": {
+  "ts_utc": "timestamp[ns, UTC], bar start (see timezone)",
+  "open": "float64 USD, first eligible trade price in the minute; raw/unadjusted (no SPY or QQQ splits in window; prices are NOT dividend-adjusted)",
+  "high": "float64 USD, highest eligible trade price in the minute",
+  "low": "float64 USD, lowest eligible trade price in the minute",
+  "close": "float64 USD, last eligible trade price in the minute",
+  "volume": "int64 shares traded in the minute (main files: consolidated tape; definition differs slightly by source, see known_issues; supplements: IEX-only shares for SPY, Dukascopy quote volume units for QQQ, stored as float64 in qqq_1m_supplement.parquet)",
+  "source": "string provenance tag of the row: alpaca_sip@oyzh888/data | alpaca_sip@ramires666/rtharb | alpaca_sip_rth@xcollantes/close-reversal | prsdro/spy | (supplements) alpaca_iex_rth@ishmael07/spy0dte-bots | dukascopy_cfd_mid@macchiatopsk-create/Market-Signal"
+ },
+ "sources": [
+  {
+   "url": "https://github.com/oyzh888/data",
+   "commit_or_tag": "12816f82c3bbbd2bbc6d36fb9ccc83e68ee066f8",
+   "files": [
+    "us_stock_1min_5year.zip (Git LFS, oid sha256 3f11f171a1a676489234665adb3ee440b7d3483328988b6ede1bb092f8fa9b27, fetched from media.githubusercontent.com; checksum verified) -> us_stock_1min_5year/SPY.csv, us_stock_1min_5year/QQQ.csv"
+   ],
+   "provider_as_documented": "Alpaca market data (\"Alpaca Portfolio Data Collector\"), timestamps UTC, raw prices, 2020-07-13 08:00 UTC .. 2025-07-09 23:59 UTC. Feed not named in README, but bars are byte-identical (OHLCV) to the two explicitly SIP-feed Alpaca sources below on every overlapping minute, so it is Alpaca SIP.",
+   "role": "MAIN: SPY all segments 2020-07-13..2025-07-09; QQQ all segments 2020-07-13..2025-07-09"
+  },
+  {
+   "url": "https://github.com/ramires666/rtharb",
+   "commit_or_tag": "3c95880f5b9977f84e042a4076b96669f2f8f895",
+   "files": [
+    "data_cache/QQQ_1m.parquet (sha256 65058e81354645b79c4990f004e1d19ad586a9f28634cbfdf983135d855f8a96, matches the repo's data_cache/mega_cap_sip_manifest.json)"
+   ],
+   "provider_as_documented": "Alpaca, feed=SIP, adjustment=RAW, 2024-08-22 04:00 ET .. 2026-08-21 19:59 ET (mega_cap_sip_manifest.json)",
+   "role": "MAIN: QQQ all segments 2025-07-10..2026-08-21"
+  },
+  {
+   "url": "https://github.com/xcollantes/close-reversal",
+   "commit_or_tag": "74a6d5c5eea3fbad889ab66ce676e54dc5b17ecc",
+   "files": [
+    "notebooks/data/SPY_1Min_2023-01-01_2026-10-01.parquet",
+    "notebooks/data/QQQ_1Min_2023-01-01_2026-10-01.parquet",
+    "notebooks/utils/alpaca_bars.py (read for provenance only)"
+   ],
+   "provider_as_documented": "Alpaca, DataFeed.SIP, Adjustment.RAW; only 09:30-16:00 ET bars of FULL sessions (early-close days dropped by the author), 2023-01-03..2026-09-30",
+   "role": "MAIN: SPY RTH 2025-07-10..2026-09-30 (except early-close days); QQQ RTH 2026-08-24..2026-09-30"
+  },
+  {
+   "url": "https://github.com/prsdro/spy",
+   "commit_or_tag": "36c18e584a32cd3b4f119a15ef786e3a023fdcb7",
+   "files": [
+    "data/candles_1m.csv.gz (sha256 371ed38b698322bd0119f2de34a984da524145b356c4dc8578dedc4db9406dc8)",
+    "ingest.py, fetch_massive.py, aggregate.py, README.md (read for provenance only)"
+   ],
+   "provider_as_documented": "SPY 1m 2000-01..2026-04-09, naive America/New_York timestamps, 04:00-20:00 ET. Pre-2025-10-22 bars come from 312 monthly \"*_SPY_1M.csv\" files whose vendor the repo does not name; 2025-10-22 onward fetched from the MASSIVE (ex-Polygon) aggregates API by fetch_massive.py (UTC ms converted to ET).",
+   "role": "MAIN: SPY all segments 2019-12-02..2020-07-10; SPY pre/post-market 2025-07-10..2026-04-09; SPY RTH on early-close days 2025-11-28 and 2025-12-24"
+  },
+  {
+   "url": "https://github.com/ishmael07/spy0dte-bots",
+   "commit_or_tag": "1dbf4ff0267db4b72b0db2cd78a900724a690ee3",
+   "files": [
+    "alpaca/runtime/data/live/spy_1m_2026-10-08.json .. spy_1m_2026-10-23.json (12 files)",
+    "alpaca/feed.py (read for provenance only)"
+   ],
+   "provider_as_documented": "Alpaca IEX feed (\"IEX feed - real time on the free plan\"), Robinhood-style dicts with begins_at in UTC, RTH only",
+   "role": "SUPPLEMENT ONLY (spy_1m_supplement.parquet)"
+  },
+  {
+   "url": "https://github.com/macchiatopsk-create/Market-Signal",
+   "commit_or_tag": "9aa6b2fd6d018887aac3cf73048b4cc106590832",
+   "files": [
+    "data/1m/QQQ_2021-12.csv.gz .. data/1m/QQQ_2026-10.csv.gz (59 files; only 2026-10 rows used)",
+    "gapfill1m.py (read for provenance only)"
+   ],
+   "provider_as_documented": "Dukascopy datafeed instrument QQQUSUSD (CFD) tick bid/ask, resampled to 1-minute bars of the (ask+bid)/2 mid, America/New_York, 09:30-14:59 only, only on days passing that repo's gap filter",
+   "role": "SUPPLEMENT ONLY (qqq_1m_supplement.parquet, 2026-10 rows)"
+  },
+  {
+   "url": "https://github.com/darbyatNE/BIN6250-HMM_Feature_Engineering",
+   "commit_or_tag": "538b422db57c2336255149888a7b21682a9adaa6",
+   "files": [
+    "data/QQQ_1min_firstratedata.csv (sha256 1f61e6cbc859b08e9c5733f0c2438bdcf68386dc854a9657193cdb07239457f7)"
+   ],
+   "provider_as_documented": "FirstRate Data QQQ 1m, 2022-09-30..2023-09-29, extended hours, naive ET",
+   "role": "VERIFICATION ONLY (independent vendor cross-check of QQQ prices and timestamp alignment)"
+  },
+  {
+   "url": "https://github.com/svettelnova/intraday-momentum-spy",
+   "commit_or_tag": "578ea6bf9f31357b6b3a76554678360a79f37027",
+   "files": [
+    "data/spy_30min.csv (Alpaca SIP 30-min RTH bars 2016-01-04..2026-10-05)",
+    "data/spy_daily.csv (yfinance daily OHLC, unadjusted close)"
+   ],
+   "provider_as_documented": "Alpaca SIP (30-min) and Yahoo Finance (daily) per README",
+   "role": "VERIFICATION ONLY (30-min re-aggregation check of every SPY segment incl. the prsdro era; official daily close check)"
+  },
+  {
+   "url": "https://github.com/zdadoosh22/company-research-gpt-evolution",
+   "commit_or_tag": "11661358e38287a846dcabdd887d83544633cfa6",
+   "files": [
+    "daytrading/data_cache/QQQ_2020_2023.json (daily OHLC, Yahoo-style unadjusted)"
+   ],
+   "provider_as_documented": "undocumented daily cache (values match QQQ official closes)",
+   "role": "VERIFICATION ONLY (QQQ official daily close check 2020-2023)"
+  }
+ ],
+ "rejected_or_unused_sources": [
+  {
+   "url": "https://github.com/lvrusu/QQQ_price_data",
+   "commit_or_tag": "e6be97d8326b30f7c737204f4a5a586afdbb1600",
+   "reason": "Rejected. 1_2_19_to_1_11_24_1minute_compressed_dataset.csv.zip is a close-only series on a synthetic 24h/7d minute grid (e.g. QQQ=208.96 stamped 2023-07-27 05:53); it matches Alpaca closes on 0.015% of 423,806 overlapping minutes at lag 0/+-1. QQQ1mfrom20_NOCRV_*.csv have the same re-indexing. QQQ1m_Ext_J_26_to_Mar_26B_2026.csv is price-scaled (constant ratio 0.99876 to raw SIP, i.e. dividend-adjusted), has no volume, and is fully redundant with ramires666/rtharb. The 5m/30m files are not 1-minute."
+  },
+  {
+   "url": "https://github.com/thokfoot/free-4-market-master",
+   "commit_or_tag": "f770a328a1e32e81d438c081f37140a4e63406b6",
+   "reason": "Unused. Yahoo Finance RTH-only snapshots for scattered days 2026-07..2026-09, redundant with SIP sources."
+  },
+  {
+   "url": "https://github.com/lin-r0987765/mnq-backtest",
+   "commit_or_tag": "c213244",
+   "reason": "Unused. Only 5-minute regularized Dukascopy QQQ/SPY bars are in the repo (the 1-minute source file is not committed)."
+  },
+  {
+   "url": "https://github.com/oyzh888/data (QQQ_15min_2023-2025.csv)",
+   "commit_or_tag": "12816f82c3bbbd2bbc6d36fb9ccc83e68ee066f8",
+   "reason": "Unused: 15-minute resolution."
+  }
+ ],
+ "splice_decisions": {
+  "rule": "For every XNYS session date and each segment (pre 04:00-09:30, rth 09:30-close, post close-20:00 ET) exactly ONE source is used: the highest-priority source that has at least one bar in that (date, segment). Sources are never mixed inside a segment, so condition-filtering conventions never change mid-segment; missing minutes are NOT filled from lower-priority sources.",
+  "priority_SPY": [
+   "alpaca_sip@oyzh888/data",
+   "alpaca_sip_rth@xcollantes/close-reversal",
+   "prsdro/spy"
+  ],
+  "priority_QQQ": [
+   "alpaca_sip@oyzh888/data",
+   "alpaca_sip@ramires666/rtharb",
+   "alpaca_sip_rth@xcollantes/close-reversal"
+  ],
+  "QQQ_agreement_basis": "All three QQQ sources are mirrors of the same Alpaca SIP bars and agree exactly (100.000% OHLC within 1 cent, identical volume, zero RTH minutes missing in one but present in another apart from early-close days that close-reversal drops by design): oyzh888 vs rtharb on 188,635 minutes (2024-08-22..2025-07-09, all hours); oyzh888 vs close-reversal on 243,360 RTH minutes; rtharb vs close-reversal on 193,440 RTH minutes. QQQ was therefore spliced only where sources agree; no QQQ source that disagreed (lvrusu, Dukascopy mid-quotes) was put in the main file.",
+  "SPY_agreement_basis": "Alpaca mirrors identical (oyzh888 vs close-reversal: 243,356 RTH minutes, 100%). prsdro/spy vs Alpaca SIP: RTH close within 1 cent on 99.78-100% of minutes per year 2020-2025; extended hours 99.99% (2020-2022) but only 45-79% (2023-2025) because prsdro OHLC includes odd-lot/non-last-sale-eligible prints (identical volume, different prices). prsdro is therefore used only where no SIP source exists.",
+  "spy_segment_runs": [
+   {
+    "segment": "pre",
+    "source": "prsdro/spy",
+    "from": "2019-12-02",
+    "to": "2020-07-10"
+   },
+   {
+    "segment": "pre",
+    "source": "alpaca_sip@oyzh888/data",
+    "from": "2020-07-13",
+    "to": "2025-07-09"
+   },
+   {
+    "segment": "pre",
+    "source": "prsdro/spy",
+    "from": "2025-07-10",
+    "to": "2026-04-09"
+   },
+   {
+    "segment": "rth",
+    "source": "prsdro/spy",
+    "from": "2019-12-02",
+    "to": "2020-07-10"
+   },
+   {
+    "segment": "rth",
+    "source": "alpaca_sip@oyzh888/data",
+    "from": "2020-07-13",
+    "to": "2025-07-09"
+   },
+   {
+    "segment": "rth",
+    "source": "alpaca_sip_rth@xcollantes/close-reversal",
+    "from": "2025-07-10",
+    "to": "2025-11-26"
+   },
+   {
+    "segment": "rth",
+    "source": "prsdro/spy",
+    "from": "2025-11-28",
+    "to": "2025-11-28"
+   },
+   {
+    "segment": "rth",
+    "source": "alpaca_sip_rth@xcollantes/close-reversal",
+    "from": "2025-12-01",
+    "to": "2025-12-23"
+   },
+   {
+    "segment": "rth",
+    "source": "prsdro/spy",
+    "from": "2025-12-24",
+    "to": "2025-12-24"
+   },
+   {
+    "segment": "rth",
+    "source": "alpaca_sip_rth@xcollantes/close-reversal",
+    "from": "2025-12-26",
+    "to": "2026-09-30"
+   },
+   {
+    "segment": "post",
+    "source": "prsdro/spy",
+    "from": "2019-12-02",
+    "to": "2020-07-10"
+   },
+   {
+    "segment": "post",
+    "source": "alpaca_sip@oyzh888/data",
+    "from": "2020-07-13",
+    "to": "2025-07-09"
+   },
+   {
+    "segment": "post",
+    "source": "prsdro/spy",
+    "from": "2025-07-10",
+    "to": "2026-04-09"
+   }
+  ],
+  "qqq_segment_runs": [
+   {
+    "segment": "pre",
+    "source": "alpaca_sip@oyzh888/data",
+    "from": "2020-07-13",
+    "to": "2025-07-09"
+   },
+   {
+    "segment": "pre",
+    "source": "alpaca_sip@ramires666/rtharb",
+    "from": "2025-07-10",
+    "to": "2026-08-21"
+   },
+   {
+    "segment": "rth",
+    "source": "alpaca_sip@oyzh888/data",
+    "from": "2020-07-13",
+    "to": "2025-07-09"
+   },
+   {
+    "segment": "rth",
+    "source": "alpaca_sip@ramires666/rtharb",
+    "from": "2025-07-10",
+    "to": "2026-08-21"
+   },
+   {
+    "segment": "rth",
+    "source": "alpaca_sip_rth@xcollantes/close-reversal",
+    "from": "2026-08-24",
+    "to": "2026-09-30"
+   },
+   {
+    "segment": "post",
+    "source": "alpaca_sip@oyzh888/data",
+    "from": "2020-07-13",
+    "to": "2025-07-09"
+   },
+   {
+    "segment": "post",
+    "source": "alpaca_sip@ramires666/rtharb",
+    "from": "2025-07-10",
+    "to": "2026-08-21"
+   }
+  ]
+ },
+ "coverage": {
+  "requested_window": "2019-12-01 .. 2026-10-23",
+  "calendar": "XNYS sessions from exchange_calendars 4.13.2 (PyPI); 1,733 sessions 2019-12-02..2026-10-23; early closes 2019-12-24, 2020-11-27, 2020-12-24, 2021-11-26, 2022-11-25, 2023-07-03, 2023-11-24, 2024-07-03, 2024-11-29, 2024-12-24, 2025-07-03, 2025-11-28, 2025-12-24; 2025-01-09 (national day of mourning) correctly closed.",
+  "SPY_main_summary": "2019-12-02 04:00 ET .. 2026-09-30 15:59 ET. Extended hours through 2026-04-09; RTH-only 2026-04-10..2026-09-30. No SIP-quality data 2026-10-01..2026-10-23 (17 sessions).",
+  "QQQ_main_summary": "2020-07-13 04:00 ET .. 2026-09-30 15:59 ET. Extended hours through 2026-08-21; RTH-only 2026-08-24..2026-09-30. NO DATA 2019-12-02..2020-07-10 (153 sessions) and no SIP-quality data 2026-10-01..2026-10-23.",
+  "SPY_by_year": [
+   {
+    "year": 2019,
+    "sessions_expected": 21,
+    "sessions_with_rth": 21,
+    "sessions_rth_complete_ge_99pct": 21,
+    "sessions_with_premarket": 21,
+    "sessions_with_postmarket": 21,
+    "rows": 14996,
+    "rth_rows": 8010,
+    "rth_minutes_expected": 8010,
+    "first_session_with_data": "2019-12-02",
+    "last_session_with_data": "2019-12-31",
+    "rows_by_source": {
+     "prsdro/spy": 14996
+    }
+   },
+   {
+    "year": 2020,
+    "sessions_expected": 253,
+    "sessions_with_rth": 253,
+    "sessions_rth_complete_ge_99pct": 249,
+    "sessions_with_premarket": 253,
+    "sessions_with_postmarket": 253,
+    "rows": 216510,
+    "rth_rows": 98254,
+    "rth_minutes_expected": 98310,
+    "first_session_with_data": "2020-01-02",
+    "last_session_with_data": "2020-12-31",
+    "rows_by_source": {
+     "prsdro/spy": 117080,
+     "alpaca_sip@oyzh888/data": 99430
+    }
+   },
+   {
+    "year": 2021,
+    "sessions_expected": 252,
+    "sessions_with_rth": 252,
+    "sessions_rth_complete_ge_99pct": 251,
+    "sessions_with_premarket": 252,
+    "sessions_with_postmarket": 252,
+    "rows": 201755,
+    "rth_rows": 98095,
+    "rth_minutes_expected": 98100,
+    "first_session_with_data": "2021-01-04",
+    "last_session_with_data": "2021-12-31",
+    "rows_by_source": {
+     "alpaca_sip@oyzh888/data": 201755
+    }
+   },
+   {
+    "year": 2022,
+    "sessions_expected": 251,
+    "sessions_with_rth": 251,
+    "sessions_rth_complete_ge_99pct": 251,
+    "sessions_with_premarket": 251,
+    "sessions_with_postmarket": 251,
+    "rows": 212900,
+    "rth_rows": 97710,
+    "rth_minutes_expected": 97710,
+    "first_session_with_data": "2022-01-03",
+    "last_session_with_data": "2022-12-30",
+    "rows_by_source": {
+     "alpaca_sip@oyzh888/data": 212900
+    }
+   },
+   {
+    "year": 2023,
+    "sessions_expected": 250,
+    "sessions_with_rth": 250,
+    "sessions_rth_complete_ge_99pct": 249,
+    "sessions_with_premarket": 250,
+    "sessions_with_postmarket": 250,
+    "rows": 202656,
+    "rth_rows": 97136,
+    "rth_minutes_expected": 97140,
+    "first_session_with_data": "2023-01-03",
+    "last_session_with_data": "2023-12-29",
+    "rows_by_source": {
+     "alpaca_sip@oyzh888/data": 202656
+    }
+   },
+   {
+    "year": 2024,
+    "sessions_expected": 252,
+    "sessions_with_rth": 252,
+    "sessions_rth_complete_ge_99pct": 252,
+    "sessions_with_premarket": 252,
+    "sessions_with_postmarket": 252,
+    "rows": 197008,
+    "rth_rows": 97740,
+    "rth_minutes_expected": 97740,
+    "first_session_with_data": "2024-01-02",
+    "last_session_with_data": "2024-12-31",
+    "rows_by_source": {
+     "alpaca_sip@oyzh888/data": 197008
+    }
+   },
+   {
+    "year": 2025,
+    "sessions_expected": 250,
+    "sessions_with_rth": 250,
+    "sessions_rth_complete_ge_99pct": 250,
+    "sessions_with_premarket": 250,
+    "sessions_with_postmarket": 250,
+    "rows": 221090,
+    "rth_rows": 96960,
+    "rth_minutes_expected": 96960,
+    "first_session_with_data": "2025-01-02",
+    "last_session_with_data": "2025-12-31",
+    "rows_by_source": {
+     "alpaca_sip@oyzh888/data": 107875,
+     "prsdro/spy": 66415,
+     "alpaca_sip_rth@xcollantes/close-reversal": 46800
+    }
+   },
+   {
+    "year": 2026,
+    "sessions_expected": 204,
+    "sessions_with_rth": 187,
+    "sessions_rth_complete_ge_99pct": 187,
+    "sessions_with_premarket": 67,
+    "sessions_with_postmarket": 67,
+    "rows": 109069,
+    "rth_rows": 72930,
+    "rth_minutes_expected": 79560,
+    "first_session_with_data": "2026-01-02",
+    "last_session_with_data": "2026-09-30",
+    "rows_by_source": {
+     "alpaca_sip_rth@xcollantes/close-reversal": 72930,
+     "prsdro/spy": 36139
+    }
+   }
+  ],
+  "QQQ_by_year": [
+   {
+    "year": 2019,
+    "sessions_expected": 21,
+    "sessions_with_rth": 0,
+    "sessions_rth_complete_ge_99pct": 0,
+    "sessions_with_premarket": 0,
+    "sessions_with_postmarket": 0,
+    "rows": 0,
+    "rth_rows": 0,
+    "rth_minutes_expected": 8010,
+    "first_session_with_data": null,
+    "last_session_with_data": null,
+    "rows_by_source": {}
+   },
+   {
+    "year": 2020,
+    "sessions_expected": 253,
+    "sessions_with_rth": 121,
+    "sessions_rth_complete_ge_99pct": 121,
+    "sessions_with_premarket": 121,
+    "sessions_with_postmarket": 121,
+    "rows": 98297,
+    "rth_rows": 46830,
+    "rth_minutes_expected": 98310,
+    "first_session_with_data": "2020-07-13",
+    "last_session_with_data": "2020-12-31",
+    "rows_by_source": {
+     "alpaca_sip@oyzh888/data": 98297
+    }
+   },
+   {
+    "year": 2021,
+    "sessions_expected": 252,
+    "sessions_with_rth": 252,
+    "sessions_rth_complete_ge_99pct": 252,
+    "sessions_with_premarket": 252,
+    "sessions_with_postmarket": 252,
+    "rows": 203477,
+    "rth_rows": 98100,
+    "rth_minutes_expected": 98100,
+    "first_session_with_data": "2021-01-04",
+    "last_session_with_data": "2021-12-31",
+    "rows_by_source": {
+     "alpaca_sip@oyzh888/data": 203477
+    }
+   },
+   {
+    "year": 2022,
+    "sessions_expected": 251,
+    "sessions_with_rth": 251,
+    "sessions_rth_complete_ge_99pct": 251,
+    "sessions_with_premarket": 251,
+    "sessions_with_postmarket": 251,
+    "rows": 215635,
+    "rth_rows": 97710,
+    "rth_minutes_expected": 97710,
+    "first_session_with_data": "2022-01-03",
+    "last_session_with_data": "2022-12-30",
+    "rows_by_source": {
+     "alpaca_sip@oyzh888/data": 215635
+    }
+   },
+   {
+    "year": 2023,
+    "sessions_expected": 250,
+    "sessions_with_rth": 250,
+    "sessions_rth_complete_ge_99pct": 250,
+    "sessions_with_premarket": 250,
+    "sessions_with_postmarket": 250,
+    "rows": 208178,
+    "rth_rows": 97140,
+    "rth_minutes_expected": 97140,
+    "first_session_with_data": "2023-01-03",
+    "last_session_with_data": "2023-12-29",
+    "rows_by_source": {
+     "alpaca_sip@oyzh888/data": 208178
+    }
+   },
+   {
+    "year": 2024,
+    "sessions_expected": 252,
+    "sessions_with_rth": 252,
+    "sessions_rth_complete_ge_99pct": 252,
+    "sessions_with_premarket": 252,
+    "sessions_with_postmarket": 252,
+    "rows": 210608,
+    "rth_rows": 97740,
+    "rth_minutes_expected": 97740,
+    "first_session_with_data": "2024-01-02",
+    "last_session_with_data": "2024-12-31",
+    "rows_by_source": {
+     "alpaca_sip@oyzh888/data": 210608
+    }
+   },
+   {
+    "year": 2025,
+    "sessions_expected": 250,
+    "sessions_with_rth": 250,
+    "sessions_rth_complete_ge_99pct": 250,
+    "sessions_with_premarket": 250,
+    "sessions_with_postmarket": 250,
+    "rows": 221418,
+    "rth_rows": 96960,
+    "rth_minutes_expected": 96960,
+    "first_session_with_data": "2025-01-02",
+    "last_session_with_data": "2025-12-31",
+    "rows_by_source": {
+     "alpaca_sip@oyzh888/data": 113057,
+     "alpaca_sip@ramires666/rtharb": 108361
+    }
+   },
+   {
+    "year": 2026,
+    "sessions_expected": 204,
+    "sessions_with_rth": 187,
+    "sessions_rth_complete_ge_99pct": 187,
+    "sessions_with_premarket": 160,
+    "sessions_with_postmarket": 160,
+    "rows": 160482,
+    "rth_rows": 72930,
+    "rth_minutes_expected": 79560,
+    "first_session_with_data": "2026-01-02",
+    "last_session_with_data": "2026-09-30",
+    "rows_by_source": {
+     "alpaca_sip@ramires666/rtharb": 149952,
+     "alpaca_sip_rth@xcollantes/close-reversal": 10530
+    }
+   }
+  ],
+  "SPY_sessions_with_rth_below_99pct_minutes": {
+   "2020-03-09": 376,
+   "2020-03-12": 376,
+   "2020-03-16": 376,
+   "2020-03-18": 376,
+   "2021-05-05": 385,
+   "2023-06-05": 386
+  },
+  "QQQ_sessions_with_rth_below_99pct_minutes": {},
+  "supplements": {
+   "spy": {
+    "rows": 4590,
+    "first": "2026-10-08 13:30:00+00:00",
+    "last": "2026-10-23 19:58:00+00:00",
+    "sessions": [
+     "2026-10-08",
+     "2026-10-09",
+     "2026-10-12",
+     "2026-10-13",
+     "2026-10-14",
+     "2026-10-15",
+     "2026-10-16",
+     "2026-10-19",
+     "2026-10-20",
+     "2026-10-21",
+     "2026-10-22",
+     "2026-10-23"
+    ]
+   },
+   "qqq": {
+    "rows": 1410,
+    "first": "2026-10-01 13:30:00+00:00",
+    "last": "2026-10-23 15:59:00+00:00",
+    "sessions": [
+     "2026-10-01",
+     "2026-10-14",
+     "2026-10-15",
+     "2026-10-16",
+     "2026-10-20",
+     "2026-10-21",
+     "2026-10-23"
+    ]
+   }
+  },
+  "rows_dropped_during_normalisation": {
+   "oyzh_SPY": {
+    "rows_in_window": 1021647,
+    "dropped_non_session_dates": 0,
+    "dropped_outside_0400_2000_ET": 23
+   },
+   "closerev_SPY": {
+    "rows_in_window": 363086,
+    "dropped_non_session_dates": 0,
+    "dropped_outside_0400_2000_ET": 0
+   },
+   "prsdro_spy": {
+    "rows_in_window": 1417482,
+    "dropped_non_session_dates": 0,
+    "dropped_outside_0400_2000_ET": 615
+   },
+   "oyzh_QQQ": {
+    "rows_in_window": 1049252,
+    "dropped_non_session_dates": 0,
+    "dropped_outside_0400_2000_ET": 0
+   },
+   "rtharb_QQQ": {
+    "rows_in_window": 446948,
+    "dropped_non_session_dates": 0,
+    "dropped_outside_0400_2000_ET": 0
+   },
+   "closerev_QQQ": {
+    "rows_in_window": 363090,
+    "dropped_non_session_dates": 0,
+    "dropped_outside_0400_2000_ET": 0
+   }
+  }
+ },
+ "checks": [
+  {
+   "check": "minute-start stamping via opening-auction spike (median volume by ET minute, raw sources)",
+   "result": {
+    "oyzh_SPY": {
+     "09:28": 16943.5,
+     "09:29": 32803.0,
+     "09:30": 650258.5,
+     "09:31": 291124.0,
+     "09:32": 256644.0,
+     "15:59": 2087689.5,
+     "16:00": 2311375.0,
+     "16:01": 139025.0
+    },
+    "closerev_SPY": {
+     "09:28": NaN,
+     "09:29": NaN,
+     "09:30": 625943.0,
+     "09:31": 281891.0,
+     "09:32": 238609.0,
+     "15:59": 1970737.0,
+     "16:00": NaN,
+     "16:01": NaN
+    },
+    "prsdro_spy": {
+     "09:28": 17121.0,
+     "09:29": 31510.0,
+     "09:30": 605964.0,
+     "09:31": 286580.0,
+     "09:32": 254833.5,
+     "15:59": 1886353.5,
+     "16:00": 2100928.0,
+     "16:01": 126250.0
+    },
+    "oyzh_QQQ": {
+     "09:28": 14966.0,
+     "09:29": 15779.0,
+     "09:30": 586326.5,
+     "09:31": 246390.5,
+     "09:32": 224864.0,
+     "15:59": 855241.5,
+     "16:00": 811696.0,
+     "16:01": 56186.0
+    },
+    "rtharb_QQQ": {
+     "09:28": 17093.5,
+     "09:29": 15928.0,
+     "09:30": 546881.0,
+     "09:31": 255148.0,
+     "09:32": 208725.0,
+     "15:59": 876119.0,
+     "16:00": 734724.0,
+     "16:01": 52975.0
+    },
+    "closerev_QQQ": {
+     "09:28": NaN,
+     "09:29": NaN,
+     "09:30": 538163.0,
+     "09:31": 254524.0,
+     "09:32": 222061.0,
+     "15:59": 902902.0,
+     "16:00": NaN,
+     "16:01": NaN
+    },
+    "frd_QQQ": {
+     "09:28": 14319.0,
+     "09:29": 18191.0,
+     "09:30": 512839.0,
+     "09:31": 258407.0,
+     "09:32": 233419.0,
+     "15:59": 880224.5,
+     "16:00": 590253.5,
+     "16:01": 47141.0
+    },
+    "iex_SPY": {
+     "09:28": NaN,
+     "09:29": NaN,
+     "09:30": 8892.0,
+     "09:31": 5310.0,
+     "09:32": 3490.0,
+     "15:59": NaN,
+     "16:00": NaN,
+     "16:01": NaN
+    }
+   },
+   "conclusion": "every source (incl. FirstRate and IEX) peaks at the 09:30 bar, with 09:29 small -> bars are stamped at minute START; none needed shifting."
+  },
+  {
+   "check": "DST handling: per calendar month, ET minute in 08:00-11:00 with the highest median volume in the FINAL files",
+   "result": {
+    "SPY_months_checked": 82,
+    "SPY_bad_months": {},
+    "QQQ_months_checked": 75,
+    "QQQ_bad_months": {}
+   },
+   "conclusion": "09:30 ET in every month on both sides of every DST change."
+  },
+  {
+   "check": "cross-source lag test (fraction of overlapping minutes with close within 1 cent at lag -1/0/+1 min)",
+   "result": {
+    "oyzh_vs_rtharb_QQQ": [
+     0.1098,
+     1.0,
+     0.1098
+    ],
+    "oyzh_vs_closerev_QQQ_RTH": [
+     0.0751,
+     1.0,
+     0.0751
+    ],
+    "rtharb_vs_closerev_QQQ_RTH": [
+     0.063,
+     1.0,
+     0.063
+    ],
+    "oyzh_vs_FirstRate_QQQ": [
+     0.1471,
+     0.9999,
+     0.1472
+    ],
+    "prsdro_vs_oyzh_SPY": [
+     0.1577,
+     0.9031,
+     0.1519
+    ],
+    "prsdro_vs_closerev_SPY_RTH": [
+     0.0836,
+     0.9999,
+     0.0836
+    ],
+    "oyzh_vs_closerev_SPY_RTH": [
+     0.0859,
+     1.0,
+     0.0859
+    ],
+    "dukascopy_mid_vs_SIP_QQQ (median abs close diff USD)": [
+     0.12,
+     0.0051,
+     0.1199
+    ]
+   },
+   "conclusion": "lag 0 is best everywhere; no source is offset by a minute."
+  },
+  {
+   "check": "independent vendor: final QQQ vs FirstRate Data 2022-09-30..2023-09-29",
+   "result": {
+    "rows": 208690,
+    "rth_close_match_1c": 0.99999,
+    "ext_close_match_1c": 0.99979,
+    "rth_high_match_1c": 0.99999,
+    "rth_volume_ratio_median(ours/frd)": 1.1605
+   }
+  },
+  {
+   "check": "final SPY re-aggregated to 30-min RTH bars vs Alpaca SIP 30-min bars (svettelnova), full 30-min windows only",
+   "result": {
+    "alpaca_sip@oyzh888/data": {
+     "bars": 16239,
+     "close_match_1c": 1.0,
+     "high_match_1c": 1.0,
+     "low_match_1c": 1.0,
+     "open_match_1c": 1.0,
+     "close_absdiff_p99": 0.0,
+     "close_absdiff_max": 0.0,
+     "volume_ratio_median(ours/sip)": 1.0,
+     "span": [
+      "2020-07-13 13:30:00+00:00",
+      "2025-07-09 19:30:00+00:00"
+     ]
+    },
+    "alpaca_sip_rth@xcollantes/close-reversal": {
+     "bars": 3991,
+     "close_match_1c": 1.0,
+     "high_match_1c": 1.0,
+     "low_match_1c": 1.0,
+     "open_match_1c": 1.0,
+     "close_absdiff_p99": 0.0,
+     "close_absdiff_max": 0.0,
+     "volume_ratio_median(ours/sip)": 1.0,
+     "span": [
+      "2025-07-10 13:30:00+00:00",
+      "2026-09-30 19:30:00+00:00"
+     ]
+    },
+    "prsdro/spy": {
+     "bars": 1992,
+     "close_match_1c": 1.0,
+     "high_match_1c": 0.99699,
+     "low_match_1c": 0.99598,
+     "open_match_1c": 0.99799,
+     "close_absdiff_p99": 0.0,
+     "close_absdiff_max": 0.0,
+     "volume_ratio_median(ours/sip)": 0.8236,
+     "span": [
+      "2019-12-02 14:30:00+00:00",
+      "2025-12-24 17:30:00+00:00"
+     ]
+    }
+   },
+   "conclusion": "Alpaca-sourced segments identical; prsdro era (2019-12..2020-07 + 2 half days) close 100%, high/low 99.6-99.7% within 1 cent, volume about 0.82x SIP."
+  },
+  {
+   "check": "official daily close (Yahoo) lies within [low,high] of the last two RTH-session bars (close-1min and close bar)",
+   "result": {
+    "SPY": {
+     "alpaca_sip@oyzh888/data": {
+      "days": 1254,
+      "official_close_within_last_two_bars_range": 1.0
+     },
+     "alpaca_sip_rth@xcollantes/close-reversal": {
+      "days": 307,
+      "official_close_within_last_two_bars_range": 0.9707
+     },
+     "prsdro/spy": {
+      "days": 155,
+      "official_close_within_last_two_bars_range": 1.0
+     }
+    },
+    "QQQ_2020_2023": {
+     "alpaca_sip@oyzh888/data": {
+      "days": 874,
+      "official_close_within_last_two_bars_range": 1.0
+     }
+    }
+   },
+   "conclusion": "100% where the closing-auction (16:00 / 13:00) bar exists; 97.1% on RTH-only close-reversal days, which by construction lack the 16:00 bar carrying the closing auction."
+  },
+  {
+   "check": "integrity of final files",
+   "result": {
+    "SPY": {
+     "rows": 1375984,
+     "dup_ts": 0,
+     "sorted": true,
+     "nonzero_seconds": 0,
+     "high_lt_max_oc": 0,
+     "low_gt_min_oc": 0,
+     "nonpos_price": 0,
+     "zero_volume_rows": 0,
+     "null_cells": 0,
+     "et_minute_range": [
+      240,
+      1199
+     ]
+    },
+    "QQQ": {
+     "rows": 1318095,
+     "dup_ts": 0,
+     "sorted": true,
+     "nonzero_seconds": 0,
+     "high_lt_max_oc": 0,
+     "low_gt_min_oc": 0,
+     "nonpos_price": 0,
+     "zero_volume_rows": 0,
+     "null_cells": 0,
+     "et_minute_range": [
+      240,
+      1199
+     ]
+    }
+   }
+  },
+  {
+   "check": "source file checksums",
+   "result": "oyzh888 zip sha256 equals its Git LFS pointer oid; rtharb QQQ_1m.parquet sha256 equals the value in the repo's own mega_cap_sip_manifest.json"
+  },
+  {
+   "check": "Dukascopy mid-quote supplement vs SIP on 123,572 overlapping minutes 2021-12..2026-09",
+   "result": {
+    "lag0_median_abs_close_diff_usd": 0.0051,
+    "lag0_p95_abs_close_diff_usd": 0.035,
+    "lag0_1min_return_corr": 0.998,
+    "lag_pm1_median_abs_close_diff_usd": 0.12
+   },
+   "conclusion": "good price proxy, correctly minute-start aligned; not a trade series."
+  }
+ ],
+ "known_issues": [
+  "QQQ: no 1-minute data at all for 2019-12-02..2020-07-10 (153 sessions incl. the Feb-Apr 2020 crash). Extensive searching of GitHub repos/code (QQQ 1min/minute/1Min/full_1min/QQQUSUSD filenames, Zarattini/ORB replications, Alpaca/Polygon/FirstRate/Dukascopy mirrors, recently pushed SPY/QQQ repos) and web search found no public 1m QQQ source for that window on allowed hosts. Kaggle/HuggingFace/Zenodo/FirstRate/Dukascopy/Polygon direct downloads are blocked.",
+  "October 2026: neither symbol has SIP-quality data after 2026-09-30. Supplements: SPY IEX-only RTH bars for 12 sessions 2026-10-08..2026-10-23 (2026-10-01..10-07 missing entirely); QQQ Dukascopy CFD mid-quote bars for 7 sessions (10-01, 10-14, 10-15, 10-16, 10-20, 10-21, 10-23), 09:30-14:59 ET only.",
+  "Extended hours end earlier than RTH: SPY pre/post-market only through 2026-04-09; QQQ pre/post-market only through 2026-08-21. After that the main files are RTH-only (09:30-15:59, no 16:00 closing-auction bar).",
+  "Volume definition is not homogeneous for SPY: prsdro-era bars (2019-12-02..2020-07-10) have about 0.82x the Alpaca SIP volume (vendor appears to exclude odd lots/some conditions), so SPY volume features have a level break at 2020-07-13. From 2023 prsdro volume equals SIP volume minute-for-minute, but its extended-hours OHLC includes odd-lot/ineligible prints: used only for SPY pre/post-market 2025-07-10..2026-04-09 where 340 of 102,132 bars have a wick >0.5% beyond the body (e.g. isolated bad prints); consider wick clipping or using close only for those rows (source == prsdro/spy and ts after 2025-07-10).",
+  "QQQ main volume is Alpaca SIP throughout (FirstRate shows ~0.86x of it), so QQQ has no volume-definition break.",
+  "prsdro/spy vendor for bars before 2025-10-22 is undocumented in that repo; its prices agree with Alpaca SIP (RTH close within 1 cent on >=99.78% of minutes per year) and with SIP 30-min bars in the window where it is used. fetch_massive.py (Massive bars 2025-10-22+) uses an approximate DST switch at 02:00 UTC on transition Sundays, which cannot affect weekday bars; the per-month spike check confirms 2026-03/2025-11 alignment.",
+  "Missing minutes are left missing (no forward fill): minutes without eligible trades have no row, frequent in early pre-market and late post-market. RTH sessions below 99% of expected minutes: SPY 2020-03-09/12/16/18 (376 bars: genuine 15-min market-wide circuit-breaker halts), SPY 2021-05-05 (385) and 2023-06-05 (386; 09:52-09:55 ET absent in Alpaca but present in prsdro, deliberately not filled). QQQ: none.",
+  "close-reversal (RTH source) omits early-close sessions by design; on SPY 2025-11-28 and 2025-12-24 the RTH segment therefore comes from prsdro/spy. QQQ early-close days in the rtharb window come from Alpaca SIP all-hours data.",
+  "Prices are raw (not dividend-adjusted). SPY and QQQ pay quarterly dividends, so multi-day return features spanning ex-dates carry small artificial gaps (~0.3-0.6% SPY, ~0.15% QQQ). No splits occurred in the window.",
+  "Bars stamped at or after 20:00 ET or before 04:00 ET were dropped (615 prsdro rows, mostly 20:00 late prints; 23 oyzh888 SPY rows). No rows fell on non-session dates.",
+  "The official closing price is the closing-auction print, which appears inside the 16:00 ET (13:00 on early closes) bar for all-hours sources; the 15:59 bar close can differ from the official close (by >$1 on volatile days such as 2025-04-09). RTH-only segments (close-reversal) contain no closing-auction bar.",
+  "SPY supplement (IEX): IEX-only volume (~2% of consolidated), highs/lows can differ from the consolidated tape, usually no 15:59 bar (the bot snapshot ran before the close), 2026-10-15 has 315 bars; it could not be checked against SIP because no SIP minute data overlaps it.",
+  "QQQ supplement (Dukascopy): quotes of a CFD on QQQ, mid of bid/ask, not exchange trades; only days chosen by that repo's own gap filter; volume column is Dukascopy quote volume (not shares) and must not be compared with main-file volume.",
+  "ts_utc uses nanosecond precision with tz=UTC; readers that drop timezone info will see UTC wall-clock times, not ET."
+ ]
+}

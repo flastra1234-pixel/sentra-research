@@ -1,0 +1,90 @@
+{
+ "confirmed": [
+  {
+   "dim": "lucid-rules",
+   "title": "The 'any payout' metric covers 21 funded sessions, but goal 1 is a payout within 2 weeks; time to first payout is never measured",
+   "severity": "major",
+   "file": "research/factory/lx_run.py",
+   "status": "fixed"
+  },
+  {
+   "dim": "selection",
+   "title": "Round 2 re-runs the 2024 validation on filtered variants of bases that already failed it, so chance passes get into the pool and the fleet",
+   "severity": "major",
+   "file": "research/factory/lx_run.py",
+   "status": "fixed"
+  }
+ ],
+ "refuted": [
+  {
+   "dim": "lookahead",
+   "title": "Session inclusion gate looks at the whole session (09:30 bar present, >=380/390 cash bars, >=1000 bars), so which days count depends on data after every entry. It silently drops the COVID-crash days and the 2022-09-21 FOMC day",
+   "why": [
+    "The claim checks committed code (HEAD), not the code under review. In HEAD, lx_data.py line 59 is `ok = present[:, 930] & (present[:, RTH].sum(axis=1) >= rth_min) & (present.sum(axis=1) >= all_min)`, with RTH_MIN=380 and ALL_MIN=1000. That is the line the reviewer quotes. The working tree changed it, uncommitted (git diff HEAD, file mtime 08:51:04). The gate at line 63 is now `ok = weekday & (present[:, RTH].sum(axis=1) >= rth_min) & (present.sum(axis=1) >= all_min)`, with RTH_MIN=60 and ALL_MIN=300. The `present[:,930]` requirement is gone. The new docstring says the change was made for exactly this reason: halt days such as the 2020 limit-down sessions stay in, because dropping them on completeness would use information from after every entry.\n\nThe reviewer's scripts b2-b5 and c1-c3 were saved between 08:39 and 08:47, before that edit. b2.py checks that the old-code build reproduces the cache (lx_nq20.npz was still the HEAD build then). The cache was then rebuilt at 08:52, and lx_candidates_nq20.json (08:56) and lx_fleet2_nq20.json (09:04) were regenerated after that.\n\nI checked it myself. Running the working-tree LD.build on the current lx_sources frame (df_wt.pkl) reproduces lx_nq20.npz exactly: same 1,751 dates, max |dc| = 0. Every day the claim names is in the cache:\n- 2020-02-27 (240 cash bars)\n- 2020-03-03 (380)\n- 2020-03-09 (376)\n- 2020-03-10 (330)\n- 2020-03-12 (377)\n- 2020-03-16 (376 cash bars, 546 total)\n- 2020-03-18 (377)\n- 2022-09-21 (379)\n- 2025-01-16 (370)\n- 2025-01-23 (357)\n- 2025-02-13 (345)\n\nThe weekdays the current gate still drops are holidays or feed gaps with no data in the morning entry window:\n- Holidays: Good Fridays, 2025-01-09 (national day of mourning), 2026-07-03, Labor Day 2026.\n- 2020-02-28 has no bars at all.\n- 2020-03-02 has only bars 0-59 (18:00-18:59 the evening before).\n- 2022-06-20 also has only bars 0-59.\n- 2022-06-21 has bars only from index 1228 (14:28 ET).\n- 2025-09-09 has bars 0-35 and 1138-1364 only, nothing from 18:36 to 14:58.\n\nNone of these could be traded at 09:30-10:30 even with perfect information, so dropping them introduces no look-ahead selection on tradable days. Leaving them in would only add forward-filled flat bars.\n\nThe one stale item is lx_fleet_nq20.json (08:32), which the claim quotes for the chosen-fleet losses. It predates the rebuilt cache, but lx_run's `fleet` command rewrites it from the new cache. The current fleet2 output and the candidates were built after the fix. The defect as described does not exist in the code under review.",
+    "The claim describes commit HEAD 39874ad, not the code under review now. At HEAD, line 59 is `ok = present[:,930] & (RTH>=380) & (all>=1000)`, and that gate did drop these days. I checked this: run on the current session set, the old gate would remove 75 sessions, including 2020-02-27, 03-03, 03-09, 03-10, 03-12, 03-16, 03-18, 2022-09-21, 2025-01-16, 01-23 and 02-13. But research/factory/lx_data.py has uncommitted working-tree changes (file saved 08:51) that replace that gate. The new gate is `weekday & (present[:,RTH].sum>=60) & (present.sum>=300)`. It has no 09:30-bar requirement, RTH_MIN is 60 instead of 380, and ALL_MIN is 300 instead of 1000. The docstring now says halt days must stay in because dropping them would use information from after entry.\n\nI rebuilt the sessions read-only from lx_sources.build() with the current lx_data.build. Script: /tmp/claude-0/-home-user-sentra/f4111bd7-7194-5f3c-8353-395e6c9d714c/scratchpad/review/sk2/chk.py. The rebuild matches /home/user/sentra-data/lx_nq20.npz exactly: 1751 sessions, the same dates, max close difference 0.0, and the same present mask. The cache contains all 11 days the claim names, for example 2020-03-12 (377 RTH bars), 2020-03-16 (546 total bars) and 2022-09-21 (379 RTH bars).\n\nThe cache was rebuilt after the fix: npz at 08:52:06, lx_data.py at 08:51:04. The sweep outputs were regenerated after it too: r1/r2 open and sealed at 08:52-08:54, trials at 08:52-08:55, lx_candidates_nq20.json at 08:56, lx_fleet2_nq20.json at 09:04. So the discovery, validation and sealed stats, the worst-low pool filter and the v2 fleet scoring all already include the COVID and FOMC days.\n\nThe current gate still drops 10 weekday session-days. Eight have zero cash-session bars: Good Fridays, holiday stubs and 2026-09-07 with a single bar. The other two are feed gaps with no prints in the 09:30-10:30 entry window (chk2.py). 2022-06-21 has data only from bar 1228 (14:28). 2025-09-09 has no data from bar 36 to bar 1137 (18:36-12:57). Their cash-session ranges were 0.60% and 0.29%. No entry could be simulated on those days, so this is not the tail-day selection the claim describes.\n\nTwo things remain, and neither is a defect in the reviewed code. First, the fix is not committed. Second, /home/user/sentra-data/lx_fleet_nq20.json (08:32) was built on the old npz and is stale. The legacy `fleet`/`unseal` commands still read it, while `unseal_v2` reads the fresh lx_fleet2_nq20.json. The reviewer's fleet evidence came from that stale file."
+   ]
+  }
+ ],
+ "minor": [
+  {
+   "title": "Minutes before a session's first print are back-filled with that bar's close, so bar 0 (18:00) carries a future price",
+   "file": "research/factory/lx_data.py",
+   "status": "fixed"
+  },
+  {
+   "title": "The 'holdout' 2026-07-02..2026-10-23 is the same Yahoo NQ=F data that the v1 pipeline already unsealed, and its lessons shaped the lx grid",
+   "file": "research/factory/lx_run.py",
+   "status": "fixed"
+  },
+  {
+   "title": "Breakout stop-entry is filled one tick better than the print that triggered it, so it pays no real slippage (minor)",
+   "file": "research/factory/lx_engine.py",
+   "status": "fixed"
+  },
+  {
+   "title": "Bars filled flat after an early close, before the first print, or inside feed gaps can still be traded, so the engine books zero-move trades that always lose the cost",
+   "file": "research/factory/lx_data.py",
+   "status": "fixed"
+  },
+  {
+   "title": "detect_rolls assumes nanosecond timestamps, so the 2-minute contiguity guard does nothing",
+   "file": "research/factory/lx_sources.py",
+   "status": "fixed"
+  },
+  {
+   "title": "June 2022 roll is not adjusted: a +0.223% jump stays inside session 2022-06-13",
+   "file": "research/factory/lx_sources.py",
+   "status": "fixed"
+  },
+  {
+   "title": "Zero-volume sub-minute tick rows in NQ_db_1m.json overwrite the real 1-minute bar in the session grid",
+   "file": "research/factory/lx_data.py",
+   "status": "fixed"
+  },
+  {
+   "title": "Bad-tick prints in the new 2026 source pass into holdout sessions unfiltered",
+   "file": "research/factory/lx_sources.py",
+   "status": "fixed"
+  },
+  {
+   "title": "(Committed HEAD 39874ad only) Holdout session 2026-07-02 contains 369 CFD bars",
+   "file": "research/factory/lx_run.py",
+   "status": "fixed"
+  },
+  {
+   "title": "Per-sleeve minute path gets stuck at the first trade's realized P&L on re-entry days, so the stop/lock overlay and lows are wrong",
+   "file": "research/factory/lx_engine.py",
+   "status": "fixed"
+  },
+  {
+   "title": "replays() pass_rate_10 keeps end-of-period windows that resolved early but drops the ones still open",
+   "file": "research/factory/lx_run.py",
+   "status": "fixed"
+  },
+  {
+   "title": "About a third of the 'holdout' was already unsealed by the v1 pipeline, and its results shaped the lx strategy design",
+   "file": "research/factory/lx_run.py",
+   "status": "fixed"
+  }
+ ]
+}
