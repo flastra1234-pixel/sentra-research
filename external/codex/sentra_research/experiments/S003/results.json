@@ -1,0 +1,57 @@
+{
+  "diagnostic_only": true,
+  "reserved_data_accessed": false,
+  "preregistration_sha256": "d734cf71eb3327ea06673224707023884056193a05df2c99ed4df775ed2ecb9a",
+  "results": {
+    "MES": {
+      "eligible_days": 201,
+      "hypothetical_net": -156.74000000000012,
+      "mean_net": -0.7798009950248762,
+      "median_net": -2.49,
+      "worst_net": -136.24,
+      "days100": 5,
+      "days150": 1,
+      "chronological_half_nets": [
+        24.759999999999945,
+        -181.5000000000001
+      ],
+      "bootstrap": {
+        "sessions": 201,
+        "mean_daily_pnl": -0.7798009950248762,
+        "confidence": 0.95,
+        "ci_low": -5.47523009950249,
+        "ci_high": 3.996318407960197,
+        "centered_bootstrap_p_value": 0.6217927357547485,
+        "block_length": 5,
+        "bootstrap_samples": 3000,
+        "note": "Single-series stationary-block diagnostic; not search-adjusted or fresh holdout evidence."
+      },
+      "holm_adjusted_p": 0.6217927357547485
+    },
+    "MNQ": {
+      "eligible_days": 201,
+      "hypothetical_net": 2194.759999999999,
+      "mean_net": 10.919203980099496,
+      "median_net": 4.26,
+      "worst_net": -281.74,
+      "days100": 28,
+      "days150": 14,
+      "chronological_half_nets": [
+        1274.2599999999998,
+        920.4999999999998
+      ],
+      "bootstrap": {
+        "sessions": 201,
+        "mean_daily_pnl": 10.919203980099496,
+        "confidence": 0.95,
+        "ci_low": -1.0417412935323398,
+        "ci_high": 22.7376119402985,
+        "centered_bootstrap_p_value": 0.035654781739420195,
+        "block_length": 5,
+        "bootstrap_samples": 3000,
+        "note": "Single-series stationary-block diagnostic; not search-adjusted or fresh holdout evidence."
+      },
+      "holm_adjusted_p": 0.07130956347884039
+    }
+  }
+}

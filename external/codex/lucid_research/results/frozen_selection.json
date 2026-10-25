@@ -1,0 +1,7 @@
+{
+  "configs": [],
+  "selection": "pre-registered development gates, top3/family, validation gates, top1/family max3",
+  "development_sessions": 224,
+  "validation_sessions": 125,
+  "tested_configs": 297
+}

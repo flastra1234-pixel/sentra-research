@@ -1,0 +1,79 @@
+{
+  "time_utc": "2026-10-25T04:36:32.150949+00:00",
+  "frozen_sha256": {
+    "results": "84915a3aba600e04c5078f0c87f235f5be918bb29f18baf06a60872a49d84ceb",
+    "results_risk": "71046273a5a2ccc2641555f25699de918006d3912b2a637fd57e3dcaffa5ed38",
+    "results_higher_tf": "307ea7db80dcfa3a47d662c647a8296c89a062d5953582e554ab977c2c9c9adc",
+    "results_time": "179495c9d0b4f05d6764a2a75cfb98687d4106675edb7803cca7155dbb5a4462",
+    "results_es": "c7384837e2aaf510fc6f8bd848982b0c6ff86158379a0e084eda8cf9a40bb487"
+  },
+  "selections": {
+    "results": {
+      "configs": [],
+      "selection": "pre-registered development gates, top3/family, validation gates, top1/family max3",
+      "development_sessions": 224,
+      "validation_sessions": 125,
+      "tested_configs": 297
+    },
+    "results_risk": {
+      "configs": [],
+      "quantity": 1,
+      "branch": "risk_sensitivity",
+      "tested_strategy_configurations": 297,
+      "holdout_inspected": false
+    },
+    "results_higher_tf": {
+      "configs": [],
+      "quantity": 1,
+      "branch": "higher_timeframe",
+      "tested_configs": 256,
+      "holdout_inspected": false
+    },
+    "results_time": {
+      "configs": [],
+      "quantity": 1,
+      "asset": "MNQ",
+      "branch": "time_entry",
+      "tested_configs": 216,
+      "holdout_inspected": false
+    },
+    "results_es": {
+      "configs": [
+        {
+          "family": "orb",
+          "signal_minutes": 5,
+          "atr_period": 5,
+          "start_minute": 585,
+          "end_minute": 900,
+          "max_hold": 120,
+          "max_trades": 1,
+          "min_stop": 1,
+          "max_stop": 20,
+          "reward_r": 1,
+          "or_minutes": 30,
+          "stop_mode": "or_fraction",
+          "stop_fraction": 0.5,
+          "id": "E028",
+          "source_config_id": "H028"
+        }
+      ],
+      "quantity": 2,
+      "instrument": "MES",
+      "price_proxy": "ES",
+      "point_value": 5.0,
+      "branch": "es_higher_timeframe",
+      "tested_configs": 256,
+      "holdout_inspected": false,
+      "selection": "development gates top2 per family; validation gates top1 per family max3",
+      "sessions": {
+        "development": 70,
+        "validation": 62,
+        "development_first": "2025-06-20",
+        "development_last": "2025-09-30",
+        "validation_first": "2025-10-01",
+        "validation_last": "2025-12-31",
+        "holdout_inspected": false
+      }
+    }
+  }
+}

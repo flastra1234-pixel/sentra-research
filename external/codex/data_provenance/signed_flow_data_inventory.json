@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "MES": {
+      "schema": "ts: timestamp[ns, tz=UTC]\nopen: double\nhigh: double\nlow: double\nclose: double\nvolume: uint32\ntrade_count: uint32",
+      "rows": 1677810,
+      "signed_flow_fields_present": false,
+      "contract_identifiers_present": false
+    },
+    "MNQ": {
+      "schema": "ts: timestamp[ns, tz=UTC]\nopen: double\nhigh: double\nlow: double\nclose: double\nvolume: uint32\ntrade_count: uint32",
+      "rows": 1696803,
+      "signed_flow_fields_present": false,
+      "contract_identifiers_present": false
+    }
+  },
+  "public_sdk_fixtures": [
+    {
+      "url": "https://raw.githubusercontent.com/databento/databento-python/main/tests/data/GLBX.MDP3/test_data.trades.dbn.zst",
+      "file": "/workspace/sentra_research/data/test_data.trades.dbn.zst",
+      "bytes": 217,
+      "sha256": "f30dbb31eeb1b163e2043ff79d4cb0e090b2580a402f2146bd16d5cba115708e",
+      "role": "SDK decoding fixture only; NOT market-performance evidence"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/databento/databento-python/main/tests/data/GLBX.MDP3/test_data.tbbo.dbn.zst",
+      "file": "/workspace/sentra_research/data/test_data.tbbo.dbn.zst",
+      "bytes": 256,
+      "sha256": "4960b9c90c43771a937e9d3653e8d6d705a58e63f51cfe691e71fcc9042381e4",
+      "role": "SDK decoding fixture only; NOT market-performance evidence"
+    }
+  ]
+}

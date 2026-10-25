@@ -1,0 +1,10 @@
+{
+  "sha256": {
+    "es_plan.md": "4de4ad6b3d863c11e17f4137f1da0da9be8843676953c6ec8715cececcba0c90",
+    "es_study.py": "cf68c5400e0b717d60dfeb5399787e7a9b9a7cb32d579093d918f63434989c25",
+    "engine.py": "0db78b7ad24f5ec9ba8bc4a3f96c6c31910ff7c0a01afbeee5d378edb937e928",
+    "higher_tf_study.py": "b7d58703e47ec40fe503ae1a01e59640ff900ce7c9167d7725c462e82c702bf0",
+    "ES_1min_stitched.csv": "36baf1581b5a7ea2533812c101b7057cc6166162e14e089cb699650fd5c7635d"
+  },
+  "holdout_inspected": false
+}

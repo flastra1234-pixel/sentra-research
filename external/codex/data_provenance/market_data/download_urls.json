@@ -1,0 +1,6 @@
+{
+  "NQ_1min_continuous.csv.gz": "https://raw.githubusercontent.com/kfccolonel1/BARS/main/NQ/1min/NQ_1min_continuous.csv.gz",
+  "ES_1min_stitched.csv": "https://raw.githubusercontent.com/kfccolonel1/BARS/main/ES/1min/ES_1min_2025-06-20_2026-10-09_stitched.csv",
+  "NQ_topstep_1min.csv": "https://raw.githubusercontent.com/axb0306/cme-futures-ohlc/main/NQ/NQ_1min_20260120_20260415.csv",
+  "ES_topstep_1min.csv": "https://raw.githubusercontent.com/axb0306/cme-futures-ohlc/main/ES/ES_1min_20260120_20260415.csv"
+}

@@ -1,0 +1,4 @@
+sample,bars,same_close_fraction,median_abs_close_difference,mean_abs_close_difference
+all,23400,0.5555128205128205,0.0,3.477051282051282
+outside_roll_week,21450,0.595990675990676,0.0,0.10447552447552448
+roll_week,1950,0.11025641025641025,50.5,40.575384615384614

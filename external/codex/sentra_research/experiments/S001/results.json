@@ -1,0 +1,38 @@
+{
+  "experiment": "S001",
+  "status": "coverage_only_not_predictive_validation",
+  "reserved_data_accessed": false,
+  "preregistration_sha256": "83882d8bb42c6f408925f478481e42abcb138aadbe54354dff127653426fa0e9",
+  "results": {
+    "MES": {
+      "full_rth_sessions": 194,
+      "overnight_incomplete_excluded": 0,
+      "eligible_sessions": 194,
+      "one_sided_events": 43,
+      "any_failure_events": 44,
+      "ambiguous_both": 1,
+      "one_sided_coverage": 0.22164948453608246,
+      "generous_any_failure_upper_bound": 0.2268041237113402,
+      "missing_previous_businessday_close": 8,
+      "gap_eligible": 186,
+      "gap_events": 25,
+      "gap_event_coverage": 0.13440860215053763,
+      "standalone_target_feasible_even_perfect_prediction": false
+    },
+    "MNQ": {
+      "full_rth_sessions": 194,
+      "overnight_incomplete_excluded": 0,
+      "eligible_sessions": 194,
+      "one_sided_events": 53,
+      "any_failure_events": 53,
+      "ambiguous_both": 0,
+      "one_sided_coverage": 0.27319587628865977,
+      "generous_any_failure_upper_bound": 0.27319587628865977,
+      "missing_previous_businessday_close": 8,
+      "gap_eligible": 186,
+      "gap_events": 33,
+      "gap_event_coverage": 0.1774193548387097,
+      "standalone_target_feasible_even_perfect_prediction": false
+    }
+  }
+}

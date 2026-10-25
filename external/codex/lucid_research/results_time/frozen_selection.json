@@ -1,0 +1,8 @@
+{
+  "configs": [],
+  "quantity": 1,
+  "asset": "MNQ",
+  "branch": "time_entry",
+  "tested_configs": 216,
+  "holdout_inspected": false
+}

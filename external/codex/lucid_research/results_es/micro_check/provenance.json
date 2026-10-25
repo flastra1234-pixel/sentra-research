@@ -1,0 +1,36 @@
+{
+  "purpose": "Postselection price-proxy check, not independent validation or retuning",
+  "frozen_config": {
+    "family": "orb",
+    "signal_minutes": 5,
+    "atr_period": 5,
+    "start_minute": 585,
+    "end_minute": 900,
+    "max_hold": 120,
+    "max_trades": 1,
+    "min_stop": 1,
+    "max_stop": 20,
+    "reward_r": 1,
+    "or_minutes": 30,
+    "stop_mode": "or_fraction",
+    "stop_fraction": 0.5,
+    "id": "E028",
+    "source_config_id": "H028"
+  },
+  "quantity": 2,
+  "shared_sessions": 60,
+  "all_dates_retained_for_performance": true,
+  "notes": [
+    "Both reports use same frozen E028 rules and2MES;1.24dollars commission per roundtrip perMES;1tick baseline/2tick stress per side.",
+    "The MES feed is actual micro futures bars from contributed TopstepX source;primaryESfeed is a separate contributor.",
+    "Raw feeds may follow different contracts inMarch15-20rollweek. All shared dates remain in strategy metrics;outside-roll comparison is only a price audit.",
+    "MinuteOHLC is insufficient to establish executable bidask or queue fills."
+  ],
+  "sha256": {
+    "MES_topstep_1min.csv": "54f66d1f60f1cd2be1831953ec144b59d589622f640f433fe832cff925b4cf4b",
+    "frozen_selection.json": "c7384837e2aaf510fc6f8bd848982b0c6ff86158379a0e084eda8cf9a40bb487",
+    "es_study.py": "cf68c5400e0b717d60dfeb5399787e7a9b9a7cb32d579093d918f63434989c25",
+    "engine.py": "0db78b7ad24f5ec9ba8bc4a3f96c6c31910ff7c0a01afbeee5d378edb937e928",
+    "es_micro_check.py": "b776ede6234fed717d0f6dd46a074f1469558c87ff2ab51f7e69ebe26f1e4824"
+  }
+}

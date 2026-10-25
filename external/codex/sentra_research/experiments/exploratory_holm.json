@@ -1,0 +1,9 @@
+{
+  "adjusted_p": {
+    "S003_MNQ": 0.14261912695768078,
+    "S004_1": 1,
+    "S003_MES": 1,
+    "S004_2": 1
+  },
+  "limitation": "Four correlated exploratory comparisons; does not repair selection on spent data or human iteration."
+}

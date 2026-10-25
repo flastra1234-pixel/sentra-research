@@ -1,0 +1,7 @@
+{
+  "configs": [],
+  "quantity": 1,
+  "branch": "higher_timeframe",
+  "tested_configs": 256,
+  "holdout_inspected": false
+}

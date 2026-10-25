@@ -1,0 +1,1236 @@
+{
+  "repository": "flastra1234-pixel/sentra-research",
+  "files": 222,
+  "raw_vendor_datasets_included": false,
+  "secret_scan_flagged_paths": [],
+  "sanitized_price_columns": [
+    {
+      "path": "lucid_research/diagnosis_trade_features.csv",
+      "columns_removed": [
+        "entry_price",
+        "exit_price"
+      ]
+    },
+    {
+      "path": "lucid_research_v2/assessment/E028_fill_reconciliation.csv",
+      "columns_removed": [
+        "entry_price_base",
+        "exit_price_base",
+        "entry_price_stress",
+        "exit_price_stress"
+      ]
+    },
+    {
+      "path": "lucid_research_v2/results/walkforward_fleet_2tick_trades.csv",
+      "columns_removed": [
+        "entry_price",
+        "exit_price"
+      ]
+    },
+    {
+      "path": "lucid_research_v2/results/walkforward_fleet_1tick_trades.csv",
+      "columns_removed": [
+        "entry_price",
+        "exit_price"
+      ]
+    },
+    {
+      "path": "lucid_research/final_results/E028_holdout_stress_trades.csv",
+      "columns_removed": [
+        "entry_price",
+        "exit_price"
+      ]
+    },
+    {
+      "path": "lucid_research/final_results/E028_holdout_baseline_trades.csv",
+      "columns_removed": [
+        "entry_price",
+        "exit_price"
+      ]
+    },
+    {
+      "path": "lucid_research/final_results/E028_development_stress_trades.csv",
+      "columns_removed": [
+        "entry_price",
+        "exit_price"
+      ]
+    },
+    {
+      "path": "lucid_research/final_results/E028_all_stress_trades.csv",
+      "columns_removed": [
+        "entry_price",
+        "exit_price"
+      ]
+    },
+    {
+      "path": "lucid_research/final_results/E028_validation_stress_trades.csv",
+      "columns_removed": [
+        "entry_price",
+        "exit_price"
+      ]
+    },
+    {
+      "path": "lucid_research/final_results/E028_development_baseline_trades.csv",
+      "columns_removed": [
+        "entry_price",
+        "exit_price"
+      ]
+    },
+    {
+      "path": "lucid_research/final_results/E028_all_baseline_trades.csv",
+      "columns_removed": [
+        "entry_price",
+        "exit_price"
+      ]
+    },
+    {
+      "path": "lucid_research/final_results/E028_validation_baseline_trades.csv",
+      "columns_removed": [
+        "entry_price",
+        "exit_price"
+      ]
+    },
+    {
+      "path": "lucid_research/results_es/micro_check/ES_BARS_proxy_baseline_trades.csv",
+      "columns_removed": [
+        "entry_price",
+        "exit_price"
+      ]
+    },
+    {
+      "path": "lucid_research/results_es/micro_check/MES_TopstepX_baseline_trades.csv",
+      "columns_removed": [
+        "entry_price",
+        "exit_price"
+      ]
+    },
+    {
+      "path": "lucid_research/results_es/micro_check/MES_TopstepX_stress_trades.csv",
+      "columns_removed": [
+        "entry_price",
+        "exit_price"
+      ]
+    },
+    {
+      "path": "lucid_research/results_es/micro_check/ES_BARS_proxy_stress_trades.csv",
+      "columns_removed": [
+        "entry_price",
+        "exit_price"
+      ]
+    }
+  ],
+  "files_sha256": [
+    {
+      "path": "STATUS.md",
+      "sha256": "e6c169cb770530beec5d7daf88fb1377e854d14d7e4324e5daa619070bc777f9",
+      "bytes": 8152
+    },
+    {
+      "path": "lucid_rules.md",
+      "sha256": "6207cfb2c11af632743a001fa41cc3a14560959105faf78412da74fe171ef11e",
+      "bytes": 8838
+    },
+    {
+      "path": "CHECKPOINT.json",
+      "sha256": "7c57be237291b2d66ec1fa2d29670434e536a3319fa7d285c9521642f4fc6ea8",
+      "bytes": 4747
+    },
+    {
+      "path": "README.md",
+      "sha256": "81e42a4882bfddac1acb8d5119645eac018a6a8eb77921826d8ef717f24f4080",
+      "bytes": 3941
+    },
+    {
+      "path": "data_provenance/signed_flow_data_inventory.json",
+      "sha256": "d72a4feb7b77f49cbf6cab6317544cee1049a4c79ec26b0e4ae9f1680302e91a",
+      "bytes": 1373
+    },
+    {
+      "path": "lucid_research_v2/account_replay.py",
+      "sha256": "418d72bc5928ae90d4ef88dc40c5969a14875d1112ccab47e3af549d3b88be67",
+      "bytes": 14054
+    },
+    {
+      "path": "lucid_research_v2/test_engine_v2.py",
+      "sha256": "c9676d7b471a79ac15a29b51649467845cba18e9e52d1ec57f819ad9278dac00",
+      "bytes": 8301
+    },
+    {
+      "path": "lucid_research_v2/validation.py",
+      "sha256": "0d93d66ec485b73839e482940ebf6e3b01b63af43be380cfda523fab81b52dba",
+      "bytes": 13015
+    },
+    {
+      "path": "lucid_research_v2/walkforward.py",
+      "sha256": "bd65386a5ebf83be4785434a94ee927c5757b3f40821e191bc9d05b344baecf5",
+      "bytes": 7838
+    },
+    {
+      "path": "lucid_research_v2/SELECTION_AUDIT.md",
+      "sha256": "7b28f63fc649644fb4c4987d41b379ef1d93c3106284337da8c0877b2a524da2",
+      "bytes": 4237
+    },
+    {
+      "path": "lucid_research_v2/engine_v2_before_limit.py",
+      "sha256": "363f4d68bd944803fece5ebbef5b41c07c964d7c46aa5351e7159adbe9c02266",
+      "bytes": 17066
+    },
+    {
+      "path": "lucid_research_v2/test_selection.py",
+      "sha256": "1c3f77dc71514a1f479f9d8863321f950d105cf27ec96c04d2eb6a5fb35a90a6",
+      "bytes": 4361
+    },
+    {
+      "path": "lucid_research_v2/RESEARCH_DESIGN_V2.md",
+      "sha256": "17b62d908754dafeba813b54ecbc4131b5cbba209765d7810acaf53321fe6de2",
+      "bytes": 8178
+    },
+    {
+      "path": "lucid_research_v2/test_account_replay.py",
+      "sha256": "df9d051d2975f6816f6fdc7a2085354488ccb193e5f92fd1e2a11db91f545719",
+      "bytes": 4937
+    },
+    {
+      "path": "lucid_research_v2/searchwide_diagnostic.py",
+      "sha256": "e78020270afb57876047dd1b5e1177f5e1c4943ce98a73f73d15f55a520e9e0a",
+      "bytes": 6843
+    },
+    {
+      "path": "lucid_research_v2/ASSESSMENT.md",
+      "sha256": "251e00c3e9a26e9ef849def12afe7d6f4fbc8467f133236481faa6e767a05724",
+      "bytes": 8987
+    },
+    {
+      "path": "lucid_research_v2/PLAN.md",
+      "sha256": "cd256bd2271eeda073f9f43d7894264dd74ff6c8aa2c891b8e2389a0ab5171ac",
+      "bytes": 7125
+    },
+    {
+      "path": "lucid_research_v2/complete_assessment.py",
+      "sha256": "292918ff9840b71c8005b2366996959a9fa4a1c526bfad64d8bfb4980d1d2d49",
+      "bytes": 4188
+    },
+    {
+      "path": "lucid_research_v2/engine_v2.py",
+      "sha256": "e2ab14ca3a465dbe8be5e0e88c8a6b016cb1c55225b6d7c1e6b50b0351429985",
+      "bytes": 17750
+    },
+    {
+      "path": "lucid_research_v2/test_validation.py",
+      "sha256": "17a7866537d06f03079325be20f72309b1bd46c193a4eaaa76e3aacd8aac0a05",
+      "bytes": 3331
+    },
+    {
+      "path": "lucid_research_v2/search.py",
+      "sha256": "b6670abed1eac2728ade5b939f2f12721d88d424db35569935236f50f9c075d9",
+      "bytes": 3126
+    },
+    {
+      "path": "sentra_research/STATUS.md",
+      "sha256": "e6c169cb770530beec5d7daf88fb1377e854d14d7e4324e5daa619070bc777f9",
+      "bytes": 8152
+    },
+    {
+      "path": "sentra_research/flow_contract.py",
+      "sha256": "df100eddb6e9da913044a40b6ec87a5aeab6a15b128a56cf93e35fdb5224894f",
+      "bytes": 1235
+    },
+    {
+      "path": "sentra_research/test_flow_contract.py",
+      "sha256": "a6f7e055e07275b819c8fbd7b860f2106fa2357ff84cd5dce213d54222842721",
+      "bytes": 1009
+    },
+    {
+      "path": "sentra_research/CHECKPOINT.json",
+      "sha256": "7c57be237291b2d66ec1fa2d29670434e536a3319fa7d285c9521642f4fc6ea8",
+      "bytes": 4747
+    },
+    {
+      "path": "sentra_research/PUBLICATION_README.md",
+      "sha256": "00c2961328410b927f25f216eb1d17f083a506c01f89375f36d2e740c81fd8b5",
+      "bytes": 3594
+    },
+    {
+      "path": "sentra_research/OWNER_DIRECTIVE.md",
+      "sha256": "8de71a15e239de5f88b11c1a8467d944df0b45b8bd9514b8245ed6358450a06f",
+      "bytes": 8220
+    },
+    {
+      "path": "sentra_research/DATA_ACCESS_AUDIT.md",
+      "sha256": "3d4f1755186eb0e182e4bffee50743fe0d522ae996bfb5ec28e1c9326d324acc",
+      "bytes": 7143
+    },
+    {
+      "path": "sentra_research/requirements.txt",
+      "sha256": "7a630dced7329f74d61375feb04047c642e3c45e365e0af0ccd18762ed082c29",
+      "bytes": 94
+    },
+    {
+      "path": "sentra_research/checkpoint_update.py",
+      "sha256": "d62f24f2be607f06345e9cb48aa79936c7cde20cc180bf197194b947ec7575b2",
+      "bytes": 5137
+    },
+    {
+      "path": "sentra_research/LITERATURE.md",
+      "sha256": "a65c45006da73f274270d77984337b3d3ad82a1b2a1cd652a8db37f480de386f",
+      "bytes": 9283
+    },
+    {
+      "path": "lucid_research/engine.py",
+      "sha256": "0db78b7ad24f5ec9ba8bc4a3f96c6c31910ff7c0a01afbeee5d378edb937e928",
+      "bytes": 21252
+    },
+    {
+      "path": "lucid_research/final_assessment.py",
+      "sha256": "5bfe2271e6f932d18ca6be34f60ff08255736e492da0273e599e8094c6341f08",
+      "bytes": 4366
+    },
+    {
+      "path": "lucid_research/study.py",
+      "sha256": "529a2ae06020844feb8d10648e020558518c62cf67aa05266860250313ea24ee",
+      "bytes": 7560
+    },
+    {
+      "path": "lucid_research/es_plan.md",
+      "sha256": "4de4ad6b3d863c11e17f4137f1da0da9be8843676953c6ec8715cececcba0c90",
+      "bytes": 3171
+    },
+    {
+      "path": "lucid_research/risk_sensitivity.py",
+      "sha256": "b77ff4444a73678aba80da597f425a003d1d596c71c713efcd7c321249459591",
+      "bytes": 1623
+    },
+    {
+      "path": "lucid_research/audit_final_accounting.py",
+      "sha256": "f825f03dddc58b90eb23dae5a8b7723bc4245f64a55d8812440d890a041ae62b",
+      "bytes": 6232
+    },
+    {
+      "path": "lucid_research/es_study.py",
+      "sha256": "b11f0774fc0466ca5d7c7b9ccfac09395d1b62d10788de6826854cb28c1c4bbe",
+      "bytes": 6441
+    },
+    {
+      "path": "lucid_research/test_engine.py",
+      "sha256": "7be3725da8a852d6a27bf3f61dc3f3f4981b70399d061161a0f2ae18e4ac8006",
+      "bytes": 5594
+    },
+    {
+      "path": "lucid_research/time_entry_study.py",
+      "sha256": "728c7b61f4fa626b60eaf499a22b49a388bfdf8da2b1b896355c38a2f52369f8",
+      "bytes": 2847
+    },
+    {
+      "path": "lucid_research/bundle_manifest.json",
+      "sha256": "c5a6cb0ffc1cf737649d3f1709be16334945ca778bcce49218df0c1c70ea23e5",
+      "bytes": 9112
+    },
+    {
+      "path": "lucid_research/risk_sensitivity_plan.md",
+      "sha256": "8e02250ceca3a23f21614a4865b47a3fb6a9fa5ce88d4aab0a4167c286a69532",
+      "bytes": 1419
+    },
+    {
+      "path": "lucid_research/README.md",
+      "sha256": "7a651de8fcace826f5f0f53484aba19779d235d0d5f3ab0573f4662b823fd1b1",
+      "bytes": 2457
+    },
+    {
+      "path": "lucid_research/test_prop_sim.py",
+      "sha256": "88a76d4c1f25cb011690c56217c4bcf218177ad5be6b625658af47745bcdfe7c",
+      "bytes": 3857
+    },
+    {
+      "path": "lucid_research/preregistered_plan.md",
+      "sha256": "c198d3959de9d9dbf87e50762bc607baa3916f304a22418413fc24718b31461f",
+      "bytes": 4528
+    },
+    {
+      "path": "lucid_research/REPORT.md",
+      "sha256": "53d6c33e8fac3387d6802d2624ea2b5a141ec45e2aef247413e303186d89b9b5",
+      "bytes": 11223
+    },
+    {
+      "path": "lucid_research/diagnosis_trade_features.csv",
+      "sha256": "d6db3bd44624060e16807c1a27fde266d851bf31d837ae5fade69726b0f77b90",
+      "bytes": 112697
+    },
+    {
+      "path": "lucid_research/DIAGNOSIS_V2.md",
+      "sha256": "8538316ec10798aec7b609de3e88411bbd599e6ff2d95bb9b69731508d1a9709",
+      "bytes": 8906
+    },
+    {
+      "path": "lucid_research/requirements.txt",
+      "sha256": "0e8ad82866efb4fa740c5471f494ce349d9af647e998b956c9821a56ab2bb5f0",
+      "bytes": 60
+    },
+    {
+      "path": "lucid_research/diagnosis_tables.txt",
+      "sha256": "108929f1501baf81dfd6d3a44ba3d6e427eed0c94d348e8874674f26c95fad43",
+      "bytes": 2209
+    },
+    {
+      "path": "lucid_research/higher_tf_study.py",
+      "sha256": "b7d58703e47ec40fe503ae1a01e59640ff900ce7c9167d7725c462e82c702bf0",
+      "bytes": 3050
+    },
+    {
+      "path": "lucid_research/prop_sim.py",
+      "sha256": "f0014e7b5f771ce8bf9dc3f3b25e023322bbaeef102d24d813e72b4422dcd419",
+      "bytes": 12106
+    },
+    {
+      "path": "lucid_research/es_micro_check.py",
+      "sha256": "b776ede6234fed717d0f6dd46a074f1469558c87ff2ab51f7e69ebe26f1e4824",
+      "bytes": 3682
+    },
+    {
+      "path": "lucid_research/time_entry_plan.md",
+      "sha256": "f90377aab2a6ba8ad20c500cdaa291781d005ed9ff70add887b291fd187faa4f",
+      "bytes": 1732
+    },
+    {
+      "path": "lucid_research/plans_sha256.json",
+      "sha256": "071df24dcc44b40cdbeb596319830303003639377533b505fe23277a9a7a7b09",
+      "bytes": 286
+    },
+    {
+      "path": "lucid_research/higher_tf_plan.md",
+      "sha256": "cbdeec838f97ef2d165e6b60b59c345504d6708e7dd5be6878c4fd197536ecbb",
+      "bytes": 1876
+    },
+    {
+      "path": "data_provenance/market_data/download_urls.json",
+      "sha256": "6fa669df8914643b95bed5cbf7834ef19c60d2337d978b72c2a58db5efddc525",
+      "bytes": 512
+    },
+    {
+      "path": "data_provenance/market_data/DATA_PROVENANCE.md",
+      "sha256": "c0e67826061712f942e6da910c585de5d15dca6eeeb174c846a00107956fcea0",
+      "bytes": 3923
+    },
+    {
+      "path": "data_provenance/market_data_v2/samples_hashes.json",
+      "sha256": "e1cb6277baaa95ff4561992c02d4f6ed576941366344c0ee1a863c5bc40c7a19",
+      "bytes": 3519
+    },
+    {
+      "path": "data_provenance/market_data_v2/DATA_PROVENANCE_V2.md",
+      "sha256": "7840e6eb3c3533d96a66c2cb567ca5640c59abf7be5f1a495c53043db1c0311b",
+      "bytes": 7577
+    },
+    {
+      "path": "lucid_research_v2/assessment/metrics.json",
+      "sha256": "bdeda4b4241f88198199bb3fb367496f6aa249c4665ccf7e5d343480cb9615f3",
+      "bytes": 13898
+    },
+    {
+      "path": "lucid_research_v2/assessment/fleet_1tick_funded_reserve1000_lifecycles.csv",
+      "sha256": "fed8477bf7479b2a9bc6d127c0d8356a9ac2ab7e791eb46b259fb563bf8c0083",
+      "bytes": 6703
+    },
+    {
+      "path": "lucid_research_v2/assessment/E028_fill_reconciliation.csv",
+      "sha256": "e25a9c821b201b78822d18b552361df6313e4c4f4f63f5675a535bb1167dd5f4",
+      "bytes": 28102
+    },
+    {
+      "path": "lucid_research_v2/assessment/fleet_2tick_funded_reserve1500_lifecycles.csv",
+      "sha256": "d9bfa6464877267e0ece2f3fc1f3a934bf327091aa9a6cb92fc4aa2e1e3c7162",
+      "bytes": 6698
+    },
+    {
+      "path": "lucid_research_v2/assessment/fleet_1tick_evaluation_reserve1000_lifecycles.csv",
+      "sha256": "adc4074e31d4c27e8776a68c0959dbf4454f37b8c91523dc0aaf59015b712df0",
+      "bytes": 6516
+    },
+    {
+      "path": "lucid_research_v2/assessment/DIAGNOSTIC_ignore_inactivity_1tick_evaluation.csv",
+      "sha256": "2896e21e547d2c8bc6213f143a30858d5293ad5298b02949daa809a8b6e282cb",
+      "bytes": 6622
+    },
+    {
+      "path": "lucid_research_v2/assessment/fleet_1tick_funded_reserve1500_lifecycles.csv",
+      "sha256": "4d1f1c371ebc4187d055fa422fbed423e06d83e50836449f1cf213e477d49650",
+      "bytes": 6703
+    },
+    {
+      "path": "lucid_research_v2/assessment/DIAGNOSTIC_ignore_inactivity_1tick_funded.csv",
+      "sha256": "8ec5d75814881d9a3eeaf7f0e92e334f86f28d5837f24838daf4f1e5659fa02d",
+      "bytes": 7148
+    },
+    {
+      "path": "lucid_research_v2/assessment/NQ_all_grid_daily_targets.csv",
+      "sha256": "f922b9699867e4758b660beb7d18ff297a5fac0b48fe1c62907d9d1a96e00dda",
+      "bytes": 206318
+    },
+    {
+      "path": "lucid_research_v2/assessment/DIAGNOSTIC_ignore_inactivity_2tick_funded.csv",
+      "sha256": "632c0f08b10a00b0124106484c5ebeb0690db876d9394ce1e825b226b10b0a5f",
+      "bytes": 7142
+    },
+    {
+      "path": "lucid_research_v2/assessment/fleet_2tick_funded_reserve1000_lifecycles.csv",
+      "sha256": "513da53739828095905519a61ff173ca462abc36de443a3314704d155abe5351",
+      "bytes": 6698
+    },
+    {
+      "path": "lucid_research_v2/assessment/DIAGNOSTIC_ignore_inactivity_2tick_evaluation.csv",
+      "sha256": "15fbdf47d6a15b5633b9ae40dc2fe818408e1ccd546c8bb22182315a5eb51f8b",
+      "bytes": 6636
+    },
+    {
+      "path": "lucid_research_v2/assessment/fleet_2tick_evaluation_reserve1500_lifecycles.csv",
+      "sha256": "1ac9ffe49085ac464543be2aea42320cc558b90369bc1b57d97eeb06870e81a7",
+      "bytes": 6516
+    },
+    {
+      "path": "lucid_research_v2/assessment/fleet_2tick_evaluation_reserve1000_lifecycles.csv",
+      "sha256": "3444a6c3bf2c4c9c0e066bab4b9ff11f7727f11dee96f1e9491d7589d99b7ad8",
+      "bytes": 6516
+    },
+    {
+      "path": "lucid_research_v2/assessment/ES_all_grid_daily_targets.csv",
+      "sha256": "a802361e1468da1cb4895eb9eb1407aaa4c011b441a42d33894b4c981ae2d606",
+      "bytes": 201821
+    },
+    {
+      "path": "lucid_research_v2/assessment/fleet_1tick_evaluation_reserve1500_lifecycles.csv",
+      "sha256": "b8f90e92aca9c148a04e026273841a440ecf2dcda61fa6c5d6e01d2437e9fb34",
+      "bytes": 6516
+    },
+    {
+      "path": "lucid_research_v2/results/ES_full_consumed_history_searchwide_statistics.csv",
+      "sha256": "ffdc72713fb10734a3da6e4685133d6d59b9a720c41810d183300e723c9b605c",
+      "bytes": 267603
+    },
+    {
+      "path": "lucid_research_v2/results/combined_common_dates_searchwide_statistics.csv",
+      "sha256": "2189ace1ecba4d8bec2cb8ec0ae7666430dc5f9164ac86afcacec49f432405e7",
+      "bytes": 496218
+    },
+    {
+      "path": "lucid_research_v2/results/walkforward_fleet_metrics.json",
+      "sha256": "3f1a0c840eb6d58c0f745a5abed37403a84de60879d809906c67452202789697",
+      "bytes": 1574
+    },
+    {
+      "path": "lucid_research_v2/results/walkforward_fleet_2tick_trades.csv",
+      "sha256": "ced4a38f612a0d04ee83e4f3ae00b102dcf491d4a308deb3d7ff838e7286d247",
+      "bytes": 27948
+    },
+    {
+      "path": "lucid_research_v2/results/strict_broad_history_screen.json",
+      "sha256": "3b43f9f8a2fb214554d9de7e813c5e4e55c13765806bdad17fefc231402b0399",
+      "bytes": 14199
+    },
+    {
+      "path": "lucid_research_v2/results/walkforward_selection.json",
+      "sha256": "436b852d90e7f6a1fa741725750ed66fcd5391e5f4608a490dd3caa194a5da6f",
+      "bytes": 89051
+    },
+    {
+      "path": "lucid_research_v2/results/walkforward_fleet_1tick_trades.csv",
+      "sha256": "6647f820a67d479a8248f4357efa9286059a0b9176e2348c949ae6c26bae9bda",
+      "bytes": 28083
+    },
+    {
+      "path": "lucid_research_v2/results/searchwide_max_t.json",
+      "sha256": "f8798886934afaab01e36dd612087b811c994ccbe0b0e3ccfccc18e956309a3c",
+      "bytes": 1488449
+    },
+    {
+      "path": "lucid_research_v2/results/current_frozen.json",
+      "sha256": "f6cd4edb9f98d949cc035941a5899de77ff547e2ff2d2c2aaa6ff904c0b0e066",
+      "bytes": 3868
+    },
+    {
+      "path": "lucid_research_v2/results/SEARCHWIDE_DIAGNOSTIC.md",
+      "sha256": "3ed215423f857a0fb1fa9af3e1ac9d77e8b018a7055ec176188a0d90693b99b0",
+      "bytes": 3535
+    },
+    {
+      "path": "lucid_research_v2/results/NQ_full_consumed_history_searchwide_statistics.csv",
+      "sha256": "45a93a0ec98bd37f74554c174c8835203020349b89d758c62a28c644dda081e3",
+      "bytes": 229366
+    },
+    {
+      "path": "lucid_research_v2/results/walkforward_fleet_1tick_daily.csv",
+      "sha256": "a147de61b162269671773335a5823810dd1469938502b6a2a3835bcec6d4a80a",
+      "bytes": 6420
+    },
+    {
+      "path": "lucid_research_v2/results/walkforward_fleet_2tick_daily.csv",
+      "sha256": "f2a97c68430e18a67902796dd3f6ef03b1f63412976b1fe98c1221603b654737",
+      "bytes": 6417
+    },
+    {
+      "path": "lucid_research_v2/results/NQ/full_consumed_history_stability.csv",
+      "sha256": "4952c819328ccbe2f316c346fecbdcbb75378a44da6499c3e2c1a352cbab0075",
+      "bytes": 744866
+    },
+    {
+      "path": "lucid_research_v2/results/NQ/all_config_metrics.csv",
+      "sha256": "f72a75a9f73e013ace6b2844cd2b6eae79d0d0c8717eb1646807b8b396e3d591",
+      "bytes": 333436
+    },
+    {
+      "path": "lucid_research_v2/results/NQ/manifest.json",
+      "sha256": "0471b7e9cf3ce21cce20b04d273b41f8659380dee283251689318a634a9a0486",
+      "bytes": 10265
+    },
+    {
+      "path": "lucid_research_v2/results/NQ/daily_stressed.npz",
+      "sha256": "4f250eee0bfaec3ffb5b4946d6fc637f3be610c178609be10668346f4f078979",
+      "bytes": 988840
+    },
+    {
+      "path": "lucid_research_v2/results/NQ/configs.json",
+      "sha256": "55f4380d9c537a7ec47fbfe210bf33012548773e469ad7e6369dd7eff572d5c6",
+      "bytes": 1454762
+    },
+    {
+      "path": "lucid_research_v2/results/ES/full_consumed_history_stability.csv",
+      "sha256": "a2536c532dd1cf763926b2bd9d9ebbaeaff708f609532eaba150baa3491d9075",
+      "bytes": 842992
+    },
+    {
+      "path": "lucid_research_v2/results/ES/all_config_metrics.csv",
+      "sha256": "97c32701745ab49b350d7fbce2a5ab208f04a5f635c2f1bf4160f1281a91a72d",
+      "bytes": 385676
+    },
+    {
+      "path": "lucid_research_v2/results/ES/manifest.json",
+      "sha256": "81756698acb547d7a756bb9fd1dd169dac926380394a1a202924c31916ac0b1e",
+      "bytes": 6377
+    },
+    {
+      "path": "lucid_research_v2/results/ES/daily_stressed.npz",
+      "sha256": "6cd697bf6a67ccbb3b13c9b83de0f97de0913daf2d6a968b2b4678a6fd973dca",
+      "bytes": 1323335
+    },
+    {
+      "path": "lucid_research_v2/results/ES/configs.json",
+      "sha256": "1651efb2c9470c0396050f3beec708f8e632087e56cb0b2a24d83d409a966049",
+      "bytes": 1454762
+    },
+    {
+      "path": "sentra_research/experiments/exploratory_holm.json",
+      "sha256": "db671e93c13badb58466014617aaf93ecb624a3cac2bbcdb0c88eb654b04ebdb",
+      "bytes": 234
+    },
+    {
+      "path": "sentra_research/experiments/S003/PREREGISTRATION.md",
+      "sha256": "d734cf71eb3327ea06673224707023884056193a05df2c99ed4df775ed2ecb9a",
+      "bytes": 1336
+    },
+    {
+      "path": "sentra_research/experiments/S003/MES_markouts.csv",
+      "sha256": "cd93727034f5ba5b430580b374ccc121368cbd0c932ff7aefec51cf120f0974a",
+      "bytes": 5306
+    },
+    {
+      "path": "sentra_research/experiments/S003/results.json",
+      "sha256": "c3dbae7d467baa1282737581ff4a6b681deb7685373e0a672e5c18b79732056f",
+      "bytes": 1789
+    },
+    {
+      "path": "sentra_research/experiments/S003/MNQ_markouts.csv",
+      "sha256": "55f89bbb9266dd34d82b9f6bb8141e74308754de4f0335dbf0cdcb0960600056",
+      "bytes": 4820
+    },
+    {
+      "path": "sentra_research/experiments/S003/run.py",
+      "sha256": "b443a7dee91f3a904b06c4f9c21f2afd0bad52ddfc75aaa72295b5ba3e27091d",
+      "bytes": 1675
+    },
+    {
+      "path": "sentra_research/experiments/S001/MES_events.csv",
+      "sha256": "28ef51765ce35e24ae14cd8e70218ddb9deae931510fef30add90ebebc2aa03a",
+      "bytes": 8889
+    },
+    {
+      "path": "sentra_research/experiments/S001/PREREGISTRATION.md",
+      "sha256": "83882d8bb42c6f408925f478481e42abcb138aadbe54354dff127653426fa0e9",
+      "bytes": 2021
+    },
+    {
+      "path": "sentra_research/experiments/S001/MNQ_events.csv",
+      "sha256": "118629f41db502d19d2cca065df31aa120e128341c83b22b006de1a5ff1df378",
+      "bytes": 9019
+    },
+    {
+      "path": "sentra_research/experiments/S001/results.json",
+      "sha256": "7d693af395e48485d2da675cb85df57a6d98544c01300617991e12178f878b4a",
+      "bytes": 1309
+    },
+    {
+      "path": "sentra_research/experiments/S001/run.py",
+      "sha256": "e7d6efa3458cb9e709903e3f2d3dcb0efce114a049bde51cc9477a17099f878d",
+      "bytes": 2423
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_own_1tick_trades.csv",
+      "sha256": "e26f916da352cba54af06cc17e94c1623666b5737fdb7e8c46089753e470fd92",
+      "bytes": 532
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_own_1tick_evaluation_lifecycles.csv",
+      "sha256": "2d4c00b8e5a76741095718f8ddddff74ccbf5f7cc3de1eeb6c64ce5e52ac0c1e",
+      "bytes": 927
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_stale_2tick_funded_lifecycles.csv",
+      "sha256": "eac8b3ddf77fac272a00907d4bab1e0afb52eb9ba1012a00ff224ab019214715",
+      "bytes": 926
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_stale_1tick_evaluation_lifecycles.csv",
+      "sha256": "af513ce7d7b4d4736d8a0ac94bf31509f5bf3fc27b164634fc80fa43efc69de8",
+      "bytes": 925
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_stale_1tick_funded_lifecycles.csv",
+      "sha256": "a051186535b9cb8d83c6f50509562ef57abb20e35432e92e5e5631f07485bded",
+      "bytes": 926
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_own_2tick_trades.csv",
+      "sha256": "80ae33cb450d3efef93d42f1183d843a80cbbb110e70cfca51f75b30207f9390",
+      "bytes": 16556
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_stale_2tick_trades.csv",
+      "sha256": "dc66d4a2b779b1326145120e76a9afe7fb20b87761a48434ca15b4a36ef85e52",
+      "bytes": 689
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_cross_1tick_evaluation_lifecycles.csv",
+      "sha256": "66611c66b4146e31fdbff55937069f35041087bfa1c03ee6a193a48b007eae47",
+      "bytes": 927
+    },
+    {
+      "path": "sentra_research/experiments/S006/PREREGISTRATION.md",
+      "sha256": "2f59f7e904d314a75316f36a56fc0b11b1d4147c8825870c0259d8baf9443fc6",
+      "bytes": 2638
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_own_2tick_funded_lifecycles.csv",
+      "sha256": "eac8b3ddf77fac272a00907d4bab1e0afb52eb9ba1012a00ff224ab019214715",
+      "bytes": 926
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_stale_2tick_funded_lifecycles.csv",
+      "sha256": "a9784a21f7d751b8adb9adad5d80e3460f00b13aed601bd8e99cfa0a0ebd5922",
+      "bytes": 938
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_stale_1tick_funded_lifecycles.csv",
+      "sha256": "f742837b7bfad9f1f5d3f5464202d88b60a0aff98b332d42984d6160fef834e2",
+      "bytes": 936
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_cross_1tick_evaluation_lifecycles.csv",
+      "sha256": "e030e31b1f759bb0450a51c22da74086f4d991d263f1a6087172180cb06138e9",
+      "bytes": 897
+    },
+    {
+      "path": "sentra_research/experiments/S006/results.json",
+      "sha256": "1bc293d609a1857627676856fe26ea718a5a3dcac7f113e69dc839bd3bfe7e52",
+      "bytes": 35767
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_cross_2tick_evaluation_lifecycles.csv",
+      "sha256": "f534f3032cb9554680e393aade0e0ccfd01a7030a33a4b76ea713577d107069a",
+      "bytes": 897
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_own_1tick_evaluation_lifecycles.csv",
+      "sha256": "b92d5169ecfd642c7237173a617aa3b3d24c35fadcc79081a52e2dc2f7bd1cf1",
+      "bytes": 917
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_own_1tick_funded_lifecycles.csv",
+      "sha256": "8131e25f0663d1b5438933e5a22eec37bd1f4de754038d7d7441f3b03efa6ea7",
+      "bytes": 938
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_own_2tick_funded_lifecycles.csv",
+      "sha256": "e82b6ad798b05b670ab93394c8c28516b481d0e9a2f65fcbb6a78402b5ae4532",
+      "bytes": 938
+    },
+    {
+      "path": "sentra_research/experiments/S006/run_summary.json",
+      "sha256": "8f8e0208a54d7fd3951705d221eb4aae60dd6ebda4b47478c1f53c4690903f1e",
+      "bytes": 3210
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_stale_2tick_evaluation_lifecycles.csv",
+      "sha256": "f87e678ebc82d674b6845c7a394f36769dcc5127e5ea97e81bb53b63b28695ea",
+      "bytes": 917
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_own_2tick_evaluation_lifecycles.csv",
+      "sha256": "f87e678ebc82d674b6845c7a394f36769dcc5127e5ea97e81bb53b63b28695ea",
+      "bytes": 917
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_stale_1tick_evaluation_lifecycles.csv",
+      "sha256": "b92d5169ecfd642c7237173a617aa3b3d24c35fadcc79081a52e2dc2f7bd1cf1",
+      "bytes": 917
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_cross_2tick_funded_lifecycles.csv",
+      "sha256": "d0eb3a0026ec31a8811752840cacd6d45f8f749c8c945545ef4d90ec1cbb3ea7",
+      "bytes": 938
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_cross_2tick_evaluation_lifecycles.csv",
+      "sha256": "f5032a6c2cd7fc726086c00bc5d63118719ddc3323223058598af823f1946216",
+      "bytes": 927
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_stale_2tick_trades.csv",
+      "sha256": "527350703f4b749513f39eb2da52e40be06a89daf923a4f3a96731a03f8d1e0f",
+      "bytes": 18200
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_stale_2tick_evaluation_lifecycles.csv",
+      "sha256": "1b307ffd4872e9137df6654ee82a9b82ebc697b1e13c04f6a3833dfd361d1851",
+      "bytes": 927
+    },
+    {
+      "path": "sentra_research/experiments/S006/run.py",
+      "sha256": "5ce97216df51932ef9f40851bb75a62421323ed638789748fd2703e5344dd80c",
+      "bytes": 5336
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_cross_2tick_funded_lifecycles.csv",
+      "sha256": "c0c1d0336156bb36a6e190ea836a57363c88796396147e25033b2c9b9a083aef",
+      "bytes": 906
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_own_1tick_funded_lifecycles.csv",
+      "sha256": "a051186535b9cb8d83c6f50509562ef57abb20e35432e92e5e5631f07485bded",
+      "bytes": 926
+    },
+    {
+      "path": "sentra_research/experiments/S006/RESULT.md",
+      "sha256": "c2d980c71a62d9ad8c2d41a3bc78312ee8f17c791be87f404c24a71f83904d2f",
+      "bytes": 2192
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_stale_1tick_trades.csv",
+      "sha256": "12b1d96e8d26ffe7814c07cf9535c3db0e85a9214c93ca3fc0f9727ddb162972",
+      "bytes": 18197
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_cross_1tick_funded_lifecycles.csv",
+      "sha256": "7d97fc07990bfd97a7015652f1be0411a676679eee339447afb6b7bf3bc4d989",
+      "bytes": 906
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_cross_1tick_trades.csv",
+      "sha256": "4b7ccb98990b5e5a961a308e7f6209313210387fd6b3cdadf1231f2e31224001",
+      "bytes": 767
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_own_1tick_trades.csv",
+      "sha256": "136de3471460dbf1dea0cadb969b091ef94958a63885e4633bd6065bf91eac35",
+      "bytes": 16552
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_own_2tick_evaluation_lifecycles.csv",
+      "sha256": "06c2e14a53e4b6a70e1284dc803f4a5d6d4d9bd00c0937d8070b35e8949cc9fc",
+      "bytes": 927
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_own_2tick_trades.csv",
+      "sha256": "d012a7b17adb26559bc902e149393434fcb681844195ded52814bc94bc67d078",
+      "bytes": 532
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_stale_1tick_trades.csv",
+      "sha256": "2a2ff4c2d642e315006771f20b86d2f3d13c597fb5ca970002bb8deeca2cdb1e",
+      "bytes": 689
+    },
+    {
+      "path": "sentra_research/experiments/S006/MES_cross_2tick_trades.csv",
+      "sha256": "490ce43de06d05b823db558325731ab55672835008ecdf7eeb5413238d68dc37",
+      "bytes": 767
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_cross_2tick_trades.csv",
+      "sha256": "19e1c86fe3d8ed40827367a4bb80be40d2b6e4796f24c1bb42ad49ef42f8bdc6",
+      "bytes": 17887
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_cross_1tick_trades.csv",
+      "sha256": "1fa6387850f0dd38d84ce19813db615e1a130dc28f02bd6a65ada10d88ad67a0",
+      "bytes": 17881
+    },
+    {
+      "path": "sentra_research/experiments/S006/MNQ_cross_1tick_funded_lifecycles.csv",
+      "sha256": "40103bae36cb6121830e7b657e617f8b34e454d0836add6d4b220da39fdca1c9",
+      "bytes": 938
+    },
+    {
+      "path": "sentra_research/experiments/S004/1tick_evaluation_lifecycles.csv",
+      "sha256": "0624c7d5f72274b0e24201faba86af652581447d98aef29203cb079540f80de3",
+      "bytes": 2661
+    },
+    {
+      "path": "sentra_research/experiments/S004/PREREGISTRATION.md",
+      "sha256": "2b53fa50f8b9367d7bcdab0fe11c9c3855342a8683075bdddcd4120f9ff86e43",
+      "bytes": 1360
+    },
+    {
+      "path": "sentra_research/experiments/S004/results.json",
+      "sha256": "d8296b2fb49df77b84df2299905f6f6ca20660d8bbeecda4570d3bd447271bbf",
+      "bytes": 5464
+    },
+    {
+      "path": "sentra_research/experiments/S004/2tick_trades.csv",
+      "sha256": "29f674b65179af2a45664f25d67bbf5068a0bc4d85b2b31555f1cb95109ccae4",
+      "bytes": 17693
+    },
+    {
+      "path": "sentra_research/experiments/S004/1tick_funded_lifecycles.csv",
+      "sha256": "068ce519b7d456e1c871b842fbc75d96c6415666cd4621d11121d532a76bb999",
+      "bytes": 2792
+    },
+    {
+      "path": "sentra_research/experiments/S004/2tick_funded_lifecycles.csv",
+      "sha256": "69fe5c4e613524f28bbfa5ae4ec0b8851afee74e2f8dd5ecf1494f87ea865da9",
+      "bytes": 2782
+    },
+    {
+      "path": "sentra_research/experiments/S004/run.py",
+      "sha256": "194981c187b61bb7fe89c4d6474c79363f021a0c63de5aed3a13af31bdfa707f",
+      "bytes": 2058
+    },
+    {
+      "path": "sentra_research/experiments/S004/2tick_evaluation_lifecycles.csv",
+      "sha256": "54d88e1980081d877e58ef4a5c0ebc3f691adc5dc732118250ec47130d5f88d6",
+      "bytes": 2649
+    },
+    {
+      "path": "sentra_research/experiments/S004/1tick_trades.csv",
+      "sha256": "166b366407b152f68ffa459ae50e19cf10c152232f46fefc3225f32b2d63d33c",
+      "bytes": 17682
+    },
+    {
+      "path": "lucid_research/results_time/development_all.csv",
+      "sha256": "2230e232cf7fda3303a4fe03d22706b950ae35bcff91ae32c6dedf15aa4efccf",
+      "bytes": 49418
+    },
+    {
+      "path": "lucid_research/results_time/frozen_selection.json",
+      "sha256": "179495c9d0b4f05d6764a2a75cfb98687d4106675edb7803cca7155dbb5a4462",
+      "bytes": 135
+    },
+    {
+      "path": "lucid_research/results_time/all_configs.json",
+      "sha256": "d03bd58f3c31a7b526e4fab6e4a607a2796f69f461ba5b253f22aab5a1661f93",
+      "bytes": 83666
+    },
+    {
+      "path": "lucid_research/results_time/validation_shortlist.csv",
+      "sha256": "f54767576fadc3c8aded95ba6c94dcc0c1309c5b2a957e77df9b0f939dcf0ca0",
+      "bytes": 1035
+    },
+    {
+      "path": "lucid_research/results_risk/frozen_selection.json",
+      "sha256": "71046273a5a2ccc2641555f25699de918006d3912b2a637fd57e3dcaffa5ed38",
+      "bytes": 139
+    },
+    {
+      "path": "lucid_research/results_risk/development_sizing.csv",
+      "sha256": "9b165c719f14b36073ef42866681d83bf110337e5955326134615473a42564e4",
+      "bytes": 64082
+    },
+    {
+      "path": "lucid_research/results_risk/validation_shortlist.csv",
+      "sha256": "c28fcc0b8d1135675ef7c2b86fc817cefcfdf7dc7049df2cab03d871a0f11731",
+      "bytes": 1399
+    },
+    {
+      "path": "lucid_research/final_results/E028_holdout_stress_trades.csv",
+      "sha256": "8deb9cef070e5b2b32cbba3683ecc97548f785a7ad318d4fb1156a18355d6591",
+      "bytes": 16846
+    },
+    {
+      "path": "lucid_research/final_results/E028_baseline_evaluation_120_minimum_payout_policy_replays.csv",
+      "sha256": "83a934b66a5419866722df2f46a64c42225d8f4ee07543a56394f70c9947414a",
+      "bytes": 2666
+    },
+    {
+      "path": "lucid_research/final_results/E028_holdout_stress_daily_oneMES.csv",
+      "sha256": "509c80e8f9911a3165197f8f109d74e33a6708c8c1acab126a9a7aff1b902144",
+      "bytes": 6507
+    },
+    {
+      "path": "lucid_research/final_results/E028_baseline_evaluation_120_all_selected_replays.csv",
+      "sha256": "56f72418f35698e099a41476bc39939c0eb00d8ef2d8f65ba58bd37f98a8291a",
+      "bytes": 6856
+    },
+    {
+      "path": "lucid_research/final_results/E028_baseline_evaluation_120_replays.csv",
+      "sha256": "152ec6ac76eb495abe3ca44f7fb32a2a7c5f730ef9d04533b75905f8b4378f04",
+      "bytes": 2666
+    },
+    {
+      "path": "lucid_research/final_results/E028_holdout_baseline_trades.csv",
+      "sha256": "16ec1893399df53413fb418ba4d49af5cdc0d69fa2cc56163fd5c26408291061",
+      "bytes": 16852
+    },
+    {
+      "path": "lucid_research/final_results/E028_development_baseline_daily_oneMES.csv",
+      "sha256": "671de9fcc0ab7c8a76316c94ab1b9513b8fbc45dcf6ec0d4113279d7e7503962",
+      "bytes": 2495
+    },
+    {
+      "path": "lucid_research/final_results/E028_stress_funded_60_replays.csv",
+      "sha256": "85f24db1b6a01cbb5fd0dc157b42d9c9344892c0a9fc8cbba64e664768e0d622",
+      "bytes": 4411
+    },
+    {
+      "path": "lucid_research/final_results/E028_development_stress_trades.csv",
+      "sha256": "5657460c6dd814bb7101be3de5d1773e08e01c3c13033dedc6b57adddc3805d6",
+      "bytes": 7312
+    },
+    {
+      "path": "lucid_research/final_results/E028_baseline_funded_60_minimum_payout_policy_replays.csv",
+      "sha256": "1456df1f86f26850b8e432cfa15df33de17754c405418004b5fbcff8ed0a2434",
+      "bytes": 4825
+    },
+    {
+      "path": "lucid_research/final_results/E028_all_stress_trades.csv",
+      "sha256": "9a1a0b396107c11758825a03fbc79f93639b66108ba36ac8c7ac57094f802f90",
+      "bytes": 29719
+    },
+    {
+      "path": "lucid_research/final_results/E028_validation_baseline_daily_oneMES.csv",
+      "sha256": "d44f2545d42da0405f4c51c215c684ef926851df12bc9bcf4993de5bd191f626",
+      "bytes": 2227
+    },
+    {
+      "path": "lucid_research/final_results/E028_development_stress_daily_oneMES.csv",
+      "sha256": "216a414abaaaae1450a50040b2e484afb81061e08b6c598aea7e65299e74e5a0",
+      "bytes": 2499
+    },
+    {
+      "path": "lucid_research/final_results/E028_baseline_funded_60_replays.csv",
+      "sha256": "ed6600cf869147083dd3a877a5603ede6a468648cf0cbd6546c806b76e94c1cd",
+      "bytes": 4548
+    },
+    {
+      "path": "lucid_research/final_results/E028_validation_stress_daily_oneMES.csv",
+      "sha256": "e4eb499820fe4cc9a26ba4e2b46354675765bc4f8935583ad593451e6873876e",
+      "bytes": 2216
+    },
+    {
+      "path": "lucid_research/final_results/E028_stress_evaluation_120_minimum_payout_policy_replays.csv",
+      "sha256": "7f53f1db1a6a3dc473f14d4f51f50bf01d176977b2fbcfa2f2f49be1ceed0b01",
+      "bytes": 2639
+    },
+    {
+      "path": "lucid_research/final_results/pre_holdout_freeze_manifest.json",
+      "sha256": "28fc1a3e14f34535242953e93489f373fddfea3161daa390bbfc56f543e3514b",
+      "bytes": 2418
+    },
+    {
+      "path": "lucid_research/final_results/split_metrics.csv",
+      "sha256": "3f6253e627a3091a9901dbbf252f2b216a9674e3e0bc748957acbf984612f86a",
+      "bytes": 1602
+    },
+    {
+      "path": "lucid_research/final_results/minimum_payout_policy_sensitivity.json",
+      "sha256": "0c1b4a62e2d716e019e56a0fec109112139873b12c847f7d4bb5403c5b7e642d",
+      "bytes": 8241
+    },
+    {
+      "path": "lucid_research/final_results/decision.json",
+      "sha256": "af1d232efaf9ff88101a480165256706a564ac3296a96ce0d463311cca607ebf",
+      "bytes": 382
+    },
+    {
+      "path": "lucid_research/final_results/E028_validation_stress_trades.csv",
+      "sha256": "65cf3b81a0d94027d69dabc343801ee7c4fbfc4ba2dd992e3b6a4219d1c9a7d8",
+      "bytes": 5789
+    },
+    {
+      "path": "lucid_research/final_results/E028_stress_evaluation_120_all_selected_replays.csv",
+      "sha256": "9eab30cb7dc1877b4fe1e77b64827987411623abd4210f0fcc9d1cceb3db310f",
+      "bytes": 6957
+    },
+    {
+      "path": "lucid_research/final_results/E028_development_baseline_trades.csv",
+      "sha256": "280407c3bd6548d6798cc7fdc994f72fe6398e90b141a4c96b5ce7d5254da5c9",
+      "bytes": 7296
+    },
+    {
+      "path": "lucid_research/final_results/holdout_equity.png",
+      "sha256": "b4c9182ccb8b8c9adb6a53894095877d58a43843a5581b7a846094db1c28cb33",
+      "bytes": 236387
+    },
+    {
+      "path": "lucid_research/final_results/E028_baseline_funded_60_all_selected_replays.csv",
+      "sha256": "a52ed113cca801a963917e5df98e7a4b3f12f4369e78065e3177b2e3fd8d501c",
+      "bytes": 8669
+    },
+    {
+      "path": "lucid_research/final_results/account_replay_summary.json",
+      "sha256": "3c49f0d328878505df829029b4dc9c57e92e97d6374fd35f04cf7676531fb103",
+      "bytes": 4360
+    },
+    {
+      "path": "lucid_research/final_results/E028_stress_evaluation_120_replays.csv",
+      "sha256": "25d84e0d06eb4b177b3e73e9baf105f7a4fbde98b728e371b0f248a48d74c7f2",
+      "bytes": 2639
+    },
+    {
+      "path": "lucid_research/final_results/monthly_pnl.csv",
+      "sha256": "301f333437d9fc6ba11ab13a1f1c4491f0fd13b7df0549f3378c54a939fa98e9",
+      "bytes": 1502
+    },
+    {
+      "path": "lucid_research/final_results/E028_all_baseline_trades.csv",
+      "sha256": "07d218854616baccc73e2967f2f8ab42e80098cf6d8538fe248e9736d755dd9f",
+      "bytes": 29720
+    },
+    {
+      "path": "lucid_research/final_results/E028_holdout_baseline_daily_oneMES.csv",
+      "sha256": "41c04c2ae50044fc787edced0855b8f352ed3d234310f6ac0ac2caa6b17839d7",
+      "bytes": 6527
+    },
+    {
+      "path": "lucid_research/final_results/E028_stress_funded_60_minimum_payout_policy_replays.csv",
+      "sha256": "d687045bcc29fde74f577bbe6879720c144c905f61e2c69bf7d532fc846bac79",
+      "bytes": 4636
+    },
+    {
+      "path": "lucid_research/final_results/E028_stress_funded_60_all_selected_replays.csv",
+      "sha256": "42154a40678f32c39fe08f3a4e7d6fa4acbbbfb2b2e790520081b9f41f5f9205",
+      "bytes": 8638
+    },
+    {
+      "path": "lucid_research/final_results/E028_validation_baseline_trades.csv",
+      "sha256": "ba91b87bd201453f51c26ed33d6b03e3b35d151dc4756bdff2afcbd450d7c147",
+      "bytes": 5800
+    },
+    {
+      "path": "lucid_research/results_higher_tf/development_all.csv",
+      "sha256": "7986c6c82df77bd18a1e51291b4e0bb564601f08e08c6914f5c547c416475f7c",
+      "bytes": 55669
+    },
+    {
+      "path": "lucid_research/results_higher_tf/frozen_selection.json",
+      "sha256": "307ea7db80dcfa3a47d662c647a8296c89a062d5953582e554ab977c2c9c9adc",
+      "bytes": 123
+    },
+    {
+      "path": "lucid_research/results_higher_tf/all_configs.json",
+      "sha256": "9fc4fabfd32a03b28e3e8303202f12d265ab9def8a2a3b213eb11749eb9c4a81",
+      "bytes": 83266
+    },
+    {
+      "path": "lucid_research/results_higher_tf/validation_shortlist.csv",
+      "sha256": "3a8baee541c9588655ae8865a6bc559d8a7191f057be2dc23a651b7079c9794a",
+      "bytes": 1386
+    },
+    {
+      "path": "lucid_research/results/development_all.csv",
+      "sha256": "57a8c22feb8221ab5966427011d592892ded1d57eda2bb9fae155ecd8e3cb5f9",
+      "bytes": 65169
+    },
+    {
+      "path": "lucid_research/results/frozen_selection.json",
+      "sha256": "84915a3aba600e04c5078f0c87f235f5be918bb29f18baf06a60872a49d84ceb",
+      "bytes": 205
+    },
+    {
+      "path": "lucid_research/results/all_configs.json",
+      "sha256": "dd6522127f07e22193c91262d060990fcaccb42ecb56f10ee73f3302e994cdb6",
+      "bytes": 73091
+    },
+    {
+      "path": "lucid_research/results/validation_shortlist.csv",
+      "sha256": "c2363578c209ba1268faf4bab249f0bb9a8e75434648f444a08832da8bd0de5c",
+      "bytes": 334
+    },
+    {
+      "path": "lucid_research/results_es/development_all.csv",
+      "sha256": "9625ab439dbafd8a08b75a72fda8186bbebf433967b65a435da3736b855e978a",
+      "bytes": 52866
+    },
+    {
+      "path": "lucid_research/results_es/frozen_selection.json",
+      "sha256": "c7384837e2aaf510fc6f8bd848982b0c6ff86158379a0e084eda8cf9a40bb487",
+      "bytes": 923
+    },
+    {
+      "path": "lucid_research/results_es/all_configs.json",
+      "sha256": "593dd6880f48c9be7b69b72e975436ab751a3de3290fb89861d36c25c38558cd",
+      "bytes": 91202
+    },
+    {
+      "path": "lucid_research/results_es/run_provenance.json",
+      "sha256": "cea3823bb2d9530a5454055fcf8e09f21634f2b5c81d75992ba0c7d7609b9a44",
+      "bytes": 498
+    },
+    {
+      "path": "lucid_research/results_es/sessions.json",
+      "sha256": "2925d7bc40d0574fe5aba116cbba25a07ee43c5c7ec5788fe82b467eefef1050",
+      "bytes": 217
+    },
+    {
+      "path": "lucid_research/results_es/validation_shortlist.csv",
+      "sha256": "3ff52705d233acdd084a6005d8bfa20ea835fd0b34c0451c0971294785bc0032",
+      "bytes": 1360
+    },
+    {
+      "path": "lucid_research/results_es/micro_check/price_audit.csv",
+      "sha256": "ff24df55a61d4c4258f6a3ef8bd3a550636538d61e1266f197ec59dca532459c",
+      "bytes": 262
+    },
+    {
+      "path": "lucid_research/results_es/micro_check/metrics.csv",
+      "sha256": "f2199d1f3d0fece961cf1a757e61013aa51e749c7d9b09d2307179769ddef5b4",
+      "bytes": 832
+    },
+    {
+      "path": "lucid_research/results_es/micro_check/ES_BARS_proxy_baseline_trades.csv",
+      "sha256": "bb728bf42b6622e1ebdb631fdf02d9332aa21c846ba54c0903f03719c48c67d5",
+      "bytes": 4691
+    },
+    {
+      "path": "lucid_research/results_es/micro_check/MES_TopstepX_baseline_trades.csv",
+      "sha256": "7326ba6e04513ef5c530bcb7091ac22179fbc181deabacd0091836dc3e4094dd",
+      "bytes": 4739
+    },
+    {
+      "path": "lucid_research/results_es/micro_check/MES_TopstepX_stress_trades.csv",
+      "sha256": "8b9906b8dfc8f7097b6e7f3f1f324f02132971343821440ebf760676b57a5692",
+      "bytes": 4683
+    },
+    {
+      "path": "lucid_research/results_es/micro_check/daily_trade_comparison.csv",
+      "sha256": "6ffe9e683ed89d94cf54adf5ec41503ecfd55cd09b06f7e507f1139c54a59b9f",
+      "bytes": 4600
+    },
+    {
+      "path": "lucid_research/results_es/micro_check/ES_BARS_proxy_stress_trades.csv",
+      "sha256": "25bd4656364eebadc672c02e8873cc315403324cd127e8e1f92eda1479401170",
+      "bytes": 4659
+    },
+    {
+      "path": "lucid_research/results_es/micro_check/provenance.json",
+      "sha256": "c0e1876077ba95363f74b163cb3ad2b4a6c9930804bf14e3e31deb4b0391d897",
+      "bytes": 1543
+    }
+  ],
+  "publication_status": "PUBLISHED_BRANCH_PR_OPEN_REVIEW_PENDING",
+  "pull_request": "https://github.com/flastra1234-pixel/sentra-research/pull/1"
+}
