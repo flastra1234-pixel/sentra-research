@@ -6,7 +6,7 @@ integration into Sentra. No deployment and no real-money trading.
 ## Provenance
 | part | source |
 |---|---|
-| `research/` | `ucmyg/sentra`, branch `claude/loving-pasteur-l8jz7t`, commit `6c9ce8d`; folder `research/`, git-tracked files only |
+| `research/` | `ucmyg/sentra`, branch `claude/loving-pasteur-l8jz7t`, commit `0942903`; folder `research/`, git-tracked files only |
 | `deps/sentra-fleet-engine/fleet_engine/` | `ucmyg/sentra-fleet-engine` at `55cb989`. Three files only: the LucidFlex rule engine (`rules.py`) and deflated Sharpe (`deflate.py`), which the factory imports (`research/factory/lucid.py`) |
 | `data-provenance/` | manifests (sources, pinned commits, hashes, checks) for the external datasets used in the goal70 round. The data itself is **not** included |
 

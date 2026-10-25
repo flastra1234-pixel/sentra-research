@@ -1,4 +1,4 @@
-9962338cce2ca75c5b25236056143a6af4c5d6002c609f796f3a1ed5fece7252  ./README.md
+2c03d4e2965b4c7a73eb186dacef6a6a8f6f24a623e047b21e9fd6cb6e4f8e0d  ./README.md
 8899e9d3244ea32b122233596b68ea66beba9ae11c2e666749531637791f8c8a  ./data-provenance/calendar_manifest.json
 d310740cc35e186c52ffcb7f3d19b2c2c51fc15aee122e8e681138dbb244c063  ./data-provenance/etf1m_manifest.json
 e9c83fd2bd4cebb5c231103c5df69c0d6c97cc918725588afc2bf7764bdf51fc  ./data-provenance/vix_manifest.json
@@ -10,7 +10,7 @@ e9c83fd2bd4cebb5c231103c5df69c0d6c97cc918725588afc2bf7764bdf51fc  ./data-provena
 d0cf3b1fdbbdab52e5d931212529ea2a4b77c62cdf65314686561bb6fe205a5f  ./research/PREREGISTRATION_round2.md
 667735712c112a5fc1127a36df407158574350418c061e142d9abd9341fa0951  ./research/RESULTS.md
 4e8b30c0c6756f1f2bf64c65ee38585a0b05c2f8e6a20f0f8bfb5aa00d057615  ./research/RESULTS_2020plus.md
-7aae8095ca1b37d8ae331a11691bc358ebb889e3148255fb0a3a9603cfe55049  ./research/RESULTS_goal70.md
+7d600bb67cd3a02ddf72a571344d34770a653933effdf5f7a39798eeaf1d3104  ./research/RESULTS_goal70.md
 b43dbd445e261ab728e64c02f76cabc41619b6e149b7e44cbc1e96e48c02d410  ./research/factory/README.md
 ba1118a9abbb6a1789dffd08adab28ca69f236bd09c71acaaa37e6599532024d  ./research/factory/data.py
 baa563a787fd7d85f343bd0a7d91b3e286a276bfb8c07ab656bdbd881ad24a2b  ./research/factory/engine.py

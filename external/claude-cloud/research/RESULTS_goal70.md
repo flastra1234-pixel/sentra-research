@@ -457,7 +457,7 @@ test on 2020-2024 with multiple-testing control.
 
 **Not tested:**
 - order flow and bid/ask data, which `RESULTS_2020plus.md` named as the first lead;
-- ES futures (the fetch did not deliver);
+- ES futures: the 1-minute data, 2020-01 to 2026-10-09, arrived after both rounds had been run, and has not been tested;
 - options and 0DTE positioning data.
 
 These are the only candidates worth a forward test. They are written down here, before any
@@ -547,6 +547,9 @@ justified, sized for survival as in section 2 and using the payout buffer.
   anyway.
   One pre-run amendment redefined N2 as beta-adjusted leadership. It was based on a
   flag-frequency check only, with no P&L seen, and is documented in the round-2 file.
+- The calendar file marks 28 releases as rescheduled after the 2025 and 2026 government
+  shutdowns. Those dates were not known in advance. All 28 fall in 2025-2026, which no test
+  used, so the design-period event flags are unaffected.
 - 2025-2026 had already been examined in `RESULTS_2020plus.md`, so no result on it counts as
   fully independent. That is why the recommendation requires a forward test.
 
